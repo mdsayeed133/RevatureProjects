@@ -1,34 +1,68 @@
 package com.revature.models;
 
+import com.revature.doas.StatusDOA;
+import com.revature.doas.TypeDOA;
+
 public class Reimbursement {
     private int reimb_id;
     private String reimb_username_fk;
     private double reimb_amount;
     private String reimb_description;
-    private int ers_reimbursement_type_id_fk;//for put
-    private int getErs_reimbursement_status_id_fk;//for put
+    private int ers_reimbursement_type_id_fk;// for easy input
+    private int ers_reimbursement_status_id_fk;//for easy input
     private Status status;//for get
     private Type type;//for get
 
     public Reimbursement() {
     }
 
-    public Reimbursement(int reimb_id, String reimb_username_fk, double reimb_amount, String reimb_description, int ers_reimbursement_type_id_fk, int getErs_reimbursement_status_id_fk) {
-        this.reimb_id = reimb_id;
+    public Reimbursement( String reimb_username_fk, double reimb_amount, String reimb_description, int ers_reimbursement_type_id_fk, int ers_reimbursement_status_id_fk) {
+        //to use the get methods
+        TypeDOA typeDOA = new TypeDOA();
+        StatusDOA statusDOA= new StatusDOA();
+
         this.reimb_username_fk = reimb_username_fk;
         this.reimb_amount = reimb_amount;
         this.reimb_description = reimb_description;
         this.ers_reimbursement_type_id_fk = ers_reimbursement_type_id_fk;
-        this.getErs_reimbursement_status_id_fk = getErs_reimbursement_status_id_fk;
+        this.ers_reimbursement_status_id_fk = ers_reimbursement_status_id_fk;
+        this.type= typeDOA.getTypeById(ers_reimbursement_type_id_fk);
+        this.status= statusDOA.getStatusById(ers_reimbursement_status_id_fk);
     }
 
-    public Reimbursement(int reimb_id, String reimb_username_fk, double reimb_amount, String reimb_description, Status status, Type type) {
-        this.reimb_id = reimb_id;
+    public Reimbursement( int reimb_id,String reimb_username_fk, double reimb_amount, String reimb_description, int ers_reimbursement_type_id_fk, int ers_reimbursement_status_id_fk) {
+        //to use the get methods
+        TypeDOA typeDOA = new TypeDOA();
+        StatusDOA statusDOA= new StatusDOA();
+        this.reimb_id=reimb_id;
+        this.reimb_username_fk = reimb_username_fk;
+        this.reimb_amount = reimb_amount;
+        this.reimb_description = reimb_description;
+        this.ers_reimbursement_type_id_fk = ers_reimbursement_type_id_fk;
+        this.ers_reimbursement_status_id_fk = ers_reimbursement_status_id_fk;
+        this.type= typeDOA.getTypeById(ers_reimbursement_type_id_fk);
+        this.status= statusDOA.getStatusById(ers_reimbursement_status_id_fk);
+    }
+
+    public Reimbursement( String reimb_username_fk, double reimb_amount, String reimb_description, Status status, Type type) {
         this.reimb_username_fk = reimb_username_fk;
         this.reimb_amount = reimb_amount;
         this.reimb_description = reimb_description;
         this.status = status;
         this.type = type;
+        this.ers_reimbursement_status_id_fk= status.getStatus_id();
+        this.ers_reimbursement_type_id_fk= type.getType_id();
+    }
+
+    public Reimbursement(int reimb_id, String reimb_username_fk, double reimb_amount, String reimb_description, Status status, Type type) {
+        this.reimb_id=reimb_id;
+        this.reimb_username_fk = reimb_username_fk;
+        this.reimb_amount = reimb_amount;
+        this.reimb_description = reimb_description;
+        this.status = status;
+        this.type = type;
+        this.ers_reimbursement_status_id_fk= status.getStatus_id();
+        this.ers_reimbursement_type_id_fk= type.getType_id();
     }
 
     public int getReimb_id() {
@@ -68,15 +102,19 @@ public class Reimbursement {
     }
 
     public void setErs_reimbursement_type_id_fk(int ers_reimbursement_type_id_fk) {
+        TypeDOA typeDOA = new TypeDOA();
         this.ers_reimbursement_type_id_fk = ers_reimbursement_type_id_fk;
+        this.type = typeDOA.getTypeById(ers_reimbursement_type_id_fk);
     }
 
-    public int getGetErs_reimbursement_status_id_fk() {
-        return getErs_reimbursement_status_id_fk;
+    public int getErs_reimbursement_status_id_fk() {
+        return ers_reimbursement_status_id_fk;
     }
 
-    public void setGetErs_reimbursement_status_id_fk(int getErs_reimbursement_status_id_fk) {
-        this.getErs_reimbursement_status_id_fk = getErs_reimbursement_status_id_fk;
+    public void setErs_reimbursement_status_id_fk(int ers_reimbursement_status_id_fk) {
+        StatusDOA statusDOA= new StatusDOA();
+        this.ers_reimbursement_status_id_fk = ers_reimbursement_status_id_fk;
+        this.status = statusDOA.getStatusById(ers_reimbursement_status_id_fk);
     }
 
     public Status getStatus() {
@@ -85,6 +123,7 @@ public class Reimbursement {
 
     public void setStatus(Status status) {
         this.status = status;
+        this.ers_reimbursement_status_id_fk= status.getStatus_id();
     }
 
     public Type getType() {
@@ -93,7 +132,9 @@ public class Reimbursement {
 
     public void setType(Type type) {
         this.type = type;
+        this.ers_reimbursement_type_id_fk= type.getType_id();
     }
+
 
     @Override
     public String toString() {
@@ -102,8 +143,8 @@ public class Reimbursement {
                 ", reimb_username_fk='" + reimb_username_fk + '\'' +
                 ", reimb_amount=" + reimb_amount +
                 ", reimb_description='" + reimb_description + '\'' +
-                ", status=" + status +
                 ", type=" + type +
+                ", status=" + status +
                 '}';
     }
 }

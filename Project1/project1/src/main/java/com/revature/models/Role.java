@@ -32,4 +32,11 @@ public class Role {
         this.user_role = user_role;
     }
 
+    @Override
+    public String toString() {
+        return "Role{" +
+                "role_id=" + role_id +
+                ", user_role='" + user_role + '\'' +
+                '}';
+    }
 }
