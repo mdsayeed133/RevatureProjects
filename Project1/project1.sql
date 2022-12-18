@@ -51,4 +51,15 @@ CREATE TABLE ERS_USERS (
  * -----------------------------------------------------------------
 */
 
+/*
+ *insert into tables
+*/
+	insert into ERS_USER_ROLES (user_role) values ("Employee");
+	insert into ers_reimbursement_type(reimb_type) values("Bu")
+/*
+ * -----------------------------------------------------------------
+*/
+
+
+
 
