@@ -41,34 +41,41 @@ CREATE TABLE ERS_REIMBURSEMENT (
 );
 /*
  * -----------------------------------------------------------------
-*/
-
-/*
  * drop tables
 */
 	drop table ers_reimbursement cascade;
 	drop table ers_users cascade;
 /*
- * -----------------------------------------------------------------
-*/
+ * ---------------------------------------------------------
+ * delete all data
+ */
 
+	truncate table ers_reimbursement ;
+	truncate table ers_reimbursement_type cascade;
+	truncate table ers_users;
 /*
+ * -----------------------------------------------------------------
  *insert into tables
 */
 	
 	insert into ERS_USER_ROLES(user_role) values ('Employee');
-	insert into ers_reimbursement_type(reimb_type) values('Flight');
+	insert into ERS_USER_ROLES(user_role) values ('Finance Manager');
+
+	insert into ers_reimbursement_type(reimb_type) values('Travel');
 	insert into ers_reimbursement_type(reimb_type) values('Meal');
+	insert into ers_reimbursement_type(reimb_type) values('Moving Company');
+	insert into ers_reimbursement_type(reimb_type) values('Other');
+	
 	insert into ers_reimbursement_status (reimb_status) values('pending');
 	insert into ers_reimbursement_status (reimb_status) values('approve');
 	insert into ers_reimbursement_status (reimb_status) values('deny');
+
 	insert into	ers_users(ers_username, ers_password,user_first_name ,user_last_name,ers_user_roles_id_fk) values ('mdsayeed133','mdsayeed133','mohammed','islam','1' );
-	insert into ERS_REIMBURSEMENT(reimb_username_fk,reimb_amount,reimb_description,ers_reimbursement_type_id_fk,ers_reimbursement_status_id_fk) values ('mdsayeed133','50.50','Flight form dallas to los angels', '1','1');
+
+	insert into ERS_REIMBURSEMENT(reimb_username_fk,reimb_amount,reimb_description,ers_reimbursement_type_id_fk,ers_reimbursement_status_id_fk) 
+		values ('mdsayeed133','50.50','Flight form dallas to los angels', '1','1');
 /*
  * -----------------------------------------------------------------
-*/
-
-/*
  *select for tables
 */
 	select * from ers_user_roles;
@@ -77,9 +84,7 @@ CREATE TABLE ERS_REIMBURSEMENT (
 	select * from ers_users;
 	select * from ers_reimbursement;
 	
-/
- * -----------------------------------------------------------------
-*/
+
 
 
 

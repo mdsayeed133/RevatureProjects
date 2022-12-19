@@ -57,8 +57,32 @@ public class ReimbursementDOA implements ReimbursementDOAInterface{
             e.printStackTrace();
         }
         return null;
+    }
+    @Override
+    public Reimbursement getReimbursementById(int reimb_id) {
 
+        try (Connection connection = ConnectionUtil.getConnection();) {
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM ERS_REIMBURSEMENT where reimb_id=?");
+            ps.setInt(1,reimb_id);
+            ResultSet resultSet = ps.executeQuery();
+            if (resultSet.next()) {
+                String username = resultSet.getString("reimb_username_fk");
+                double amount = resultSet.getDouble("reimb_amount");
+                String description = resultSet.getString("reimb_description");
+                int typeId = resultSet.getInt("ers_reimbursement_type_id_fk");
+                int statusId = resultSet.getInt("ers_reimbursement_status_id_fk");
 
+                Reimbursement reimbursement = new Reimbursement(reimb_id, username, amount, description, typeId, statusId);
+                return reimbursement;
+            } else {
+                System.out.println("No reimbursement by that id");
+                return null;
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     @Override
@@ -113,6 +137,27 @@ public class ReimbursementDOA implements ReimbursementDOAInterface{
 
     @Override
     public Boolean updateReimbursementStatus(int reimb_id, int status_id) {
-        return null;
+        if(hasReimbursementBeenProcessed(reimb_id))return false;
+        try (Connection conn = ConnectionUtil.getConnection()){
+            String sql= "UPDATE ERS_REIMBURSEMENT SET ers_reimbursement_status_id_fk = ? WHERE reimb_id = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setInt(1, status_id);
+            ps.setInt(2, reimb_id);
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
+
+    @Override
+    public Boolean hasReimbursementBeenProcessed(int reimb_id) {
+        Reimbursement reimbursement = getReimbursementById(reimb_id);
+        if(reimbursement.getErs_reimbursement_status_id_fk()==1){
+            return false;
+        } else return true;
+    }
+
+
 }

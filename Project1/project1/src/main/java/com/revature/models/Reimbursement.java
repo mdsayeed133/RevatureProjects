@@ -15,8 +15,23 @@ public class Reimbursement {
 
     public Reimbursement() {
     }
+    //default to  pending for status.
+    public Reimbursement(String reimb_username_fk, double reimb_amount, String reimb_description, int ers_reimbursement_type_id_fk) {
+        //to use the get methods
+        TypeDOA typeDOA = new TypeDOA();
+        StatusDOA statusDOA= new StatusDOA();
 
-    public Reimbursement( String reimb_username_fk, double reimb_amount, String reimb_description, int ers_reimbursement_type_id_fk, int ers_reimbursement_status_id_fk) {
+        this.reimb_username_fk = reimb_username_fk;
+        this.reimb_amount = reimb_amount;
+        this.reimb_description = reimb_description;
+        this.ers_reimbursement_type_id_fk = ers_reimbursement_type_id_fk;
+        this.ers_reimbursement_status_id_fk = 1;//pending
+        this.type= typeDOA.getTypeById(ers_reimbursement_type_id_fk);
+        this.status= statusDOA.getStatusById(1);
+    }
+
+
+    public Reimbursement(String reimb_username_fk, double reimb_amount, String reimb_description, int ers_reimbursement_type_id_fk, int ers_reimbursement_status_id_fk) {
         //to use the get methods
         TypeDOA typeDOA = new TypeDOA();
         StatusDOA statusDOA= new StatusDOA();
@@ -29,7 +44,7 @@ public class Reimbursement {
         this.type= typeDOA.getTypeById(ers_reimbursement_type_id_fk);
         this.status= statusDOA.getStatusById(ers_reimbursement_status_id_fk);
     }
-
+    //used for getting data for sql
     public Reimbursement( int reimb_id,String reimb_username_fk, double reimb_amount, String reimb_description, int ers_reimbursement_type_id_fk, int ers_reimbursement_status_id_fk) {
         //to use the get methods
         TypeDOA typeDOA = new TypeDOA();
@@ -44,26 +59,6 @@ public class Reimbursement {
         this.status= statusDOA.getStatusById(ers_reimbursement_status_id_fk);
     }
 
-    public Reimbursement( String reimb_username_fk, double reimb_amount, String reimb_description, Status status, Type type) {
-        this.reimb_username_fk = reimb_username_fk;
-        this.reimb_amount = reimb_amount;
-        this.reimb_description = reimb_description;
-        this.status = status;
-        this.type = type;
-        this.ers_reimbursement_status_id_fk= status.getStatus_id();
-        this.ers_reimbursement_type_id_fk= type.getType_id();
-    }
-
-    public Reimbursement(int reimb_id, String reimb_username_fk, double reimb_amount, String reimb_description, Status status, Type type) {
-        this.reimb_id=reimb_id;
-        this.reimb_username_fk = reimb_username_fk;
-        this.reimb_amount = reimb_amount;
-        this.reimb_description = reimb_description;
-        this.status = status;
-        this.type = type;
-        this.ers_reimbursement_status_id_fk= status.getStatus_id();
-        this.ers_reimbursement_type_id_fk= type.getType_id();
-    }
 
     public int getReimb_id() {
         return reimb_id;
