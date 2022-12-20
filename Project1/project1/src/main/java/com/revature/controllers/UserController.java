@@ -26,7 +26,7 @@ public class UserController {
             ctx.result(body); //send back the user
         } else {
             ctx.status(406); //406 "not acceptable"
-            ctx.result("Insert employee failed!");
+            ctx.result("Insert user failed!");
         }
     };
 

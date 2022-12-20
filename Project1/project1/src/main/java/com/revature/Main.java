@@ -44,11 +44,13 @@ public class Main {
 
         app.post("/reimb", reimbursementController.insertReimbursement);
 
+        app.get("/reimb", reimbursementController.getAllReimbursement);
 
+        app.get("/reimb/status/{statusId}", reimbursementController.getReimbursementByStatus);
 
+        app.get("/reimb/{username}", reimbursementController.getReimbursementByUser);
 
-
-
+        app.patch("/reimb/status/{reimbId}", reimbursementController.patchReimbursementStatus);
 
     }
 }
