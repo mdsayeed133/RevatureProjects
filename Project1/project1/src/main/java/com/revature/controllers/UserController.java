@@ -7,6 +7,7 @@ import io.javalin.http.Handler;
 
 public class UserController {
     UserDOA userDOA = new UserDOA();
+    //AuthController authController = new AuthController();
 
     public Handler insertNewUser = (ctx) -> {
         String body = ctx.body();
@@ -21,7 +22,10 @@ public class UserController {
 
         User newUser= new User(username,password, firstName,lastName);
 
+
+
         if(userDOA.insertUser(newUser) != null){
+           // authController.newLogin(newUser,ctx);
             ctx.status(201); //201 "created"
             ctx.result(body); //send back the user
         } else {

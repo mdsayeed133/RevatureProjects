@@ -1,5 +1,6 @@
 package com.revature;
 
+import com.revature.controllers.AuthController;
 import com.revature.controllers.ReimbursementController;
 import com.revature.controllers.UserController;
 import com.revature.doas.ReimbursementDOA;
@@ -17,22 +18,21 @@ public class Main {
         ReimbursementDOA reimbursementDOA= new ReimbursementDOA();
         UserController userController= new UserController();
         ReimbursementController reimbursementController= new ReimbursementController();
+        AuthController authController= new AuthController();
         /*
-        //new user
-        User user= new User("user1","password",1);
-        System.out.println(userDOA.insertUser(user));
+        //add manager
+        User manager= new User("manager","manager",2);
+        System.out.println(userDOA.insertUser(manager));
+
+        //add employee
+        User emp = new User("employee", "employee",1);
+        System.out.println(userDOA.insertUser(emp));
 
         //new reimbursement
-        Reimbursement reimbursement= new Reimbursement("user1",100.34,"dinner with client", 2,1);
+        Reimbursement reimbursement= new Reimbursement("employee",1053.23,"house party",4);
         System.out.println(reimbursementDOA.insertReimbursement(reimbursement));
 
-        //testing getAllReimbursement()
-        ArrayList<Reimbursement>  allReimbursement =reimbursementDOA.getAllReimbursement();
-        for (Reimbursement r: allReimbursement) {
-            System.out.println(r);
-        }
-
-         */
+        */
 
         Javalin app = Javalin.create(
                 config -> {
@@ -48,9 +48,11 @@ public class Main {
 
         app.get("/reimb/status/{statusId}", reimbursementController.getReimbursementByStatus);
 
-        app.get("/reimb/{username}", reimbursementController.getReimbursementByUser);
+        app.get("/reimb/user", reimbursementController.getReimbursementByUser);
 
         app.patch("/reimb/status/{reimbId}", reimbursementController.patchReimbursementStatus);
+
+        app.post("/login",authController.loginHandler);
 
     }
 }
