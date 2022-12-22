@@ -10,6 +10,7 @@ public interface ReimbursementDOAInterface {
     Reimbursement getReimbursementById(int reimb_id);
     ArrayList<Reimbursement> getReimbursementByUsername(String username);
     ArrayList<Reimbursement> getReimbursementByStatus(int status_id);
+    ArrayList<Reimbursement> getReimbursementByType(String username, int type_id);
     Boolean updateReimbursementStatus(int reimb_id, int status_id);
 
     Boolean hasReimbursementBeenProcessed(int reimb_id);

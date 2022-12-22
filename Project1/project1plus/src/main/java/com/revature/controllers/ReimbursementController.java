@@ -15,7 +15,6 @@ public class ReimbursementController {
             String body = ctx.body();
             Gson gson = new Gson();
             Reimbursement jsonBody = gson.fromJson(body, Reimbursement.class);
-            //String reimbUsernameFk = jsonBody.getReimb_username_fk();
             String reimbUsernameFk1 = (String) AuthController.ses.getAttribute("ers_username");
             double reimbAmount = jsonBody.getReimb_amount();
             String reimbDescription = jsonBody.getReimb_description();
@@ -26,7 +25,8 @@ public class ReimbursementController {
 
             if (reimbursementDOA.insertReimbursement(newReimbursement)!=null) {
                 ctx.status(201); //201 "created"
-                ctx.result(body);
+                String result = gson.toJson(newReimbursement);
+                ctx.result(result);
             } else {
                 ctx.status(406); //406 "not acceptable"
                 ctx.result("Insert Reimbursement failed!");
@@ -88,6 +88,24 @@ public class ReimbursementController {
         }
     };
 
+    public Handler getReimbursementByType= (ctx)-> {
+        if(AuthController.ses != null && (int)AuthController.ses.getAttribute("ers_user_roles_id_fk")==1) {
+            Gson gson = new Gson();
+            String username = (String) AuthController.ses.getAttribute("ers_username");
+            int typeId= Integer.parseInt(ctx.pathParam("typeId"));
+
+            ArrayList<Reimbursement> reimbursements= reimbursementDOA.getReimbursementByType(username,typeId);
+            String jsonReimb = gson.toJson(reimbursements);
+
+            ctx.result(jsonReimb);
+            //we can set status code with ctx.status()
+            ctx.status(202);
+        } else { //if the user is NOT logged in:
+            ctx.result("YOU ARE UNAUTHORIZED TO ACCESS THIS FUNCTION");
+            ctx.status(401); //401 "unauthorized"
+        }
+    };
+
     public Handler getReimbursementByUser= (ctx)-> {
         if(AuthController.ses != null && (int)AuthController.ses.getAttribute("ers_user_roles_id_fk")==1) {
             Gson gson = new Gson();
@@ -106,7 +124,7 @@ public class ReimbursementController {
 
     public Handler patchReimbursementStatus= (ctx)->{
         if(AuthController.ses != null && (int)AuthController.ses.getAttribute("ers_user_roles_id_fk")==2) {
-            Gson gson = new Gson();
+
             int reimbId= Integer.parseInt(ctx.pathParam("reimbId"));
             String body = ctx.body();
             int statusId;

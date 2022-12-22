@@ -70,4 +70,20 @@ public class UserDOA implements UserDOAInterface{
         }
             return false;
     }
+
+    @Override
+    public Boolean updateUsersAddress(String username, String address) {
+        try (Connection conn = ConnectionUtil.getConnection()){
+            String sql= "UPDATE ERS_USERS SET user_address = ? WHERE ers_username = ?";
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, address);
+            ps.setString(2, username);
+            ps.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            System.out.println("address did not update");
+        }
+        return false;
+    }
 }

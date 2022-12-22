@@ -7,5 +7,6 @@ public interface UserDOAInterface {
 
     User getUserByUserName(String username);
     Boolean updateUsersRole(String username, int role_id);
+    Boolean updateUsersAddress(String username, String address);
 
 }

@@ -1,8 +1,3 @@
-
-/*
- * Creating the tables
- */
-
 CREATE TABLE ERS_USER_ROLES (
     role_id serial primary key,
     user_role TEXT not null
@@ -24,6 +19,7 @@ CREATE TABLE ERS_USERS (
     ers_password text not null,
     user_first_name text ,
     user_last_name text ,
+    user_address text,
     ers_user_roles_id_fk INT not null,
     foreign key (ers_user_roles_id_fk) references ERS_USER_ROLES(role_id)
 );
@@ -62,18 +58,19 @@ CREATE TABLE ERS_REIMBURSEMENT (
 	insert into ERS_USER_ROLES(user_role) values ('Finance Manager');
 
 	insert into ers_reimbursement_type(reimb_type) values('Travel');
-	insert into ers_reimbursement_type(reimb_type) values('Meal');
-	insert into ers_reimbursement_type(reimb_type) values('Moving Company');
+	insert into ers_reimbursement_type(reimb_type) values('Lodging');
+	insert into ers_reimbursement_type(reimb_type) values('Food');
 	insert into ers_reimbursement_type(reimb_type) values('Other');
 	
 	insert into ers_reimbursement_status (reimb_status) values('pending');
 	insert into ers_reimbursement_status (reimb_status) values('approve');
 	insert into ers_reimbursement_status (reimb_status) values('deny');
 
-	insert into	ers_users(ers_username, ers_password,user_first_name ,user_last_name,ers_user_roles_id_fk) values ('mdsayeed133','mdsayeed133','mohammed','islam','1' );
+	insert into	ers_users(ers_username, ers_password,user_first_name ,user_last_name,user_address,ers_user_roles_id_fk) values ('employee','employee',null,null,null,'1' );
+	insert into	ers_users(ers_username, ers_password,user_first_name ,user_last_name,user_address,ers_user_roles_id_fk) values ('manager','manager',null,null,null,'2' );
 
 	insert into ERS_REIMBURSEMENT(reimb_username_fk,reimb_amount,reimb_description,ers_reimbursement_type_id_fk,ers_reimbursement_status_id_fk) 
-		values ('mdsayeed133','50.50','Flight form dallas to los angels', '1','1');
+		values ('employee','0.01','test', '4','1');
 /*
  * -----------------------------------------------------------------
  *select for tables
@@ -83,11 +80,4 @@ CREATE TABLE ERS_REIMBURSEMENT (
 	select * from ers_reimbursement_status;
 	select * from ers_users;
 	select * from ers_reimbursement;
-	select * from ers_users where ers_username='mdsayeed133' and ers_password =null;
-	
-	
-
-
-
-
-
+;

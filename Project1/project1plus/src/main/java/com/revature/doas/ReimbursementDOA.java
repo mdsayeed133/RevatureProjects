@@ -136,6 +136,31 @@ public class ReimbursementDOA implements ReimbursementDOAInterface{
     }
 
     @Override
+    public ArrayList<Reimbursement> getReimbursementByType(String username,int type_id) {
+        ArrayList<Reimbursement> reimbursements = new ArrayList<>();
+
+        try (Connection connection = ConnectionUtil.getConnection();) {
+            PreparedStatement ps = connection.prepareStatement("SELECT * FROM ERS_REIMBURSEMENT WHERE ers_reimbursement_type_id_fk = ? and reimb_username_fk= ?");
+            ps.setInt(1,type_id );
+            ps.setString(2,username);
+            ResultSet resultSet = ps.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("reimb_id");
+                double amount = resultSet.getDouble("reimb_amount");
+                String description = resultSet.getString("reimb_description");
+                int statusId = resultSet.getInt("ers_reimbursement_status_id_fk");
+
+                Reimbursement reimbursement = new Reimbursement(id, username, amount, description, type_id, statusId);
+                reimbursements.add(reimbursement);
+            }
+            return reimbursements;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    @Override
     public Boolean updateReimbursementStatus(int reimb_id, int status_id) {
         if(hasReimbursementBeenProcessed(reimb_id))return false;
         try (Connection conn = ConnectionUtil.getConnection()){

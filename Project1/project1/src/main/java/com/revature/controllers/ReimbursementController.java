@@ -26,7 +26,8 @@ public class ReimbursementController {
 
             if (reimbursementDOA.insertReimbursement(newReimbursement)!=null) {
                 ctx.status(201); //201 "created"
-                ctx.result(body);
+                String result = gson.toJson(newReimbursement);
+                ctx.result(result);
             } else {
                 ctx.status(406); //406 "not acceptable"
                 ctx.result("Insert Reimbursement failed!");

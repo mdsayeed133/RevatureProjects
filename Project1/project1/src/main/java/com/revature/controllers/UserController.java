@@ -27,7 +27,8 @@ public class UserController {
         if(userDOA.insertUser(newUser) != null){
            // authController.newLogin(newUser,ctx);
             ctx.status(201); //201 "created"
-            ctx.result(body); //send back the user
+            String result = gson.toJson(newUser);
+            ctx.result(result); //send back the user
         } else {
             ctx.status(406); //406 "not acceptable"
             ctx.result("Insert user failed!");
