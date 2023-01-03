@@ -31,7 +31,7 @@ public class UserController {
             ctx.result(result);
         } else {
             ctx.status(406); //406 "not acceptable"
-            ctx.result("Insert user failed!");
+            ctx.result("username is already in use");
         }
     };
 
