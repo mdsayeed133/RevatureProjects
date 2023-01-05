@@ -1,0 +1,50 @@
+*{
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+/* header */
+.nav-item {
+    font-size: 20px;
+    margin: 20px;
+    padding: 5px;
+    border: 1px solid gray;
+    background-color: gray;
+    border-radius: 5px;
+}
+.nav-item a {
+    text-decoration: none;
+    color: white;
+}
+.nav-item a:hover {
+    background-color: #f26925;
+    transition: ease-in 0.5s;
+}
+
+.main-container {
+    position: relative;
+}
+
+.logbox {
+    position: absolute;
+    top: 100px;
+    left: 70%;
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px gray;
+    height: fit-content;
+}
+
+.fig-text {
+    position: absolute;
+    top: 100px;
+    left: 200px;
+    font-size: 40px;
+}
+
+.main-login-box {
+    border: 1px solid black;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px gray;
+    height: fit-content;
+}
