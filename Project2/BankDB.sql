@@ -50,7 +50,7 @@ CREATE TABLE transactions (
 
 CREATE TABLE inner_transfer_logs (
   id SERIAL PRIMARY KEY,
-  form_account_id INTEGER NOT NULL,
+  from_account_id INTEGER NOT NULL,
   to_account_id INTEGER NOT NULL,
   amount DECIMAL(10, 2) NOT NULL,
   FOREIGN KEY (form_account_id) REFERENCES accounts(id),
