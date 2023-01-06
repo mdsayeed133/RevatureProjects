@@ -2,11 +2,31 @@
     box-sizing: border-box;
     scroll-behavior: smooth;
 }
-
+body {
+    background-image: url(media/pexels-la-miko-3616764.jpg);
+}
+:root {
+    --primOrange: #f26925;
+    --primWhite: #fff;
+    --primGray: #474c55;
+    --secBlue: #72a4c2;
+    --secYellow: #fcb414;
+    --secGray: #b9b9ba;
+}
 /* header */
+.header {
+    background-color: var(--primGray);
+    box-shadow: 2px 2px 2px black;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+.darkmode-switch {
+    display: flex;
+    justify-content: right;
+}
 .nav-item {
     font-size: 20px;
-    margin: 20px;
+    margin: 10px;
     padding: 5px;
     border: 1px solid gray;
     background-color: gray;
@@ -21,6 +41,7 @@
     transition: ease-in 0.5s;
 }
 
+/* MAIN */
 .main-container {
     position: relative;
 }
@@ -35,6 +56,7 @@
     height: fit-content;
 }
 
+
 .fig-text {
     position: absolute;
     top: 100px;
@@ -46,5 +68,21 @@
     border: 1px solid black;
     border-radius: 5px;
     box-shadow: 2px 2px 2px gray;
-    height: fit-content;
+    height: 200px;
+    background-color: var(--secBlue);
+}
+
+.main-hero {
+    /* border: 2px solid var(--primWhite);
+    border-radius: 5px; */
+    padding: 0;
+}
+
+.dividing-line {
+    border-top: 4px solid var(--primOrange);
+    border-bottom: 4px solid var(--primOrange);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-top: 10px;
 }
