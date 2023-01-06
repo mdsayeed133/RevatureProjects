@@ -28,3 +28,23 @@ Revature was very clear about the color selection
 - Blue [RGB:115,165,194; Hex:#72a4c2]
 - Yellow [RGB:253,181,21; Hex:#fcb414]
 - Light Gray [RGB:185,185,186; Hex:#b9b9ba]
+
++=======+
+| Fonts 
+
++=============+
+| React Icons |
++=============+
+- React 
+- HTML/CSS/JS (draft)
+- Bootstrap 
+- Spring 
+- Postman 
+- PostgreSQL
+
++==================+
+| Create React App |
++==================+
+- keep track of differences in TSX and JSX
+
+
