@@ -1,0 +1,16 @@
+
+.top-nav-list {
+    justify-content: center;
+}
+.nav-item {
+    font-size: 20px;
+    margin: 5%;
+}
+.nav-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.login-name {
+    font-size: 30px;
+}
