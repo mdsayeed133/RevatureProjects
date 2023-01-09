@@ -4,7 +4,8 @@ import React from 'react'
 import Header from '../Header/Header'
 
 import { FaAws, FaReact } from "react-icons/fa";
-import {SiTypescript, SiSpring, SiPostgresql, SiBootstrap} from "react-icons/si";
+import { SiTypescript, SiSpring, SiPostgresql, SiBootstrap } from "react-icons/si";
+import { Link } from 'react-router-dom';
 
 const Home: React.FC<any> = () => {
 
@@ -13,10 +14,22 @@ const Home: React.FC<any> = () => {
     return (
         <div>
             <Header />
+            <div className="banner-container container-fluid">
+                <h1>Big Banner Goes Here</h1>
+                <p>Something something motivational and empty</p>
+            </div>
             <div className="main-container container">
-                <div className="banner-container">
-                    <h1>Big Banner Goes Here</h1>
-                    <p>Something something motivational and empty</p>
+                <div className="row dividing-line d-flex justify-content-around">
+                    <div className="col-md-6 login-options">
+                        <h3 className="subheader">Not Logged In?</h3>
+                        <p className="text">If you want to make the most of the opportunities that Revature Banking can provide you, please click to login</p>
+                        <Link to="/" className="log-btn btn btn-secondary">Login</Link>
+                    </div>
+                    <div className="col-md-6 login-options">
+                    <h3 className="subheader">No Account?</h3>
+                        <p className="text">If you want to make the most of the opportunities that Revature Banking can provide you, please click to create an account</p>
+                        <button className="log-btn btn btn-secondary" id="accountBtn">Create Account</button>
+                    </div>
                 </div>
                 <div className="row dividing-line">
                     <div className="col-4 sub-info">
@@ -36,12 +49,12 @@ const Home: React.FC<any> = () => {
             <div className="container main-tech-stack">
                 <h3>Simple React Icons</h3>
                 <div className="icon-list">
-                    <SiBootstrap size="5em"/>
-                    <FaAws size="5em"/>
-                    <FaReact size="5em"/>
-                    <SiSpring size="5em"/>
-                    <SiTypescript size="5em"/>
-                    <SiPostgresql size="5em"/>
+                    <SiBootstrap size="5em" />
+                    <FaAws size="5em" />
+                    <FaReact size="5em" />
+                    <SiSpring size="5em" />
+                    <SiTypescript size="5em" />
+                    <SiPostgresql size="5em" />
                 </div>
             </div>
         </div>

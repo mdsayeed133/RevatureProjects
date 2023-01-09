@@ -2,6 +2,16 @@
     border: 1px solid orange;
 }
 
-.tech-icon {
-    
+.dividing-line {
+    border-bottom: 4px solid orange;
+}
+
+.login-options {
+    width: 30%;
+    height: 300px;
+    border: 2px solid gray;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px gray;
+    padding-top: 15px;
+    margin-bottom: 30px;
 }
