@@ -16,8 +16,13 @@
   <body>
     <header class="header" id="header">
       <div class="container">
+        <div class="extras">
+          <div class="darkmode-switch">
+            <p>light/dark</p>
+          </div>
+        </div>
         <div class="row">
-          <div class="col-md-6">
+          <div class="col-md-4">
             <img
               src="media/rev-logo_281_29.png"
               alt=""
@@ -25,52 +30,41 @@
               id="RevLogo"
             />
           </div>
-          <div class="col-md-6">
+          <div class="col-md-5">
             <ul class="nav top-nav-list">
               <li class="nav-item"><a href="#link">Home</a></li>
-              <li class="nav-item"><a href="#link">About</a></li>
-              <li class="nav-item"><a href="#link">Project</a></li>
+              <li class="nav-item"><a href="#About">About</a></li>
+              <li class="nav-item"><a href="#link">Account</a></li>
               <li class="nav-item"><a href="#link">Contact</a></li>
             </ul>
+          </div>
+          <div class="col-md-2 login-status">
+            <p>Hello, GUEST</p>
           </div>
         </div>
       </div>
     </header>
     <main class="main" id="main">
-        <div class="container main-container">
-            <div class="row">
-                <div class="col-8 main-hero">
-                    <div class="figure">
-                        <img src="media/pexels-andrea-piacquadio-3772512.jpg" alt="" class="img-fluid" height="200px" width="100%">
-                        <figcaption class="fig-text">Don't let Revature leave you behind</figcaption>
-                    </div>
-                </div>
-                <div class="col-4 main-login-box">
-                    <h4>login</h4>
-                    <input type="text" placeholder="username">
-                    <br>
-                    <input type="text" placeholder="password">
-                    <br>
-                    <button class="btn btn-info">Login</button>
-                </div>
-            </div>
-        </div>
-        <div class="container main-container">
-          <div class="figure">
-            <img src="media/pexels-andrea-piacquadio-3772512.jpg" alt="" class="img-fluid" height="200px" width="100%">
-            <figcaption class="fig-text">Don't let Revature leave you behind</figcaption>
-        </div>
-        <div class="logbox">
-          <h4>login</h4>
-                    <input type="text" placeholder="username">
-                    <br>
-                    <input type="text" placeholder="password">
-                    <br>
-                    <button class="btn btn-info">Login</button>
-        </div>
-        </div>
-        <div class="container main-info">
-            <div class="row">
+        <div class="container-fluid main-container">
+          <div class="row">
+              <div class="col-8 main-hero">
+                  <div class="figure">
+                      <img src="media/pexels-andrea-piacquadio-3772512.jpg" alt="" class="main-hero img-fluid" height="200px" width="100%">
+                      <figcaption class="fig-text">Don't let Revature leave you behind</figcaption>
+                  </div>
+              </div>
+              <div class="col-4 main-login-box">
+                  <h4>login</h4>
+                  <input type="text" placeholder="username">
+                  <br>
+                  <input type="text" placeholder="password">
+                  <br>
+                  <button class="btn login-btn">Login</button>
+              </div>
+          </div>
+      </div>
+        <div class="container main-info" id="About">
+            <div class="row dividing-line">
                 <div class="col-4 sub-info">
                     <h3>info here</h3>
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Architecto laudantium cum recusandae debitis ipsam aperiam labore pariatur exercitationem quasi. Molestias dolores modi ullam officiis corrupti tenetur mollitia a! Id inventore animi, veritatis harum illo soluta hic? Tenetur corrupti porro voluptatibus.</p>
@@ -86,15 +80,35 @@
             </div>
         </div>
         <div class="container main-tech-stack">
+          <h3>Simple React Icons</h3>
           <ul class="tech-icons-list list-group list-group-horizontal">
-            <li class="tech-items list-group-item">html</li>
-            <li class="tech-items list-group-item">css</li>
-            <li class="tech-items list-group-item">javascript</li>
             <li class="tech-items list-group-item">bootstrap</li>
-            <li class="tech-items list-group-item">dbeaver</li>
+            <li class="tech-items list-group-item">react</li>
             <li class="tech-items list-group-item">postman</li>
             <li class="tech-items list-group-item">spring</li>
+            <li class="tech-items list-group-item">typescript xml</li>
           </ul>
+        </div>
+        <div class="container main-account-section">
+          <div class="account-details">
+            <h2>Account Details:</h2>
+            <p>Name:</p>
+            <p>Account Number:</p>
+            <p><strong>Balance:</strong></p>
+          </div>
+
+          <div class="account-entry">
+            <p>Date: 1/6/2023</p>
+            <p>Description: Food</p>
+            <p>Amount: $67.35</p>
+            <hr>
+          </div>
+          <div class="account-entry">
+            <p>Date: 1/4/2023</p>
+            <p>Description: Entertainment</p>
+            <p>Amount: $93.78</p>
+            <hr>
+          </div>
         </div>
     </main>
     <footer class="footer" id="footer"></footer>

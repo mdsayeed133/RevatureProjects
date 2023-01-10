@@ -1,0 +1,50 @@
+A list of things to search for and import for P2 
+
+
++=============+
+| React Icons |
++=============+
+Accessible upon install
+- Sun/moon for darkmode switch
+- Framework icons [React, Spring, TSX, etc]
+
+
++=================+
+| Carousel Images |
++=================+
+- Photo by Andrea Piacquadio: https://www.pexels.com/photo/man-in-black-suit-waiting-for-a-cab-3772512/
+- Photo by Tima Miroshnichenko: https://www.pexels.com/photo/bearded-man-in-white-button-up-shirt-sitting-in-front-of-laptop-feeling-excited-7567444/
+- Photo by Karolina Grabowska: https://www.pexels.com/photo/sad-woman-crying-having-money-debt-5900146/
+
++===============+
+| Color Schemes |
++===============+
+Revature was very clear about the color selection
+**Primary**
+- Orange [RGB:242,105,38; Hex:#f26925]
+- White [RGB:0,0,0]
+- Dark Gray [RGB:72,76,86; Hex:#474c55]
+**Secondary**
+- Blue [RGB:115,165,194; Hex:#72a4c2]
+- Yellow [RGB:253,181,21; Hex:#fcb414]
+- Light Gray [RGB:185,185,186; Hex:#b9b9ba]
+
++=======+
+| Fonts 
+
++=============+
+| React Icons |
++=============+
+- React 
+- HTML/CSS/JS (draft)
+- Bootstrap 
+- Spring 
+- Postman 
+- PostgreSQL
+
++==================+
+| Create React App |
++==================+
+- keep track of differences in TSX and JSX
+
+

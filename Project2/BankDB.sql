@@ -82,3 +82,4 @@ drop table account_type cascade;
 drop table inner_transfer_logs cascade;
 drop table transactions cascade;
 drop table requests cascade;
+
