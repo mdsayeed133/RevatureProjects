@@ -28,7 +28,7 @@ const Home: React.FC<any> = () => {
                     <div className="col-md-6 login-options">
                     <h3 className="subheader">No Account?</h3>
                         <p className="text">If you want to make the most of the opportunities that Revature Banking can provide you, please click to create an account</p>
-                        <button className="log-btn btn btn-secondary" id="accountBtn">Create Account</button>
+                        <Link to="/Signup" className="log-btn btn btn-secondary">Create Account</Link>
                     </div>
                 </div>
                 <div className="row dividing-line">
