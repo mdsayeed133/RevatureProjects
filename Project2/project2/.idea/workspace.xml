@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30ff3ca2-8c79-4e81-9506-86339bdee7ae" name="Changes" comment="Added AccountType model to com.revature.models - Fixed spelling mistakes.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/TransactionType.java" afterDir="false" />
+    <list default="true" id="30ff3ca2-8c79-4e81-9506-86339bdee7ae" name="Changes" comment="started writing the models">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,16 +47,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/JavaProject/RevatureProjects/Project2/project2&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/JavaProject/Revature_Ben_Demos/demos/Week6/HelloSpringData",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0"
   }
-}</component>
+}]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,35 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673464293716</updated>
     </task>
-    <task id="LOCAL-00002" summary="Attempted connection utility update.">
-      <created>1673478010365</created>
+    <task id="LOCAL-00002" summary="started writing the models">
+      <created>1673477404819</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1673478010365</updated>
+      <updated>1673477404819</updated>
     </task>
-    <task id="LOCAL-00003" summary="Added package folders and some additional beans to launcher.">
-      <created>1673478237668</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1673478237669</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Added AccountType model to com.revature.models">
-      <created>1673478901248</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1673478901248</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Added AccountType model to com.revature.models - Fixed spelling mistakes.">
-      <created>1673478954528</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1673478954528</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,10 +96,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="started writing the models" />
-    <MESSAGE value="Attempted connection utility update." />
-    <MESSAGE value="Added package folders and some additional beans to launcher." />
-    <MESSAGE value="Added AccountType model to com.revature.models" />
-    <MESSAGE value="Added AccountType model to com.revature.models - Fixed spelling mistakes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added AccountType model to com.revature.models - Fixed spelling mistakes." />
+    <option name="LAST_COMMIT_MESSAGE" value="started writing the models" />
   </component>
 </project>
