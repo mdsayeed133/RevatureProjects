@@ -1,13 +1,15 @@
 package com.revature.models;
 
 import jakarta.persistence.*;
+import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name = "status")
+@Component
 public class Status {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private int id;
 
     @Column(name = "status_type", nullable = false)
     private String statusType;
@@ -19,17 +21,17 @@ public class Status {
         this.statusType = statusType;
     }
 
-    public Status(Long id, String statusType) {
+    public Status(int id, String statusType) {
         this.id = id;
         this.statusType = statusType;
     }
 
     // getters and setters
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -39,5 +41,13 @@ public class Status {
 
     public void setStatusType(String statusType) {
         this.statusType = statusType;
+    }
+
+    @Override
+    public String toString() {
+        return "Status{" +
+                "id=" + id +
+                ", statusType='" + statusType + '\'' +
+                '}';
     }
 }
