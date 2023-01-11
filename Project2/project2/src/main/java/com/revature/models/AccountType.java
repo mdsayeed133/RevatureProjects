@@ -4,7 +4,7 @@ import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name = "acount_type")
+@Table(name = "account_type")
 @Component
 public class AccountType {
     @Id

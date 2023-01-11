@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30ff3ca2-8c79-4e81-9506-86339bdee7ae" name="Changes" comment="Added package folders and some additional beans to launcher.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/AccountType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="30ff3ca2-8c79-4e81-9506-86339bdee7ae" name="Changes" comment="Added AccountType model to com.revature.models">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/AccountType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/AccountType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +85,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673478237669</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added AccountType model to com.revature.models">
+      <created>1673478901248</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673478901248</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -104,6 +110,7 @@
     <MESSAGE value="started writing the models" />
     <MESSAGE value="Attempted connection utility update." />
     <MESSAGE value="Added package folders and some additional beans to launcher." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added package folders and some additional beans to launcher." />
+    <MESSAGE value="Added AccountType model to com.revature.models" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AccountType model to com.revature.models" />
   </component>
 </project>
