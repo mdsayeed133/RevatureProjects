@@ -9,7 +9,8 @@ import org.springframework.stereotype.Component;
 public class Status {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @Column(name ="id")
+    private int statusId;
 
     @Column(name = "status_type", nullable = false)
     private String statusType;
@@ -22,17 +23,17 @@ public class Status {
     }
 
     public Status(int id, String statusType) {
-        this.id = id;
+        this.statusId = id;
         this.statusType = statusType;
     }
 
     // getters and setters
     public int getId() {
-        return id;
+        return statusId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.statusId = id;
     }
 
     public String getStatusType() {
@@ -46,7 +47,7 @@ public class Status {
     @Override
     public String toString() {
         return "Status{" +
-                "id=" + id +
+                "id=" + statusId +
                 ", statusType='" + statusType + '\'' +
                 '}';
     }
