@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="30ff3ca2-8c79-4e81-9506-86339bdee7ae" name="Changes" comment="started writing the models">
+    <list default="true" id="30ff3ca2-8c79-4e81-9506-86339bdee7ae" name="Changes" comment="Added package folders and some additional beans to launcher.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/AccountType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673464293716</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Attempted connection utility update.">
+      <created>1673478010365</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673478010365</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added package folders and some additional beans to launcher.">
+      <created>1673478237668</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673478237669</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,6 +102,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="started writing the models" />
-    <option name="LAST_COMMIT_MESSAGE" value="started writing the models" />
+    <MESSAGE value="Attempted connection utility update." />
+    <MESSAGE value="Added package folders and some additional beans to launcher." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added package folders and some additional beans to launcher." />
   </component>
 </project>
