@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2acac7d3-61e6-46ba-aca8-9b230c46dbdc" name="Changes" comment="user started" />
+    <list default="true" id="2acac7d3-61e6-46ba-aca8-9b230c46dbdc" name="Changes" comment="Added boilerplate Daos">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/daos/AccountTypeDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/daos/AccountTypeDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/daos/AccountsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/daos/AccountsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/daos/InnerTransferLogDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/daos/InnerTransferLogDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/daos/RequestsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/daos/RequestsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/daos/StatusDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/daos/StatusDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/daos/TransactionsDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/daos/TransactionsDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/daos/UsersDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/daos/UsersDAO.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +23,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -56,7 +66,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="30ff3ca2-8c79-4e81-9506-86339bdee7ae" name="Changes" comment="" />
+      <changelist id="2acac7d3-61e6-46ba-aca8-9b230c46dbdc" name="Changes" comment="Added boilerplate Daos" />
       <created>1673334425961</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -83,14 +93,49 @@
       <option name="project" value="LOCAL" />
       <updated>1673479947945</updated>
     </task>
-    <task id="LOCAL-00004" summary="user started">
-      <created>1673481572603</created>
+    <task id="LOCAL-00004" summary="updated statusId">
+      <created>1673481827093</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1673481572603</updated>
+      <updated>1673481827094</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed naming convention issues. Created Request in models">
+      <created>1673482081721</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673482081721</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Fixed naming convention issues. Created Request in models">
+      <created>1673482156635</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1673482156635</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Finished InnerTransferLog.java">
+      <created>1673483101475</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1673483101475</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Fixed a naming issue in AccountType.java">
+      <created>1673483347253</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1673483347254</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Added boilerplate Daos">
+      <created>1673484515023</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1673484515023</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -107,7 +152,11 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="started writing the models" />
     <MESSAGE value="status done" />
-    <MESSAGE value="user started" />
-    <option name="LAST_COMMIT_MESSAGE" value="user started" />
+    <MESSAGE value="updated statusId" />
+    <MESSAGE value="Fixed naming convention issues. Created Request in models" />
+    <MESSAGE value="Finished InnerTransferLog.java" />
+    <MESSAGE value="Fixed a naming issue in AccountType.java" />
+    <MESSAGE value="Added boilerplate Daos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added boilerplate Daos" />
   </component>
 </project>
