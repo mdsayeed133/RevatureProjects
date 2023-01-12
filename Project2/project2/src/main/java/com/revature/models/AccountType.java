@@ -9,7 +9,8 @@ import org.springframework.stereotype.Component;
 public class AccountType {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private int id;
+    @Column(name = "id")
+    private int accountId;
     @Column(name = "account_type_name", nullable = false)
     private String accountTypeName;
 
@@ -17,23 +18,21 @@ public class AccountType {
     public AccountType() {
     }
 
-    //All args - id
     public AccountType(String accountTypeName) {
         this.accountTypeName = accountTypeName;
     }
 
-    //All args
-    public AccountType(int id, String accountTypeName) {
-        this.id = id;
+    public AccountType(int accountId, String accountTypeName) {
+        this.accountId = accountId;
         this.accountTypeName = accountTypeName;
     }
 
-    public int getId() {
-        return id;
+    public int getAccountId() {
+        return accountId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
     }
 
     public String getAccountTypeName() {
@@ -47,7 +46,7 @@ public class AccountType {
     @Override
     public String toString() {
         return "AccountType{" +
-                "id=" + id +
+                "accountId=" + accountId +
                 ", accountTypeName='" + accountTypeName + '\'' +
                 '}';
     }

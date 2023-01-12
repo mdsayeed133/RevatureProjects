@@ -9,7 +9,8 @@ import org.springframework.stereotype.Component;
 public class TransactionType {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
-    private int id;
+    @Column(name="id")
+    private int transactionId;
     @Column(name="transaction_types_name", nullable = false )
     private String transaction_types_name;
 
@@ -23,17 +24,13 @@ public class TransactionType {
     }
 
     //All args
-    public TransactionType(int id, String transaction_types_name) {
-        this.id = id;
-        this.transaction_types_name = transaction_types_name;
+
+    public int getTransactionId() {
+        return transactionId;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
+    public void setTransactionId(int transactionId) {
+        this.transactionId = transactionId;
     }
 
     public String getTransaction_types_name() {
@@ -47,7 +44,7 @@ public class TransactionType {
     @Override
     public String toString() {
         return "TransactionType{" +
-                "id=" + id +
+                "transactionId=" + transactionId +
                 ", transaction_types_name='" + transaction_types_name + '\'' +
                 '}';
     }
