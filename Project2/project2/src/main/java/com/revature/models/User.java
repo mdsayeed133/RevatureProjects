@@ -29,7 +29,16 @@ public class User {
     @Column(name = "email")
     private String email;
 
+    public User() {
+    }
 
-
-
+    public User(int userId, String username, String password, String firstName, String lastName, String address, String email) {
+        this.userId = userId;
+        this.username = username;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.email = email;
+    }
 }
