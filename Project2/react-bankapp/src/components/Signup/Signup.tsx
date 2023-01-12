@@ -8,6 +8,7 @@ const SignUp: React.FC<any>= () => {
             </div>
             <div className="signup-box-container container">
                 <h2>Sign up for your account here</h2>
+                {/* name, account, balance? */}
                 <table>
                     <thead>Name:</thead>
                     <tr>First Name:</tr>
