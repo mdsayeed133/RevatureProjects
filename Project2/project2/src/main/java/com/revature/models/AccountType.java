@@ -10,7 +10,7 @@ public class AccountType {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int accountId;
+    private int accountTypeId;
     @Column(name = "account_type_name", nullable = false)
     private String accountTypeName;
 
@@ -22,17 +22,17 @@ public class AccountType {
         this.accountTypeName = accountTypeName;
     }
 
-    public AccountType(int accountId, String accountTypeName) {
-        this.accountId = accountId;
+    public AccountType(int accountTypeId, String accountTypeName) {
+        this.accountTypeId = accountTypeId;
         this.accountTypeName = accountTypeName;
     }
 
-    public int getAccountId() {
-        return accountId;
+    public int getAccountTypeId() {
+        return accountTypeId;
     }
 
-    public void setAccountId(int accountId) {
-        this.accountId = accountId;
+    public void setAccountTypeId(int accountTypeId) {
+        this.accountTypeId = accountTypeId;
     }
 
     public String getAccountTypeName() {
@@ -46,7 +46,7 @@ public class AccountType {
     @Override
     public String toString() {
         return "AccountType{" +
-                "accountId=" + accountId +
+                "accountTypeId=" + accountTypeId +
                 ", accountTypeName='" + accountTypeName + '\'' +
                 '}';
     }
