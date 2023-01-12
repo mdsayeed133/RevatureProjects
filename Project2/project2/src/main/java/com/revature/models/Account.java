@@ -1,9 +1,11 @@
 package com.revature.models;
 
 import jakarta.persistence.*;
+import org.springframework.stereotype.Component;
 
 @Entity
 @Table(name = "accounts")
+@Component
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

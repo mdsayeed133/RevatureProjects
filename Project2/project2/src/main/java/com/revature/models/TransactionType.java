@@ -10,7 +10,7 @@ public class TransactionType {
     @Id
     @GeneratedValue (strategy = GenerationType.AUTO)
     @Column(name="id")
-    private int transactionId;
+    private int transactionTypeId;
     @Column(name="transaction_types_name", nullable = false )
     private String transaction_types_name;
 
@@ -25,12 +25,12 @@ public class TransactionType {
 
     //All args
 
-    public int getTransactionId() {
-        return transactionId;
+    public int getTransactionTypeId() {
+        return transactionTypeId;
     }
 
-    public void setTransactionId(int transactionId) {
-        this.transactionId = transactionId;
+    public void setTransactionTypeId(int transactionTypeId) {
+        this.transactionTypeId = transactionTypeId;
     }
 
     public String getTransaction_types_name() {
@@ -44,7 +44,7 @@ public class TransactionType {
     @Override
     public String toString() {
         return "TransactionType{" +
-                "transactionId=" + transactionId +
+                "transactionId=" + transactionTypeId +
                 ", transaction_types_name='" + transaction_types_name + '\'' +
                 '}';
     }
