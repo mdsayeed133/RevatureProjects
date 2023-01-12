@@ -14,7 +14,7 @@ public class InnerTransferLog {
     private int innerTransferLogsId;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="accountId") //These are not null constrained. Might need to fix?
+    @JoinColumn(name="from_account_id") //These are not null constrained. Might need to fix?
     private int fromAccountId;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
