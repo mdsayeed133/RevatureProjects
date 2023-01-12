@@ -8,38 +8,37 @@ import org.springframework.stereotype.Component;
 @Component
 public class Request {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int requestId;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="accountId")
-    private int fromAccountId;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinColumn(name="fromAccountId",insertable=false, updatable=false)
+    private Account fromAccountId;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="userId")
-    private int fromUserId;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinColumn(name="fromUserId",insertable=false, updatable=false)
+    private User fromUserId;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="accountId")
-    private int toAccountId;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinColumn(name="toAccountId",insertable=false, updatable=false)
+    private Account toAccountId;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="userId")
-    private int toUserId;
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
+    @JoinColumn(name="toUserId",insertable=false, updatable=false)
+    private User toUserId;
 
-    private int amount;
+    private double amount;
     private String reason;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name="statusId") //maybe issues.
-    private int statusId;
+    private Status statusId;
 
     //boilerplate
     public Request() {
     }
 
-    public Request(int fromAccountId, int fromUserId, int toAccountId, int toUserId, int amount, String reason, int statusId) {
+    public Request(Account fromAccountId, User fromUserId, Account toAccountId, User toUserId, double amount, String reason, Status statusId) {
         this.fromAccountId = fromAccountId;
         this.fromUserId = fromUserId;
         this.toAccountId = toAccountId;
@@ -49,7 +48,7 @@ public class Request {
         this.statusId = statusId;
     }
 
-    public Request(int requestId, int fromAccountId, int fromUserId, int toAccountId, int toUserId, int amount, String reason, int statusId) {
+    public Request(int requestId, Account fromAccountId, User fromUserId, Account toAccountId, User toUserId, double amount, String reason, Status statusId) {
         this.requestId = requestId;
         this.fromAccountId = fromAccountId;
         this.fromUserId = fromUserId;
@@ -68,43 +67,43 @@ public class Request {
         this.requestId = requestId;
     }
 
-    public int getFromAccountId() {
+    public Account getFromAccountId() {
         return fromAccountId;
     }
 
-    public void setFromAccountId(int fromAccountId) {
+    public void setFromAccountId(Account fromAccountId) {
         this.fromAccountId = fromAccountId;
     }
 
-    public int getFromUserId() {
+    public User getFromUserId() {
         return fromUserId;
     }
 
-    public void setFromUserId(int fromUserId) {
+    public void setFromUserId(User fromUserId) {
         this.fromUserId = fromUserId;
     }
 
-    public int getToAccountId() {
+    public Account getToAccountId() {
         return toAccountId;
     }
 
-    public void setToAccountId(int toAccountId) {
+    public void setToAccountId(Account toAccountId) {
         this.toAccountId = toAccountId;
     }
 
-    public int getToUserId() {
+    public User getToUserId() {
         return toUserId;
     }
 
-    public void setToUserId(int toUserId) {
+    public void setToUserId(User toUserId) {
         this.toUserId = toUserId;
     }
 
-    public int getAmount() {
+    public double getAmount() {
         return amount;
     }
 
-    public void setAmount(int amount) {
+    public void setAmount(double amount) {
         this.amount = amount;
     }
 
@@ -116,11 +115,11 @@ public class Request {
         this.reason = reason;
     }
 
-    public int getStatusId() {
+    public Status getStatusId() {
         return statusId;
     }
 
-    public void setStatusId(int statusId) {
+    public void setStatusId(Status statusId) {
         this.statusId = statusId;
     }
 

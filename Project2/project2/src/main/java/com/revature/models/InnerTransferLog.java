@@ -9,17 +9,16 @@ import org.springframework.stereotype.Component;
 public class InnerTransferLog {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int innerTransferLogsId;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="accountId") //These are not null constrained. Might need to fix?
-    private int fromAccountId;
+    @JoinColumn(name="fromAccountId", nullable=false,insertable=false, updatable=false) //These are not null constrained. Might need to fix?
+    private Account fromAccountId;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="accountId") //These are not null constrained. Might need to fix?
-    private int toAccountId;
+    @JoinColumn(name="toAccountId", nullable=false,insertable=false, updatable=false) //These are not null constrained. Might need to fix?
+    private Account toAccountId;
 
     @Column(nullable = false)
     private double amount;
@@ -29,13 +28,13 @@ public class InnerTransferLog {
     public InnerTransferLog() {
     }
 
-    public InnerTransferLog(int fromAccountId, int toAccountId, double amount) {
+    public InnerTransferLog(Account fromAccountId, Account toAccountId, double amount) {
         this.fromAccountId = fromAccountId;
         this.toAccountId = toAccountId;
         this.amount = amount;
     }
 
-    public InnerTransferLog(int innerTransferLogsId, int fromAccountId, int toAccountId, double amount) {
+    public InnerTransferLog(int innerTransferLogsId, Account fromAccountId, Account toAccountId, double amount) {
         this.innerTransferLogsId = innerTransferLogsId;
         this.fromAccountId = fromAccountId;
         this.toAccountId = toAccountId;
@@ -50,19 +49,19 @@ public class InnerTransferLog {
         this.innerTransferLogsId = innerTransferLogsId;
     }
 
-    public int getFromAccountId() {
+    public Account getFromAccountId() {
         return fromAccountId;
     }
 
-    public void setFromAccountId(int fromAccountId) {
+    public void setFromAccountId(Account fromAccountId) {
         this.fromAccountId = fromAccountId;
     }
 
-    public int getToAccountId() {
+    public Account getToAccountId() {
         return toAccountId;
     }
 
-    public void setToAccountId(int toAccountId) {
+    public void setToAccountId(Account toAccountId) {
         this.toAccountId = toAccountId;
     }
 
