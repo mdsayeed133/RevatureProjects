@@ -9,8 +9,7 @@ import org.springframework.stereotype.Component;
 public class Account {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int AccountId;
+    private int accountId;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "userId", nullable = false)
@@ -27,7 +26,7 @@ public class Account {
     }
 
     public Account(int accountId, User user, double amount, AccountType accountType) {
-        AccountId = accountId;
+        accountId = accountId;
         this.user = user;
         this.amount = amount;
         this.accountType = accountType;
@@ -40,11 +39,11 @@ public class Account {
     }
 
     public int getAccountId() {
-        return AccountId;
+        return accountId;
     }
 
     public void setAccountId(int accountId) {
-        AccountId = accountId;
+        accountId = accountId;
     }
 
     public User getUser() {
@@ -74,7 +73,7 @@ public class Account {
     @Override
     public String toString() {
         return "Account{" +
-                "AccountId=" + AccountId +
+                "accountId=" + accountId +
                 ", user=" + user +
                 ", amount=" + amount +
                 ", accountType=" + accountType +

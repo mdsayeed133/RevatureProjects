@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int userId;
     @Column(name = "user_name", nullable = false, unique = true)
     private String username;
