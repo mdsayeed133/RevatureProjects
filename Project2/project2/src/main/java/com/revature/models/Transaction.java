@@ -13,7 +13,7 @@ public class Transaction {
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "accountId", nullable = false)
-    private Account account;
+    private Account accountId;
 
     @Column(name = "amount", nullable = false)
     private double amount;
@@ -30,14 +30,14 @@ public class Transaction {
 
     public Transaction(int transactionId, Account account, double amount, String description, TransactionType type) {
         this.transactionId = transactionId;
-        this.account = account;
+        this.accountId = account;
         this.amount = amount;
         this.description = description;
         this.type = type;
     }
 
     public Transaction(Account account, double amount, String description, TransactionType type) {
-        this.account = account;
+        this.accountId = account;
         this.amount = amount;
         this.description = description;
         this.type = type;
@@ -52,11 +52,11 @@ public class Transaction {
     }
 
     public Account getAccount() {
-        return account;
+        return accountId;
     }
 
     public void setAccount(Account account) {
-        this.account = account;
+        this.accountId = account;
     }
 
     public double getAmount() {
@@ -87,7 +87,7 @@ public class Transaction {
     public String toString() {
         return "Transaction{" +
                 "transactionId=" + transactionId +
-                ", account=" + account +
+                ", account=" + accountId +
                 ", amount=" + amount +
                 ", description='" + description + '\'' +
                 ", type=" + type +
