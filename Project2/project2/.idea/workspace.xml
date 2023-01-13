@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
+
     <list default="true" id="2acac7d3-61e6-46ba-aca8-9b230c46dbdc" name="Changes" comment="Finalized boilerplate code for DAOs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-bankapp/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/App.css" afterDir="false" />
@@ -18,12 +18,7 @@
       <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-bankapp/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/index.css" afterDir="false" />
-=======
-    <list default="true" id="2acac7d3-61e6-46ba-aca8-9b230c46dbdc" name="Changes" comment="Fixed Issue with TransactionsDAO. Application is now in runnable state.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/Project2Application.class" beforeDir="false" />
->>>>>>> 7f3c87e168678a20b95116276353235ba388567e
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
