@@ -13,12 +13,12 @@ import java.util.Optional;
 
 @Repository
 public interface RequestsDAO extends JpaRepository<Request, Integer> {
-    public Optional <List<Request>> findByFromUserId(int fromUserId);
-    public Optional <List<Request>> findByToUserId(int toUserId);
-    public Optional <List<Request>> findByFromAccountId(int fromAccountId);
-    public Optional <List<Request>> findByToAccountId(int toAccountId);
-    public Optional <List<Request>> findByStatusId(int statusId);
-    public Optional <List<Request>> findByToUserIdAndStatusId(int toUserId, int statusId);
+    public Optional <List<Request>> findByFromUserId(Request fromUserId);
+    public Optional <List<Request>> findByToUserId(Request toUserId);
+    public Optional <List<Request>> findByFromAccountId(Request fromAccountId);
+    public Optional <List<Request>> findByToAccountId(Request toAccountId);
+    public Optional <List<Request>> findByStatusId(Request statusId);
+    public Optional <List<Request>> findByToUserIdAndStatusId(Request toUserId, Request statusId);
 
     @Modifying
     @Transactional

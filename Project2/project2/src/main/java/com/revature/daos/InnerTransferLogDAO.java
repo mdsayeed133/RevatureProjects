@@ -9,6 +9,6 @@ import java.util.Optional;
 
 @Repository //Finished code for transfer log lookup
 public interface InnerTransferLogDAO extends JpaRepository<InnerTransferLog, Integer> {
-    public Optional<List<InnerTransferLog>> findByFromAccountId(int fromAccountId);
-    public Optional<List<InnerTransferLog>> findByToAccountId(int toUserAccountId);
+    public Optional<List<InnerTransferLog>> findByFromAccountId(InnerTransferLog fromAccountId);
+    public Optional<List<InnerTransferLog>> findByToAccountId(InnerTransferLog toUserAccountId);
 }
