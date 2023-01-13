@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AccountType {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    @Column(name = "id")
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int accountTypeId;
     @Column(name = "account_type_name", nullable = false)
     private String accountTypeName;

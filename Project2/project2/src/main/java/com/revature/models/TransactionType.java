@@ -8,8 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TransactionType {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    @Column(name="id")
+    @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int transactionTypeId;
     @Column(name="transaction_types_name", nullable = false )
     private String transaction_types_name;

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 public class Status {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name ="id")
     private int statusId;
 
     @Column(name = "status_type", nullable = false)

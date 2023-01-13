@@ -9,7 +9,6 @@ import org.springframework.stereotype.Component;
 public class Transaction {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
     private int transactionId;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
