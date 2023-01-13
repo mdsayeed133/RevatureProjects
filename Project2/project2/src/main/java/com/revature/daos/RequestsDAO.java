@@ -22,6 +22,6 @@ public interface RequestsDAO extends JpaRepository<Request, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value="Update requests set status_id = ?2, where request_id = ?1", nativeQuery = true)
+    @Query(value="Update requests set status_id = ?2 where request_id = ?1", nativeQuery = true)
     boolean updateStatus(int requestId, int statusId);
 }
