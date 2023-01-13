@@ -4,7 +4,7 @@ import React from 'react'
 import Header from '../Header/Header'
 
 import { FaAws, FaReact } from "react-icons/fa";
-import { SiTypescript, SiSpring, SiPostgresql, SiBootstrap } from "react-icons/si";
+import { SiTypescript, SiSpring, SiPostgresql, SiBootstrap, SiPython } from "react-icons/si";
 import { Link } from 'react-router-dom';
 
 const Home: React.FC<any> = () => {
@@ -15,8 +15,8 @@ const Home: React.FC<any> = () => {
         <div>
             <Header />
             <div className="banner-container container-fluid">
-                <h1>Big Banner Goes Here</h1>
-                <p>Something something motivational and empty</p>
+                <h1>Work with us and we work for you!</h1>
+                <img src="pexels-fauxels-3184632.jpg" alt="company unit NOT family" className="img-fluid teampic"/>
             </div>
             <div className="main-container container">
                 <div className="row dividing-line d-flex justify-content-around">
@@ -30,6 +30,10 @@ const Home: React.FC<any> = () => {
                         <p className="text">If you want to make the most of the opportunities that Revature Banking can provide you, please click to create an account</p>
                         <Link to="/Signup" className="log-btn btn btn-secondary">Create Account</Link>
                     </div>
+                </div>
+                <div className="row dividing-line">
+                    <h2 className="why-container">Why Choose Revature?</h2>
+                    <p>Just because...</p>
                 </div>
                 <div className="row dividing-line">
                     <div className="col-4 sub-info">
@@ -47,14 +51,15 @@ const Home: React.FC<any> = () => {
                 </div>
             </div>
             <div className="container main-tech-stack">
-                <h3>Simple React Icons</h3>
-                <div className="icon-list">
+                <h3>Created With:</h3>
+                <div className="icon-list d-flex justify-content-around">
                     <SiBootstrap size="5em" />
                     <FaAws size="5em" />
                     <FaReact size="5em" />
                     <SiSpring size="5em" />
                     <SiTypescript size="5em" />
                     <SiPostgresql size="5em" />
+                    <SiPython size="5em"/>
                 </div>
             </div>
         </div>

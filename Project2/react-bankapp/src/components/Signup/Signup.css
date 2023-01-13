@@ -1,0 +1,12 @@
+
+.text-container {
+    border: 2px solid gray;
+    border-radius: 15px;
+    box-shadow: 2px 2px 2px gray;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    width: 400px;
+    height: 250px;
+    background-color: white;
+}

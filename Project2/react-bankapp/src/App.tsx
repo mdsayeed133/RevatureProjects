@@ -10,6 +10,7 @@ import SignUp from './components/Signup/Signup';
 
 
 function App() {
+
   return (
     <div className="App">
       {/* will contain browserrouter */}

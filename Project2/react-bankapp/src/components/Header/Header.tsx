@@ -2,28 +2,43 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import '../Header/Header.css'
 const Header = () => {
+
+    // test darkmode here...
+    const [darkMode, setDarkMode] = React.useState(false);
+
+    React.useEffect(() => {
+        if (darkMode) {
+            document.body.classList.add("dark");
+        } else {
+            document.body.classList.remove("dark");
+        }
+    }, [darkMode]);
+
+
+
     return (
         <div className="header-container container-fluid">
-                <div className="darkmode-switch">
-                    <p>light/dark</p>
+            <div className="darkmode-switch">
+                <p>light/dark</p>
+                <button onClick={() => setDarkMode(!darkMode)}>DarkMode</button>
+            </div>
+            <div className="row d-flex justify-content-around">
+                <div className="col-md-2">
+                    <img src="rev-logo_281_29.png" alt="Revature logo" />
                 </div>
-                <div className="row d-flex justify-content-around">
-                    <div className="col-md-2">
-                        <img src="rev-logo_281_29.png" alt="Revature logo" />
-                    </div>
-                    <div className="col-md-4">
-                        <ul className="nav top-nav-list">
-                            {/* links to "navigate" components */}
-                            <Link to="/Home" className="nav-item">Home</Link>
-                            <li className="nav-item"><a href="#About">About</a></li>
-                            <Link to="/Account" className="nav-item">Account</Link>
-                        </ul>
-                    </div>
-                    <div className="col-md-2 login-status">
-                        <p className="login-name">Hello, GUEST</p>
-                    </div>
+                <div className="col-md-4">
+                    <ul className="nav top-nav-list">
+                        {/* links to "navigate" components */}
+                        <Link to="/Home" className="nav-item">Home</Link>
+                        <li className="nav-item"><a href="#About">About</a></li>
+                        <Link to="/Account" className="nav-item">Account</Link>
+                    </ul>
+                </div>
+                <div className="col-md-2 login-status">
+                    <p className="login-name">Hello, GUEST</p>
                 </div>
             </div>
+        </div>
     )
 }
 
