@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TransactionTypesDAO extends JpaRepository<TransactionType,Integer> {
+    //no additional functionality needs to be described here.
 }
