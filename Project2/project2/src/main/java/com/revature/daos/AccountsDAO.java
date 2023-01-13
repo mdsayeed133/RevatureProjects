@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-@Repository
+@Repository //Finished.
 public interface AccountsDAO extends JpaRepository<Account,Integer> {
     @Modifying
     @Transactional
