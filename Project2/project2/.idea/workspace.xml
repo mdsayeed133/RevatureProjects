@@ -19,13 +19,10 @@
       <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../react-bankapp/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/index.css" afterDir="false" />
 =======
-    <list default="true" id="2acac7d3-61e6-46ba-aca8-9b230c46dbdc" name="Changes" comment="Added additional beans to the controller package.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/revature/aspects/LoggingAspect.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
+    <list default="true" id="2acac7d3-61e6-46ba-aca8-9b230c46dbdc" name="Changes" comment="Fixed Issue with TransactionsDAO. Application is now in runnable state.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/models/InnerTransferLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/models/InnerTransferLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/revature/Project2Application.class" beforeDir="false" />
 >>>>>>> 7f3c87e168678a20b95116276353235ba388567e
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,6 +39,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="Logger" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="JpbToolWindowState">
@@ -156,7 +158,70 @@
       <option name="project" value="LOCAL" />
       <updated>1673536592047</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Logger Finished - Appears to work without issue.">
+      <created>1673553173033</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1673553173033</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fixed all of the bugs! For now... Ready for main branch merge.">
+      <created>1673556192208</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1673556192208</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Finished the AccountsDAO">
+      <created>1673639400161</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1673639400161</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Finished the TransactionsDAO, modified placement of comments.">
+      <created>1673640332398</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1673640332398</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Finished the InnerTransferLogDAO.">
+      <created>1673640766391</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1673640766391</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Finished the requestsDAO">
+      <created>1673643817321</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1673643817321</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Fixed an issue with prior commit.">
+      <created>1673643864576</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1673643864576</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Potential fix for the issue with data types on Beans">
+      <created>1673644451247</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1673644451247</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fixed Issue with TransactionsDAO. Application is now in runnable state.">
+      <created>1673645523033</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1673645523033</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -164,7 +229,34 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="Branch">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="HEAD" />
+                </option>
+              </RecentGroup>
+            </list>
           </value>
         </entry>
       </map>
@@ -179,6 +271,15 @@
     <MESSAGE value="Fixed a naming issue in AccountType.java" />
     <MESSAGE value="Added boilerplate Daos" />
     <MESSAGE value="Finalized boilerplate code for DAOs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finalized boilerplate code for DAOs" />
+    <MESSAGE value="Logger Finished - Appears to work without issue." />
+    <MESSAGE value="Fixed all of the bugs! For now... Ready for main branch merge." />
+    <MESSAGE value="Finished the AccountsDAO" />
+    <MESSAGE value="Finished the TransactionsDAO, modified placement of comments." />
+    <MESSAGE value="Finished the InnerTransferLogDAO." />
+    <MESSAGE value="Finished the requestsDAO" />
+    <MESSAGE value="Fixed an issue with prior commit." />
+    <MESSAGE value="Potential fix for the issue with data types on Beans" />
+    <MESSAGE value="Fixed Issue with TransactionsDAO. Application is now in runnable state." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Issue with TransactionsDAO. Application is now in runnable state." />
   </component>
 </project>
