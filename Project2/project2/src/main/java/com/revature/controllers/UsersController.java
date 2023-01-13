@@ -14,6 +14,7 @@ public class UsersController {
     @Autowired
     public  UsersController(UsersDAO usersDAO) {this.usersDAO = usersDAO;}
 
+
     @PutMapping("/{id}/firstname")
     public ResponseEntity<String> updateFirstName(@PathVariable int id, @RequestParam String firstName) {
         if(usersDAO.updateUserFirstName(id, firstName)&&AuthController.authorized())
@@ -53,6 +54,5 @@ public class UsersController {
         else
             return ResponseEntity.badRequest().body("Failed to update email");
     }
-
 
 }
