@@ -1,6 +1,9 @@
 package com.revature.daos;
 
+import com.revature.models.Account;
 import com.revature.models.Request;
+import com.revature.models.Status;
+import com.revature.models.User;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -13,15 +16,15 @@ import java.util.Optional;
 
 @Repository
 public interface RequestsDAO extends JpaRepository<Request, Integer> {
-    public Optional <List<Request>> findByFromUserId(int fromUserId);
-    public Optional <List<Request>> findByToUserId(int toUserId);
-    public Optional <List<Request>> findByFromAccountId(int fromAccountId);
-    public Optional <List<Request>> findByToAccountId(int toAccountId);
-    public Optional <List<Request>> findByStatusId(int statusId);
-    public Optional <List<Request>> findByToUserIdAndStatusId(int toUserId, int statusId);
+    public Optional <List<Request>> findByFromUserId(User fromUserId);
+    public Optional <List<Request>> findByToUserId(User toUserId);
+    public Optional <List<Request>> findByFromAccountId(Account fromAccountId);
+    public Optional <List<Request>> findByToAccountId(Account toAccountId);
+    public Optional <List<Request>> findByStatusId(Status statusId);
+    public Optional <List<Request>> findByToUserIdAndStatusId(User toUserId, Status statusId);
 
     @Modifying
     @Transactional
     @Query(value="Update requests set status_id = ?2 where request_id = ?1", nativeQuery = true)
-    boolean updateStatus(int requestId, int statusId);
+    boolean updateStatus(Request requestId, Status statusId);
 }
