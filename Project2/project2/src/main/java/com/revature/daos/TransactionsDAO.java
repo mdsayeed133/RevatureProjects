@@ -11,6 +11,6 @@ import java.util.Optional;
 
 @Repository //Finished (Probably)
 public interface TransactionsDAO extends JpaRepository<Transaction, Integer> {
-    public Optional<List<Transaction>> findByAccountId(Account accountId);
-    public Optional<List<Transaction>> findByAccountIdAndTransactionTypeId(Account accountId, TransactionType transactionTypeId);
+    public Optional<List<Transaction>> findByAccount(int accountId);
+    public Optional<List<Transaction>> findByAccountAndType(int accountId, int transactionTypeId);
 }
