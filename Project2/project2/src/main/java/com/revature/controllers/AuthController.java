@@ -34,4 +34,9 @@ public class AuthController {
         return ResponseEntity.badRequest().build();
     }
 
+    public static boolean authorized()
+    {
+        return ses.getAttribute("activeUser")!=null;
+    }
+
 }

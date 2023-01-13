@@ -16,7 +16,7 @@ public class UsersController {
 
     @PutMapping("/{id}/firstname")
     public ResponseEntity<String> updateFirstName(@PathVariable int id, @RequestParam String firstName) {
-        if(usersDAO.updateUserFirstName(id, firstName))
+        if(usersDAO.updateUserFirstName(id, firstName)&&AuthController.authorized())
             return ResponseEntity.ok().body("First name updated successfully");
         else
             return ResponseEntity.badRequest().body("Failed to update first name");
@@ -24,7 +24,7 @@ public class UsersController {
 
     @PutMapping("/{id}/lastname")
     public ResponseEntity<String> updateLastName(@PathVariable int id, @RequestParam String lastName) {
-        if(usersDAO.updateUserLastName(id, lastName))
+        if(usersDAO.updateUserLastName(id, lastName)&&AuthController.authorized())
             return ResponseEntity.ok().body("Last name updated successfully");
         else
             return ResponseEntity.badRequest().body("Failed to update last name");
@@ -32,7 +32,7 @@ public class UsersController {
 
     @PutMapping("/{id}/password")
     public ResponseEntity<String> updatePassword(@PathVariable int id, @RequestParam String password) {
-        if(usersDAO.updateUserPassword(id, password))
+        if(usersDAO.updateUserPassword(id, password)&&AuthController.authorized())
             return ResponseEntity.ok().body("Password updated successfully");
         else
             return ResponseEntity.badRequest().body("Failed to update password");
@@ -40,7 +40,7 @@ public class UsersController {
 
     @PutMapping("/{id}/address")
     public ResponseEntity<String> updateAddress(@PathVariable int id, @RequestParam String address) {
-        if(usersDAO.updateUserAddress(id, address))
+        if(usersDAO.updateUserAddress(id, address)&&AuthController.authorized())
             return ResponseEntity.ok().body("Address updated successfully");
         else
             return ResponseEntity.badRequest().body("Failed to update address");
@@ -48,7 +48,7 @@ public class UsersController {
 
     @PutMapping("/{id}/email")
     public ResponseEntity<String> updateEmail(@PathVariable int id, @RequestParam String email) {
-        if(usersDAO.updateUserEmail(id, email))
+        if(usersDAO.updateUserEmail(id, email)&&AuthController.authorized())
             return ResponseEntity.ok().body("Email updated successfully");
         else
             return ResponseEntity.badRequest().body("Failed to update email");
