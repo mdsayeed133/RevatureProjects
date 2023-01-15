@@ -1,4 +1,4 @@
-package com.revature.tests;
+package com.revature.controllers;
 
 import com.revature.daos.TransactionTypesDAO;
 import org.springframework.beans.factory.annotation.Autowired;

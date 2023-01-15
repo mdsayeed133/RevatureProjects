@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository //Finished.
+@Repository
 public interface AccountsDAO extends JpaRepository<Account,Integer> {
     @Modifying
     @Transactional
