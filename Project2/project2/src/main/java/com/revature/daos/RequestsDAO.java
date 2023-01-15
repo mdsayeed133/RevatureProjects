@@ -16,15 +16,15 @@ import java.util.Optional;
 
 @Repository
 public interface RequestsDAO extends JpaRepository<Request, Integer> {
-    public Optional <List<Request>> findByFromUserId(User fromUserId);
-    public Optional <List<Request>> findByToUserId(User toUserId);
-    public Optional <List<Request>> findByFromAccountId(Account fromAccountId);
-    public Optional <List<Request>> findByToAccountId(Account toAccountId);
-    public Optional <List<Request>> findByStatusId(Status statusId);
-    public Optional <List<Request>> findByToUserIdAndStatusId(User toUserId, Status statusId);
+    public Optional <List<Request>> findByFromUserId(int fromUserId);
+    public Optional <List<Request>> findByToUserId(int toUserId);
+    public Optional <List<Request>> findByFromAccountId(int fromAccountId);
+    public Optional <List<Request>> findByToAccountId(int toAccountId);
+    public Optional <List<Request>> findByStatusId(int statusId);
+    public Optional <List<Request>> findByFromUserIdAndStatusId(int fromUserId, int statusId);
 
     @Modifying
     @Transactional
     @Query(value="Update requests set status_id = ?2 where request_id = ?1", nativeQuery = true)
-    boolean updateStatus(Request requestId, Status statusId);
+    boolean updateStatus(int requestId, int statusId);
 }

@@ -1,4 +1,4 @@
-package com.revature.controllers;
+package com.revature.tests;
 
 import com.revature.daos.UsersDAO;
 import com.revature.models.User;
@@ -12,10 +12,11 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping()//TODO
+@RequestMapping("/login")
 public class AuthController {
-    private static HttpSession ses;
+    public static HttpSession ses;
     private UsersDAO uDAO;
+
     @Autowired
     public AuthController(UsersDAO uDAO) {
         this.uDAO = uDAO;
@@ -24,10 +25,10 @@ public class AuthController {
     @PostMapping
     public ResponseEntity login(@RequestBody UserLoginDTO u)
     {
-        Optional possibleUser =  uDAO.findByUsernameAndPassword(u.getUsername(),u.getPassword());
+        Optional<User> possibleUser =  uDAO.findByUsernameAndPassword(u.getUsername(),u.getPassword());
         if (possibleUser.isPresent()) //found a user.
         {
-            User user = (User) possibleUser.get(); //possible error point...
+            User user = possibleUser.get(); //possible error point...
             ses.setAttribute("activeUser",user);
             return ResponseEntity.ok(user);
         }
