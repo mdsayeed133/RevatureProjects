@@ -1,4 +1,4 @@
-package com.revature.controllers;
+package com.revature.tests;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
@@ -12,7 +12,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.lang.reflect.Type;
 import java.util.Optional;
 
 @ExtendWith(MockitoExtension.class)

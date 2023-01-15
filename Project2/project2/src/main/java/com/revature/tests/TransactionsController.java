@@ -1,8 +1,7 @@
-package com.revature.controllers;
+package com.revature.tests;
 
 import com.revature.daos.TransactionsDAO;
 import com.revature.models.Transaction;
-import com.revature.models.TransactionType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
