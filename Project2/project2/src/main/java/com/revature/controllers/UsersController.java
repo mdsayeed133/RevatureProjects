@@ -1,9 +1,12 @@
 package com.revature.controllers;
 
 import com.revature.daos.UsersDAO;
+import com.revature.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @CrossOrigin
@@ -13,7 +16,24 @@ public class UsersController {
 
     @Autowired
     public  UsersController(UsersDAO usersDAO) {this.usersDAO = usersDAO;}
+    @GetMapping("/{id}/profile")
+    public ResponseEntity<User> getUser(@PathVariable int id){
+        Optional<User> userOptional = usersDAO.findById(id);
+        if(userOptional.isPresent()){
+            User user = userOptional.get();
+            return ResponseEntity.ok(user);
+        }
+        return ResponseEntity.badRequest().build();
+    }
 
+    @PostMapping("/register")
+    public ResponseEntity<User> addUser(@RequestBody User user) {
+        try {
+            return ResponseEntity.ok(usersDAO.save(user));
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().build();
+        }
+    }
 
     @PutMapping("/{id}/firstname")
     public ResponseEntity<String> updateFirstName(@PathVariable int id, @RequestParam String firstName) {

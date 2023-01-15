@@ -12,7 +12,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin
-@RequestMapping()//TODO
+@RequestMapping("/login")
 public class AuthController {
     private static HttpSession ses;
     private UsersDAO uDAO;
