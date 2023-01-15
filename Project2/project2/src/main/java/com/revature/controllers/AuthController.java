@@ -1,4 +1,4 @@
-package com.revature.tests;
+package com.revature.controllers;
 
 import com.revature.daos.UsersDAO;
 import com.revature.models.User;

@@ -1,5 +1,7 @@
 package com.revature.tests;
 
+import com.revature.controllers.AuthController;
+import com.revature.controllers.UsersController;
 import com.revature.daos.UsersDAO;
 import com.revature.models.User;
 import com.revature.models.UserLoginDTO;
