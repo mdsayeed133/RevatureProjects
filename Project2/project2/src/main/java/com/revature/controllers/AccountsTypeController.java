@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping()//TODO
 public class AccountsTypeController {
-    AccountTypeDAO atDAO;
+    private AccountTypeDAO atDAO;
     @Autowired
     public AccountsTypeController(AccountTypeDAO atDAO) {
         this.atDAO = atDAO;

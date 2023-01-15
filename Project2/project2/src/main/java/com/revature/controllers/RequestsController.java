@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping()//TODO
 public class RequestsController {
-    RequestsDAO rDAO;
+    private RequestsDAO rDAO;
 
     @Autowired
     public RequestsController(RequestsDAO rDAO) {

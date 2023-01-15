@@ -24,6 +24,11 @@ public class TransactionType {
 
     //All args
 
+    public TransactionType(int transactionTypeId, String transaction_types_name) {
+        this.transactionTypeId = transactionTypeId;
+        this.transaction_types_name = transaction_types_name;
+    }
+
     public int getTransactionTypeId() {
         return transactionTypeId;
     }

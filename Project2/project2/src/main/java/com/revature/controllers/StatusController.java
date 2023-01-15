@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping()//TODO
 public class StatusController {
-    StatusDAO sDAO;
+    private StatusDAO sDAO;
     @Autowired
     public StatusController(StatusDAO sDAO) {
         this.sDAO = sDAO;

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 @RequestMapping()//TODO
 public class InnerTransferLogController {
-    InnerTransferLogDAO itlDAO;
+    private InnerTransferLogDAO itlDAO;
 
     @Autowired
     public InnerTransferLogController(InnerTransferLogDAO itlDAO) {

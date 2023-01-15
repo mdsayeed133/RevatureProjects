@@ -16,6 +16,7 @@ public class UsersController {
 
     @Autowired
     public  UsersController(UsersDAO usersDAO) {this.usersDAO = usersDAO;}
+
     @GetMapping("/{id}")
     public ResponseEntity<User> getUser(@PathVariable int id){
         Optional<User> userOptional = usersDAO.findById(id);

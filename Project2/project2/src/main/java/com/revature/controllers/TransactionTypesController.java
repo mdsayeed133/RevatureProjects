@@ -9,19 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
 
+//we do not need this class
 @RestController
 @CrossOrigin
 @RequestMapping()// TODO
 public class TransactionTypesController {
-    TransactionTypesDAO transactionTypesDAO;
+    private TransactionTypesDAO transactionTypesDAO;
 
     @Autowired
     public TransactionTypesController(TransactionTypesDAO transactionTypesDAO) {
         this.transactionTypesDAO = transactionTypesDAO;
     }
 
-    public TransactionType getTransactionTypeById(int id) {
-        Optional<TransactionType> transactionType = transactionTypesDAO.findById(id);
-        return transactionType.get();
-    }
+
 }

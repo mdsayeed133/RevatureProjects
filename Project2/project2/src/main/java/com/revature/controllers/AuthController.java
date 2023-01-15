@@ -14,8 +14,9 @@ import java.util.Optional;
 @CrossOrigin
 @RequestMapping("/login")
 public class AuthController {
-    private static HttpSession ses;
+    public static HttpSession ses;
     private UsersDAO uDAO;
+
     @Autowired
     public AuthController(UsersDAO uDAO) {
         this.uDAO = uDAO;
@@ -24,10 +25,10 @@ public class AuthController {
     @PostMapping
     public ResponseEntity login(@RequestBody UserLoginDTO u)
     {
-        Optional possibleUser =  uDAO.findByUsernameAndPassword(u.getUsername(),u.getPassword());
+        Optional<User> possibleUser =  uDAO.findByUsernameAndPassword(u.getUsername(),u.getPassword());
         if (possibleUser.isPresent()) //found a user.
         {
-            User user = (User) possibleUser.get(); //possible error point...
+            User user = possibleUser.get(); //possible error point...
             ses.setAttribute("activeUser",user);
             return ResponseEntity.ok(user);
         }
