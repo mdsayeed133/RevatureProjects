@@ -7,6 +7,7 @@ import com.revature.models.Account;
 import com.revature.models.Transaction;
 import com.revature.models.TransactionDTO;
 import com.revature.models.TransactionType;
+import org.decimal4j.util.DoubleRounder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -65,7 +66,7 @@ public class TransactionsService {
 
         double amount= accountService.getAmountOfAccount(accountId);
         amount += transaction.getAmount();
-
+        amount = DoubleRounder.round(amount,2);
         Account targetAccount = accountService.getAccountById(accountId).get();
         if(targetAccount==null)
             throw new Exception("Transaction failed, not an account.");
