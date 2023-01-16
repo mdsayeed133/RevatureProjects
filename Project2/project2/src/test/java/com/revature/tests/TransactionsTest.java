@@ -1,7 +1,6 @@
 package com.revature.tests;
 
 import com.revature.controllers.TransactionsController;
-import com.revature.daos.AccountsDAO;
 import com.revature.daos.TransactionsDAO;
 import com.revature.models.*;
 import com.revature.services.AccountService;
@@ -20,7 +19,6 @@ import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)

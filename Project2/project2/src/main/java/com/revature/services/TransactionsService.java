@@ -64,20 +64,19 @@ public class TransactionsService {
         if(transaction.getAmount()==0)
             throw new Exception("Transactions of 0 dollars are not allowed.");
 
-        String type = (transaction.getAmount() > 0)? "income":"expense";
-
         double amount= accountService.getAmountOfAccount(accountId);
         amount += transaction.getAmount();
         amount = DoubleRounder.round(amount,2);
+
         Account targetAccount = accountService.getAccountById(accountId).get();
         if(targetAccount==null)
             throw new Exception("Transaction failed, not an account.");
 
         TransactionType transactionType;
-        if(type==transactionTypeService.getTransactionTypeById(1).getTransactionTypesName()){//expense
-            transactionType = transactionTypeService.getTransactionTypeById(1);
+        if(transaction.getAmount() < 0){
+            transactionType = transactionTypeService.getTransactionTypeById(1);//expense
         } else {
-            transactionType = transactionTypeService.getTransactionTypeById(2);
+            transactionType = transactionTypeService.getTransactionTypeById(2);//income
         }
 
         Transaction newTransaction = new Transaction(targetAccount,transaction.getAmount(),transaction.getMsg(),transactionType);
