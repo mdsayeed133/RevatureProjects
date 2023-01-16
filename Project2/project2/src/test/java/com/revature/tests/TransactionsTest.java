@@ -65,7 +65,7 @@ public class TransactionsTest {
     public void addTransactionTest() throws Exception {
         //when(accountService.getAmountOfAccount(anyInt())).thenReturn(200.0);
         when(transactionTypeService.getTransactionTypeById(anyInt())).thenReturn(transactionType);
-        when(accountService.updateAmount(anyInt(), anyInt())).thenReturn(true);
+        //when(accountService.updateAmount(anyInt(), anyInt())).thenReturn(true);
         when(transactionsService.createTransaction(transaction)).thenReturn(transaction);
         ResponseEntity<Transaction> response = transactionsController.addTransaction(transaction);
         assertEquals(response.getStatusCode(), HttpStatus.OK);

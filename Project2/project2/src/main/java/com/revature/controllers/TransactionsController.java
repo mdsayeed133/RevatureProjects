@@ -2,6 +2,7 @@ package com.revature.controllers;
 
 import com.revature.daos.TransactionsDAO;
 import com.revature.models.Transaction;
+import com.revature.models.TransactionDTO;
 import com.revature.services.TransactionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +44,7 @@ public class TransactionsController {
     }
 
     @PostMapping
-    public ResponseEntity<Transaction> addTransaction(@RequestBody Transaction transaction) {
+    public ResponseEntity<Transaction> addTransaction(@RequestBody TransactionDTO transaction) {
         try {
             return ResponseEntity.ok(transactionsService.createTransaction(transaction));
         } catch (Exception e) {
