@@ -25,17 +25,6 @@ public class AccountController {
     }
 
 
-    /*
-    *I committed out this method out because I want to use the transaction and inner transfer to update it in the service layer
-    *
-    @PutMapping("/{id}/amount")
-    public ResponseEntity<String> updateAmount(@PathVariable int id, @RequestParam double amount) {
-        if(accountsDAO.updateAmount(id, amount))
-            return ResponseEntity.ok().body("Amount updated successfully");
-        else
-            return ResponseEntity.badRequest().body("Failed to update amount");
-    }
-    */
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<Account>> getAccountsByUser(@PathVariable int userId) {
         Optional<List<Account>> accounts = accountService.getAccountOfUser(userId);

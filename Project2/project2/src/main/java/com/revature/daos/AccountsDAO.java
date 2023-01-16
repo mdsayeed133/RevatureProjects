@@ -13,10 +13,7 @@ import java.util.Optional;
 
 @Repository
 public interface AccountsDAO extends JpaRepository<Account,Integer> {
-    @Modifying
-    @Transactional
-    @Query(value="Update accounts set amount = ?2, where id = ?1", nativeQuery = true)
-    boolean updateAmount(int id, double amount);
+
 
     Optional<List<Account>> findByUser(User userId);
 }

@@ -23,10 +23,6 @@ public class AccountService {
     }
 
 
-    public boolean updateAmount(int id, double amount) {
-        return accountsDAO.updateAmount(id, amount);
-    }
-
     public Optional<Account> getAccountById(int id){
         return accountsDAO.findById(id);
     }

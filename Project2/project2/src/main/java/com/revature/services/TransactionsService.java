@@ -44,6 +44,7 @@ public class TransactionsService {
 
     public Transaction createTransaction(Transaction transaction) throws Exception {
         int accountId= transaction.getAccount().getAccountId();
+        Account targetAccount = accountService.getAccountById(accountId).get();
         String type= transaction.getType().getTransactionTypesName();
         double amount= accountService.getAmountOfAccount(accountId);
 
@@ -52,7 +53,8 @@ public class TransactionsService {
         } else {
             amount += transaction.getAmount();
         }
-        if(!accountService.updateAmount(accountId,amount)) throw new Exception("Failed to account's amount");
+        targetAccount.setAmount(amount);
+        accountsDAO.save(targetAccount);
         return transactionsDAO.save(transaction);
     }
 
@@ -79,16 +81,10 @@ public class TransactionsService {
         }
 
         Transaction newTransaction = new Transaction(targetAccount,transaction.getAmount(),transaction.getMsg(),transactionType);
-        //newTransaction.setAccount(targetAccount);
-       // newTransaction.setDescription(transaction.getMsg());
-       // newTransaction.setAmount(transaction.getAmount());
-       // newTransaction.setType(new TransactionType((type.equalsIgnoreCase("expense")? 1:2),type));
-
 
         targetAccount.setAmount(amount);
         accountsDAO.save(targetAccount);
         transactionsDAO.save(newTransaction);
-        //if(accountsDAO.save(targetAccount)!=targetAccount) throw new Exception("Failed to update account's amount");
         return newTransaction;
     }
 
