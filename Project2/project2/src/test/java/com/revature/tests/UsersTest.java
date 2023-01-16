@@ -4,6 +4,7 @@ import com.revature.controllers.AuthController;
 import com.revature.controllers.UsersController;
 import com.revature.daos.UsersDAO;
 import com.revature.models.User;
+import com.revature.services.UserService;
 import com.revature.utils.RequestSession;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -24,6 +25,8 @@ public class UsersTest {
 
     @Mock
     private UsersDAO usersDAO;
+    @Mock
+    private UserService userService;
     @Mock
     private RequestSession requestSession;
     @InjectMocks
@@ -75,7 +78,7 @@ public class UsersTest {
     public void testUpdatePassword() {
 
         // Configure UsersDAO.updateUserPassword to return true
-        when(usersDAO.updateUserPassword(1, "password")).thenReturn(true);
+        when(userService.updatePassword(1,"password")).thenReturn(true);
         // Configure session to return the new created user
         when(requestSession.getAttribute(anyString())).thenReturn(new User());
 
