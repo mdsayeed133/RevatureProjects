@@ -1,6 +1,7 @@
 package com.revature.tests;
 
-import static org.junit.Assert.assertEquals;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.when;
 
 import com.revature.daos.TransactionTypesDAO;
@@ -26,6 +27,6 @@ public class TransactionTypesTest {
         TransactionType type = new TransactionType(1,"expense");
         when(transactionTypesDAO.findById(1)).thenReturn(Optional.of(type));
         TransactionType response= transactionTypeService.getTransactionTypeById(1);
-        assertEquals(response.getTransaction_types_name(),"expense");
+        assertEquals(response.getTransactionTypesName(),"expense");
     }
 }
