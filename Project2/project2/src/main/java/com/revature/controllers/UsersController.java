@@ -20,7 +20,7 @@ public class UsersController {
     @GetMapping("/{id}")
     public ResponseEntity<User> getUser(@PathVariable int id){
         Optional<User> userOptional = usersDAO.findById(id);
-        if(userOptional.isPresent()){
+        if(userOptional.isPresent()&&AuthController.authorized()){
             User user = userOptional.get();
             return ResponseEntity.ok(user);
         }

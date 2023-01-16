@@ -37,7 +37,7 @@ public class AuthController {
     @PostMapping("/logout")
     public ResponseEntity logout() {
         requestSession.setAttribute("activeUser",null);
-        return ResponseEntity.ok().build();
+        return ResponseEntity.ok("The user has logged out");
     }
 
     public static boolean authorized() {

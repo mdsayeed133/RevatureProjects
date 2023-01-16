@@ -1,5 +1,6 @@
 package com.revature.utils;
 
+import com.revature.models.User;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
@@ -22,7 +23,7 @@ public class RequestSession {
         session.setAttribute(key, value);
     }
 
-    public Object getAttribute(String key) {
-        return session.getAttribute(key);
+    public User getAttribute(String key) {
+        return (User) session.getAttribute(key);
     }
 }
