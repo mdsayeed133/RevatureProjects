@@ -64,22 +64,26 @@ public class TransactionsService {
         String type = (transaction.getAmount() > 0)? "income":"expense";
 
         double amount= accountService.getAmountOfAccount(accountId);
+        amount += transaction.getAmount();
 
         Account targetAccount = accountService.getAccountById(accountId).get();
         if(targetAccount==null)
             throw new Exception("Transaction failed, not an account.");
-        TransactionType transactionType =new TransactionType((type.equalsIgnoreCase("expense")? 1:2),type);
+
+        TransactionType transactionType;
+        if(type==transactionTypeService.getTransactionTypeById(1).getTransactionTypesName()){//expense
+            transactionType = transactionTypeService.getTransactionTypeById(1);
+        } else {
+            transactionType = transactionTypeService.getTransactionTypeById(2);
+        }
+
         Transaction newTransaction = new Transaction(targetAccount,transaction.getAmount(),transaction.getMsg(),transactionType);
         //newTransaction.setAccount(targetAccount);
        // newTransaction.setDescription(transaction.getMsg());
        // newTransaction.setAmount(transaction.getAmount());
        // newTransaction.setType(new TransactionType((type.equalsIgnoreCase("expense")? 1:2),type));
 
-        if(type==transactionTypeService.getTransactionTypeById(1).getTransactionTypesName()){//expense
-            amount -= transaction.getAmount();
-        } else {
-            amount += transaction.getAmount();
-        }
+
         targetAccount.setAmount(amount);
         accountsDAO.save(targetAccount);
         transactionsDAO.save(newTransaction);
