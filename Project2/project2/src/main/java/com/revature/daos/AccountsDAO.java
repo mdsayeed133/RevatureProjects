@@ -1,6 +1,7 @@
 package com.revature.daos;
 
 import com.revature.models.Account;
+import com.revature.models.User;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -17,5 +18,5 @@ public interface AccountsDAO extends JpaRepository<Account,Integer> {
     @Query(value="Update accounts set amount = ?2, where id = ?1", nativeQuery = true)
     boolean updateAmount(int id, double amount);
 
-    Optional<List<Account>> findByUser(int userId);
+    Optional<List<Account>> findByUser(User userId);
 }

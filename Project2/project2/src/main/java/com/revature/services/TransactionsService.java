@@ -1,10 +1,15 @@
 package com.revature.services;
 
 
+import com.revature.models.Account;
 import com.revature.models.Transaction;
 import com.revature.daos.TransactionsDAO;
+import com.revature.models.TransactionType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.Optional;
 
 
 @Service
@@ -19,6 +24,17 @@ public class TransactionsService {
         this.transactionsDAO = transactionsDAO;
         this.accountService= accountService;
         this.transactionTypeService =transactionTypeService;
+    }
+
+    public Optional<List<Transaction>> getListOfTransactionByAccountId(int accountId){
+        Account account = accountService.getAccountById(accountId).get();
+        return transactionsDAO.findByAccount(account);
+    }
+
+    public Optional<List<Transaction>> getListOfTransactionByAccountIdAndTypeId(int accountId, int typeId){
+        Account account = accountService.getAccountById(accountId).get();
+        TransactionType type = transactionTypeService.getTransactionTypeById(typeId);
+        return transactionsDAO.findByAccountAndType(account,type);
     }
 
     public Transaction createTransaction(Transaction transaction) throws Exception {

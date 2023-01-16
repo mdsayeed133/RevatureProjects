@@ -24,7 +24,7 @@ public class TransactionsController {
 
     @GetMapping("/account/{accountId}")
     public ResponseEntity<List<Transaction>> getTransactionsByAccount(@PathVariable int accountId) {
-        Optional<List<Transaction>> transactions = transactionsDAO.findByAccount(accountId);
+        Optional<List<Transaction>> transactions = transactionsService.getListOfTransactionByAccountId(accountId);
         if (transactions.isPresent()) {
             return ResponseEntity.ok(transactions.get());
         } else {
@@ -34,7 +34,7 @@ public class TransactionsController {
 
     @GetMapping("/account/{accountId}/type/{typeId}")
     public ResponseEntity<List<Transaction>> getTransactionsByAccountAndType(@PathVariable int accountId, @PathVariable int typeId) {
-        Optional<List<Transaction>> transactions = transactionsDAO.findByAccountAndType(accountId, typeId);
+        Optional<List<Transaction>> transactions = transactionsService.getListOfTransactionByAccountIdAndTypeId(accountId, typeId);
         if (transactions.isPresent()) {
             return ResponseEntity.ok(transactions.get());
         } else {

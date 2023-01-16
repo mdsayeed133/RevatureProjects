@@ -38,7 +38,7 @@ public class AccountController {
     */
     @GetMapping("/user/{userId}")
     public ResponseEntity<List<Account>> getAccountsByUser(@PathVariable int userId) {
-        Optional<List<Account>> accounts = accountsDAO.findByUser(userId);
+        Optional<List<Account>> accounts = accountService.getAccountOfUser(userId);
         if (accounts.isPresent()) {
             return ResponseEntity.ok(accounts.get());
         } else {
