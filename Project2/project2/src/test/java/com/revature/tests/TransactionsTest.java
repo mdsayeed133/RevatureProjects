@@ -15,7 +15,6 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
@@ -76,8 +75,8 @@ public class TransactionsTest {
     @Test
     public void createTransaction_ReturnsTransaction_WhenUpdatingAmountSucceeds() throws Exception {
         when(transactionsDAO.save(transaction)).thenReturn(transaction);
-        when(accountService.getAmountOfAccount(1)).thenReturn(500.0);
-        when(accountService.updateAmount(1, 500)).thenReturn(true);
+        when(accountService.getAmountOfAccount(0)).thenReturn(500.0);
+        when(accountService.updateAmount(0, 0)).thenReturn(true);
         when(transactionTypeService.getTransactionTypeById(1)).thenReturn(transactionType);
 
         Transaction result = transactionsService.createTransaction(transaction);

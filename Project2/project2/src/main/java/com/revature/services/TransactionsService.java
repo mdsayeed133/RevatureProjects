@@ -2,9 +2,9 @@ package com.revature.services;
 
 
 import com.revature.daos.AccountsDAO;
+import com.revature.daos.TransactionsDAO;
 import com.revature.models.Account;
 import com.revature.models.Transaction;
-import com.revature.daos.TransactionsDAO;
 import com.revature.models.TransactionDTO;
 import com.revature.models.TransactionType;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,19 +57,23 @@ public class TransactionsService {
 
     public Transaction createTransaction(TransactionDTO transaction) throws Exception {
         int accountId= transaction.getTargetAccountId();
+
         if(transaction.getAmount()==0)
             throw new Exception("Transactions of 0 dollars are not allowed.");
+
         String type = (transaction.getAmount() > 0)? "income":"expense";
+
         double amount= accountService.getAmountOfAccount(accountId);
-        Transaction newTransaction = new Transaction();
+
         Account targetAccount = accountService.getAccountById(accountId).get();
         if(targetAccount==null)
             throw new Exception("Transaction failed, not an account.");
-
-        newTransaction.setAccount(targetAccount);
-        newTransaction.setDescription(transaction.getMsg());
-        newTransaction.setAmount(transaction.getAmount());
-        newTransaction.setType(new TransactionType((type.equalsIgnoreCase("expense")? 1:2),type));
+        TransactionType transactionType =new TransactionType((type.equalsIgnoreCase("expense")? 1:2),type);
+        Transaction newTransaction = new Transaction(targetAccount,transaction.getAmount(),transaction.getMsg(),transactionType);
+        //newTransaction.setAccount(targetAccount);
+       // newTransaction.setDescription(transaction.getMsg());
+       // newTransaction.setAmount(transaction.getAmount());
+       // newTransaction.setType(new TransactionType((type.equalsIgnoreCase("expense")? 1:2),type));
 
         if(type==transactionTypeService.getTransactionTypeById(1).getTransactionTypesName()){//expense
             amount -= transaction.getAmount();
