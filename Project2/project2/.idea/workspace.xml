@@ -4,21 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-
-    <list default="true" id="2acac7d3-61e6-46ba-aca8-9b230c46dbdc" name="Changes" comment="Finalized boilerplate code for DAOs">
+    <list default="true" id="25d4d888-95f9-4d3a-9e3e-0af180f175c6" name="Changes" comment="make some more tests, add a service layer and modified controller">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Account/Account.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Account/Account.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Account/Account.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Account/Account.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Header/Header.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Header/Header.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Home/Home.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Home/Home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Login/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Login/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/index.css" afterDir="false" />
-
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +27,19 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="0ad030dc-2daa-4ecd-baa8-6c58052162f9" />
+        <option name="url" value="https://github.com/mdsayeed133/RevatureProjects.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="JpbToolWindowState">
     <option name="isDesignerTabSelected" value="false" />
@@ -68,16 +68,56 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/JavaProject/Revature_Ben_Demos/demos/Week6/HelloSpringData&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/JavaProject/RevatureProjects/Project2/project2&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="UsersTest.testGetUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.controllers.UsersTest" />
+      <option name="METHOD_NAME" value="testGetUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.controllers.UsersTest" />
+      <option name="METHOD_NAME" value="testLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UsersTest.testLogin" />
+        <item itemvalue="JUnit.UsersTest.testGetUser" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="2acac7d3-61e6-46ba-aca8-9b230c46dbdc" name="Changes" comment="Added boilerplate Daos" />
+      <changelist id="25d4d888-95f9-4d3a-9e3e-0af180f175c6" name="Changes" comment="polished dao and did half of the controller" />
       <created>1673334425961</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -216,7 +256,70 @@
       <option name="project" value="LOCAL" />
       <updated>1673645523033</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="workspace.xml push">
+      <created>1673650398537</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1673650398537</updated>
+    </task>
+    <task id="LOCAL-00021" summary="changes to UsersController">
+      <created>1673650555618</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1673650555618</updated>
+    </task>
+    <task id="LOCAL-00022" summary="polished dao and did half of the controller">
+      <created>1673752833536</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1673752833536</updated>
+    </task>
+    <task id="LOCAL-00023" summary="polished dao and did half of the controller">
+      <created>1673753760769</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1673753760769</updated>
+    </task>
+    <task id="LOCAL-00024" summary="made some test for UsersController">
+      <created>1673757655182</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1673757655182</updated>
+    </task>
+    <task id="LOCAL-00025" summary="make some more tests, add a service layer and modified controller">
+      <created>1673825914820</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1673825914820</updated>
+    </task>
+    <task id="LOCAL-00026" summary="make some more tests, add a service layer and modified controller">
+      <created>1673826017135</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1673826017135</updated>
+    </task>
+    <task id="LOCAL-00027" summary="make some more tests, add a service layer and modified controller">
+      <created>1673826519599</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1673826519599</updated>
+    </task>
+    <task id="LOCAL-00028" summary="make some more tests, add a service layer and modified controller">
+      <created>1673826589166</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1673826589166</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -275,6 +378,11 @@
     <MESSAGE value="Fixed an issue with prior commit." />
     <MESSAGE value="Potential fix for the issue with data types on Beans" />
     <MESSAGE value="Fixed Issue with TransactionsDAO. Application is now in runnable state." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Issue with TransactionsDAO. Application is now in runnable state." />
+    <MESSAGE value="workspace.xml push" />
+    <MESSAGE value="changes to UsersController" />
+    <MESSAGE value="polished dao and did half of the controller" />
+    <MESSAGE value="made some test for UsersController" />
+    <MESSAGE value="make some more tests, add a service layer and modified controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="make some more tests, add a service layer and modified controller" />
   </component>
 </project>
