@@ -2,6 +2,7 @@ package com.revature.controllers;
 
 import com.revature.daos.TransactionsDAO;
 import com.revature.models.Transaction;
+import com.revature.services.TransactionsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,10 +15,11 @@ import java.util.Optional;
 @RequestMapping("/transactions")
 public class TransactionsController {
     private TransactionsDAO transactionsDAO;
-
+    private TransactionsService transactionsService;
     @Autowired
-    public TransactionsController(TransactionsDAO transactionsDAO) {
+    public TransactionsController(TransactionsDAO transactionsDAO, TransactionsService transactionsService) {
         this.transactionsDAO = transactionsDAO;
+        this.transactionsService=transactionsService;
     }
 
     @GetMapping("/account/{accountId}")
@@ -43,7 +45,7 @@ public class TransactionsController {
     @PostMapping
     public ResponseEntity<Transaction> addTransaction(@RequestBody Transaction transaction) {
         try {
-            return ResponseEntity.ok(transactionsDAO.save(transaction));
+            return ResponseEntity.ok(transactionsService.createTransaction(transaction));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 import java.util.Optional;
 
-@Repository //Finished (Probably)
+@Repository
 public interface TransactionsDAO extends JpaRepository<Transaction, Integer> {
     public Optional<List<Transaction>> findByAccount(int accountId);
     public Optional<List<Transaction>> findByAccountAndType(int accountId, int transactionTypeId);

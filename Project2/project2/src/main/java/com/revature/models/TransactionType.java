@@ -11,22 +11,22 @@ public class TransactionType {
     @GeneratedValue (strategy = GenerationType.IDENTITY)
     private int transactionTypeId;
     @Column(name="transaction_types_name", nullable = false )
-    private String transaction_types_name;
+    private String transactionTypesName;
 
     //boilerplate
     public TransactionType() {
     }
 
     //All args - id
-    public TransactionType(String transaction_types_name) {
-        this.transaction_types_name = transaction_types_name;
+    public TransactionType(String transactionTypesName) {
+        this.transactionTypesName = transactionTypesName;
     }
 
     //All args
 
-    public TransactionType(int transactionTypeId, String transaction_types_name) {
+    public TransactionType(int transactionTypeId, String transactionTypesName) {
         this.transactionTypeId = transactionTypeId;
-        this.transaction_types_name = transaction_types_name;
+        this.transactionTypesName = transactionTypesName;
     }
 
     public int getTransactionTypeId() {
@@ -37,19 +37,19 @@ public class TransactionType {
         this.transactionTypeId = transactionTypeId;
     }
 
-    public String getTransaction_types_name() {
-        return transaction_types_name;
+    public String getTransactionTypesName() {
+        return transactionTypesName;
     }
 
-    public void setTransaction_types_name(String transaction_types_name) {
-        this.transaction_types_name = transaction_types_name;
+    public void setTransactionTypesName(String transactionTypesName) {
+        this.transactionTypesName = transactionTypesName;
     }
 
     @Override
     public String toString() {
         return "TransactionType{" +
                 "transactionId=" + transactionTypeId +
-                ", transaction_types_name='" + transaction_types_name + '\'' +
+                ", transaction_types_name='" + transactionTypesName + '\'' +
                 '}';
     }
 }

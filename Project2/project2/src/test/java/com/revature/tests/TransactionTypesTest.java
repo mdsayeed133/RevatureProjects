@@ -26,6 +26,6 @@ public class TransactionTypesTest {
         TransactionType type = new TransactionType(1,"expense");
         when(transactionTypesDAO.findById(1)).thenReturn(Optional.of(type));
         TransactionType response= transactionTypeService.getTransactionTypeById(1);
-        assertEquals(response.getTransaction_types_name(),"expense");
+        assertEquals(response.getTransactionTypesName(),"expense");
     }
 }

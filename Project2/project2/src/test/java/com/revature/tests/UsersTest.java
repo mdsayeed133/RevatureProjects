@@ -5,7 +5,6 @@ import com.revature.controllers.UsersController;
 import com.revature.daos.UsersDAO;
 import com.revature.models.User;
 import com.revature.utils.RequestSession;
-import org.junit.Before;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -13,9 +12,6 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
 import java.util.Optional;
 
@@ -35,16 +31,18 @@ public class UsersTest {
     @InjectMocks
     private AuthController authController;
 
+    /*
     @Before
     public void setup() {
         // Set up mock request
         MockHttpServletRequest request = new MockHttpServletRequest();
         RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
     }
+    */
+
 
     @Test
     public void testGetUser() {
-
         // Create a new User instance
         User user = new User(1, "username", "password", "firstName", "lastName", "address", "email");
 
