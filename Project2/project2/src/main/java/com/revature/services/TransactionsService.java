@@ -20,10 +20,12 @@ public class TransactionsService {
     private TransactionsDAO transactionsDAO;
     private AccountService accountService;
     private TransactionTypeService transactionTypeService;
+    private AccountsDAO accountsDAO;
 
     @Autowired
-    public TransactionsService(TransactionsDAO transactionsDAO, AccountService accountService, TransactionTypeService transactionTypeService) {
+    public TransactionsService(TransactionsDAO transactionsDAO, AccountService accountService, TransactionTypeService transactionTypeService, AccountsDAO accountsDAO) {
         this.transactionsDAO = transactionsDAO;
+        this.accountsDAO = accountsDAO;
         this.accountService= accountService;
         this.transactionTypeService =transactionTypeService;
     }
@@ -74,8 +76,11 @@ public class TransactionsService {
         } else {
             amount += transaction.getAmount();
         }
-        if(!accountService.updateAmount(accountId,amount)) throw new Exception("Failed to update account's amount");
-        return transactionsDAO.save(newTransaction);
+        targetAccount.setAmount(amount);
+        accountsDAO.save(targetAccount);
+        transactionsDAO.save(newTransaction);
+        //if(accountsDAO.save(targetAccount)!=targetAccount) throw new Exception("Failed to update account's amount");
+        return newTransaction;
     }
 
 }
