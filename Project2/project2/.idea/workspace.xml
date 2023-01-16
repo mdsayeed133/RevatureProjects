@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25d4d888-95f9-4d3a-9e3e-0af180f175c6" name="Changes" comment="make some more tests, add a service layer and modified controller">
+    <list default="true" id="25d4d888-95f9-4d3a-9e3e-0af180f175c6" name="Changes" comment="Added TransactionDTO and related controller and service layer functionality.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +74,20 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Project2Application">
+    <configuration name="Project2Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.revature.Project2Application" />
+      <module name="project2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UsersTest.testGetUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project2" />
       <extension name="coverage">
@@ -109,6 +122,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Project2Application" />
         <item itemvalue="JUnit.UsersTest.testLogin" />
         <item itemvalue="JUnit.UsersTest.testGetUser" />
       </list>
@@ -319,7 +333,21 @@
       <option name="project" value="LOCAL" />
       <updated>1673826589166</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="Finished setup. Broken addTransactinTest :)">
+      <created>1673888575223</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1673888575223</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Added TransactionDTO and related controller and service layer functionality.">
+      <created>1673896394520</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1673896394520</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -383,6 +411,19 @@
     <MESSAGE value="polished dao and did half of the controller" />
     <MESSAGE value="made some test for UsersController" />
     <MESSAGE value="make some more tests, add a service layer and modified controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="make some more tests, add a service layer and modified controller" />
+    <MESSAGE value="Finished setup. Broken addTransactinTest :)" />
+    <MESSAGE value="Added TransactionDTO and related controller and service layer functionality." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added TransactionDTO and related controller and service layer functionality." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/revature/tests/TransactionsTest.java</url>
+          <line>69</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
