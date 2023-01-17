@@ -1,12 +1,12 @@
 
 .text-container {
-    border: 2px solid gray;
+    border: 2px solid var(--secGray);
     border-radius: 15px;
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 2px 2px 2px var(--secGray);
     position: absolute;
     top: 30%;
     left: 50%;
     width: 400px;
     height: 250px;
-    background-color: white;
+    background-color: var(--primWhite);
 }

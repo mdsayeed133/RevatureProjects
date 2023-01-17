@@ -6,15 +6,18 @@
 }
 
 .dividing-line {
-    border-bottom: 4px solid orange;
+    border-bottom: 4px solid var(--primOrange);
 }
 
 .login-options {
     width: 30%;
     height: 300px;
-    border: 2px solid gray;
+    border: 2px solid var(--secGray);
     border-radius: 15px;
-    box-shadow: 2px 2px 2px gray;
+    box-shadow: 2px 2px 2px var(--secGray);
     padding-top: 15px;
     margin-bottom: 30px;
+    margin-top: 30px;
 }
+
+

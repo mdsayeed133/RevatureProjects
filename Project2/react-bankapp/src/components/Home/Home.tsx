@@ -8,14 +8,16 @@ import { SiTypescript, SiSpring, SiPostgresql, SiBootstrap, SiPython } from "rea
 import { Link } from 'react-router-dom';
 
 const Home: React.FC<any> = () => {
+    // get the state
+    
 
 
     /* worry about home page look */
     return (
         <div>
             <Header />
-            <div className="banner-container container-fluid">
-                <h1>Work with us and we work for you!</h1>
+            <div className="d-none d-md-block banner-container container-fluid">
+                <h1>Work with us while we work for you!</h1>
                 <img src="pexels-fauxels-3184632.jpg" alt="company unit NOT family" className="img-fluid teampic"/>
             </div>
             <div className="main-container container">
@@ -23,7 +25,7 @@ const Home: React.FC<any> = () => {
                     <div className="col-md-6 login-options">
                         <h3 className="subheader">Not Logged In?</h3>
                         <p className="text">If you want to make the most of the opportunities that Revature Banking can provide you, please click to login</p>
-                        <Link to="/" className="log-btn btn btn-secondary">Login</Link>
+                        <Link to="/login" className="log-btn btn btn-secondary">Login</Link>
                     </div>
                     <div className="col-md-6 login-options">
                     <h3 className="subheader">No Account?</h3>
@@ -32,8 +34,8 @@ const Home: React.FC<any> = () => {
                     </div>
                 </div>
                 <div className="row dividing-line">
-                    <h2 className="why-container">Why Choose Revature?</h2>
-                    <p>Just because...</p>
+                    <h2 className="why-container">Why Choose RevatureBanking?</h2>
+                    <p>Revature is the world's leading talent enablement firm and employer of tech professionals.</p>
                 </div>
                 <div className="row dividing-line">
                     <div className="col-4 sub-info">
@@ -53,13 +55,13 @@ const Home: React.FC<any> = () => {
             <div className="container main-tech-stack">
                 <h3>Created With:</h3>
                 <div className="icon-list d-flex justify-content-around">
-                    <SiBootstrap size="5em" />
-                    <FaAws size="5em" />
-                    <FaReact size="5em" />
-                    <SiSpring size="5em" />
-                    <SiTypescript size="5em" />
-                    <SiPostgresql size="5em" />
-                    <SiPython size="5em"/>
+                    <SiBootstrap size="5em"  className="icons" />
+                    <FaAws size="5em"  className="icons" />
+                    <FaReact size="5em"  className="icons" />
+                    <SiSpring size="5em"  className="icons" />
+                    <SiTypescript size="5em"  className="icons" />
+                    <SiPostgresql size="5em"  className="icons" />
+                    <SiPython size="5em" className="icons" />
                 </div>
             </div>
         </div>

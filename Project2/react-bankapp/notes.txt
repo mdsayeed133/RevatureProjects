@@ -30,7 +30,12 @@ Revature was very clear about the color selection
 - Light Gray [RGB:185,185,186; Hex:#b9b9ba]
 
 +=======+
-| Fonts 
+| Fonts |
++=======+
+font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Oxygen', sans-serif;
+font-family: 'Poiret One', cursive;
+font-family: 'Raleway', sans-serif;
 
 +=============+
 | React Icons |

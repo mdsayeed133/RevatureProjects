@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import '../Login/Login.css'
 
@@ -33,7 +33,7 @@ const Login: React.FC<any> = () => {
     /* axios */
     const login = async () => {
 
-        const response = await axios.post("http://localhost:5000/auth", {username, password})
+        const response = await axios.post("http://localhost:5555/auth", {username, password})
 
         /* if login was successful... */
         if(response.status === 202){
@@ -54,9 +54,12 @@ const Login: React.FC<any> = () => {
     return (
         <>
         <div className="Login">
-            <div className="image-container">
+            {/* <div className="image-container">
                 <img src="rev-logo_281_29.png" alt="Revature Logo" />
-            </div>
+            </div> */}
+            <Link to="/home" className="image-container">
+            <img src="rev-logo_281_29.png" alt="Revature Logo" />
+            </Link>
             <div className="hero-image-container">
                 <img src="pexels-andrea-piacquadio-3772512.jpg" alt="image of someone left behind" className="img-fluid hero-image" />
             </div>
@@ -71,6 +74,7 @@ const Login: React.FC<any> = () => {
                 </div>
 
                 <button className="login-button" onClick={login}>Login</button>
+                <button className="login-button">Reset Password</button>
             </div>
             <div className="disclaimer">
                 <p><em>Results based solely on the amount of effort you put in. Sorry...</em></p>

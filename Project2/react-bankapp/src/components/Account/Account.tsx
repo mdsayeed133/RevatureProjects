@@ -5,6 +5,9 @@ import Header from '../Header/Header'
 import Requests from '../Requests/Requests'
 
 const Account = () => {
+
+    //this is using axios
+
     return (
         <div>
             <Header/>
@@ -16,6 +19,7 @@ const Account = () => {
                     <h2>Account Details:</h2>
                     <p>Name: Guest</p>
                     <p>Account Number: 123456789 </p>
+                    <p>Account Type: Checking/Savings</p>
                     <p><strong>Balance: 500.00</strong></p>
                 </div>
                 {/* auto create cards here */}
