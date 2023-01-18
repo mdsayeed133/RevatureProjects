@@ -5,17 +5,22 @@ import Header from '../Header/Header'
 import Requests from '../Requests/Requests'
 
 const Account = () => {
+
+    //this is using axios
+    // create useState hooks to declare the states
+    // const [username, setUsername] = useState("");
+    // const [account, setAccount] = useState("");
+    // const [balance, setBalance] = useState("");
+
     return (
         <div>
             <Header/>
             <div className="container main-account-section">
-                <div className="account-actions d-flex">
-                    <Requests/>
-                </div>
                 <div className="account-details">
                     <h2>Account Details:</h2>
                     <p>Name: Guest</p>
                     <p>Account Number: 123456789 </p>
+                    <p>Account Type: Checking/Savings</p>
                     <p><strong>Balance: 500.00</strong></p>
                 </div>
                 {/* auto create cards here */}

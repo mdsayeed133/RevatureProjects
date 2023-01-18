@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+
     <list default="true" id="25d4d888-95f9-4d3a-9e3e-0af180f175c6" name="Changes" comment="polished the TransactionsService">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/AccountService.java" afterDir="false" />
@@ -11,6 +12,7 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/TransactionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/TransactionsService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/revature/tests/TransactionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/revature/tests/TransactionsTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/revature/tests/UsersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/revature/tests/UsersTest.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,19 +34,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
-  </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="0ad030dc-2daa-4ecd-baa8-6c58052162f9" />
-        <option name="url" value="https://github.com/mdsayeed133/RevatureProjects.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="JpbToolWindowState">
     <option name="isDesignerTabSelected" value="false" />
@@ -73,12 +62,13 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/JavaProject/RevatureProjects/Project2/project2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/keitr/RevatureTraining/Project2/RevatureProjects/Project2/project2&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+
   <component name="RunManager">
     <configuration name="TransactionsTest.addTransaction_ReturnsTransaction_WhenTransactionIsSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="project2" />
@@ -170,10 +160,11 @@
       </list>
     </recent_temporary>
   </component>
+
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="25d4d888-95f9-4d3a-9e3e-0af180f175c6" name="Changes" comment="polished dao and did half of the controller" />
+      <changelist id="2acac7d3-61e6-46ba-aca8-9b230c46dbdc" name="Changes" comment="Added boilerplate Daos" />
       <created>1673334425961</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -312,6 +303,7 @@
       <option name="project" value="LOCAL" />
       <updated>1673645523033</updated>
     </task>
+
     <task id="LOCAL-00020" summary="workspace.xml push">
       <created>1673650398537</created>
       <option name="number" value="00020" />
@@ -446,6 +438,7 @@
       <updated>1673910531968</updated>
     </task>
     <option name="localTasksCounter" value="39" />
+
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -498,6 +491,7 @@
     <MESSAGE value="Fixed an issue with prior commit." />
     <MESSAGE value="Potential fix for the issue with data types on Beans" />
     <MESSAGE value="Fixed Issue with TransactionsDAO. Application is now in runnable state." />
+
     <MESSAGE value="workspace.xml push" />
     <MESSAGE value="changes to UsersController" />
     <MESSAGE value="polished dao and did half of the controller" />
@@ -513,5 +507,6 @@
     <MESSAGE value="updating the test" />
     <MESSAGE value="polished the TransactionsService" />
     <option name="LAST_COMMIT_MESSAGE" value="polished the TransactionsService" />
+
   </component>
 </project>

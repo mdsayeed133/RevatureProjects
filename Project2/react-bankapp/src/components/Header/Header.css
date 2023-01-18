@@ -10,14 +10,17 @@
     justify-content: center;
 }
 .nav-item {
-    font-size: 20px;
-    margin: 5%;
-}
-.nav-item a {
+    font-size: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 25px;
     text-decoration: none;
-    color: black;
+    color: white;
+    background-color: var(--primOrange);
 }
+
 
 .login-name {
     font-size: 30px;
+    margin: 5%;
 }

@@ -1,3 +1,7 @@
 .account-entry {
     border-top: 2px solid black;
 }
+
+.main-account-section {
+    margin-bottom: 10%;
+}
