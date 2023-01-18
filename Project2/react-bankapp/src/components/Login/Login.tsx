@@ -33,7 +33,10 @@ const Login: React.FC<any> = () => {
     /* axios */
     const login = async () => {
 
-        const response = await axios.post("http://localhost:5555/auth", { username, password })
+        const response = await axios.post("project2.citpuzbvuzos.us-east-1.rds.amazonaws.com", { username, password })
+        // project2.citpuzbvuzos.us-east-1.rds.amazonaws.com
+        //localhost5432
+        // const response = await axios.post("localhost:5432")
 
         /* if login was successful... */
         if (response.status === 202) {

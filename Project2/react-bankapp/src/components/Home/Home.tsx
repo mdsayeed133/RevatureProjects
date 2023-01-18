@@ -9,7 +9,8 @@ import { Link } from 'react-router-dom';
 
 const Home: React.FC<any> = () => {
     // get the state
-
+    // create useState hooks to declare the states
+    // const [username, setUsername] = useState("");
 
 
     /* worry about home page look */

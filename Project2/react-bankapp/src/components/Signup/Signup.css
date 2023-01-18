@@ -11,3 +11,7 @@
     background-color: var(--primWhite);
     animation: slidein 1s;
 }
+
+#addressbox {
+    width: 100%;
+}

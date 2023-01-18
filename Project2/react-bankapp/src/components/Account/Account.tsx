@@ -7,6 +7,10 @@ import Requests from '../Requests/Requests'
 const Account = () => {
 
     //this is using axios
+    // create useState hooks to declare the states
+    // const [username, setUsername] = useState("");
+    // const [account, setAccount] = useState("");
+    // const [balance, setBalance] = useState("");
 
     return (
         <div>

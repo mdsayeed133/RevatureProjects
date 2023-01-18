@@ -16,13 +16,16 @@ const SignUp: React.FC<any> = () => {
                 <div className="text-container">
                     <h1></h1>
                     <h3>Time to make the right decision</h3>
+                    {/* firstname, lastname, username, password, address */}
                     <div className="input-container">
+                        <input type="text" name="first_name" placeholder="first name" />
+                        <input type="text" name="last_name" placeholder="last name" />
                         <input type="text" name="username" placeholder="username" />
+                        <input type="password" name="password" placeholder="password" />
                     </div>
                     <div className="input-container">
-                        <input type="password" name="password" placeholder="password" />
                         <br />
-                        <input type="password" name="password" placeholder="re-type password" />
+                        <input type="text" name="address" placeholder="address" id="addressbox" />
                     </div>
 
                     <button className="login-button">Create</button>
