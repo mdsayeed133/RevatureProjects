@@ -19,3 +19,7 @@ body {
   --mainText1: 'IBM Plex Sans', sans-serif;
   --mainText2: 'Oxygen', sans-serif;
 }
+
+.dark-btn {
+  background-color: var(--primOrange);
+}

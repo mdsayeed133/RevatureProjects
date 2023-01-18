@@ -34,7 +34,7 @@ function App() {
       {/* testing darkmode */}
       {/* how to add persistance... */}
       <div className="darkmode-switch">
-                <button onClick={() => setDarkMode(!darkMode)} className="btn btn-secondary">DarkMode</button>
+                <button onClick={() => setDarkMode(!darkMode)} className="btn btn-secondary dark-btn">DarkMode</button>
             </div>
       {/* will contain browserrouter */}
       <BrowserRouter>

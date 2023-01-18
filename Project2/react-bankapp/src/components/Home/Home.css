@@ -25,3 +25,7 @@
     height: 500px;
 }
 
+.icons:hover {
+    color: var(--primOrange);
+    transition: ease-in 0.5s;
+}
