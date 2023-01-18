@@ -15,7 +15,7 @@ const Requests = () => {
     return (
         <>
         <Header />
-            <div className="container">
+            <div className="container request-container">
                 <div className="row">
                     <div className="col-6">
                         <div className="money-service d-flex">
