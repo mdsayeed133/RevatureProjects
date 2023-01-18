@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import Account from './components/Account/Account';
 import SignUp from './components/Signup/Signup';
 import Footer from './components/Footer/Footer';
+import Requests from './components/Requests/Requests';
 
 
 
@@ -44,6 +45,7 @@ function App() {
           <Route path="/home" element={<Home/>}/>
           <Route path="/account" element={<Account/>}/>
           <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/requests" element={<Requests/>}/>
         </Routes>
       </BrowserRouter>
       <Footer/>

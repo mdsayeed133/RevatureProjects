@@ -9,4 +9,5 @@
     width: 400px;
     height: 250px;
     background-color: var(--primWhite);
+    animation: slidein 1s;
 }

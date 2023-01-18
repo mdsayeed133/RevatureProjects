@@ -12,9 +12,6 @@ const Account = () => {
         <div>
             <Header/>
             <div className="container main-account-section">
-                <div className="account-actions d-flex">
-                    <Requests/>
-                </div>
                 <div className="account-details">
                     <h2>Account Details:</h2>
                     <p>Name: Guest</p>

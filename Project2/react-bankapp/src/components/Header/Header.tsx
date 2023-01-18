@@ -16,6 +16,7 @@ const Header = () => {
                         {/* links to "navigate" components */}
                         <Link to="/Home" className="nav-item">Home</Link>
                         <Link to="/Account" className="nav-item">Account</Link>
+                        <Link to="/Requests" className="nav-item">Requests</Link>
                     </ul>
                 </div>
                 <div className="col-md-2 login-status">

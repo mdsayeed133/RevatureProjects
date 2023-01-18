@@ -14,25 +14,36 @@ const Requests = () => {
     }
     return (
         <>
+        <Header />
             <div className="container">
-                <div className="row d-flex justify-content-around">
-                    <div className="col-6 money-service d-flex">
+                <div className="row">
+                    <div className="col-6">
+                        <div className="money-service d-flex">
                         <h3>Request Money</h3>
                         <div id="requestMoney">
                             <FaHandHoldingUsd size="4em"/>
                             <FaArrowLeft size="4em"/>
                             <FaUser size="4em"/>
                         </div>
-                        <Link to="/ReceiveMoney" className="btn btn-secondary">Request</Link>
+                        </div>
+                        <p>Please choose account</p>
+                        <input type="text" name="amount" placeholder='amount'/>
+                        <input type="text" name="amount" placeholder='user account'/>
+                        <button>Submit</button>
                     </div>
-                    <div className="col-6 money-service d-flex">
+                    <div className="col-6">
+                        <div className="money-service d-flex">
                         <h3>Send Money</h3>
                         <div id="sendMoney">
                             <FaHandHoldingUsd size="4em" />
                             <FaArrowRight size="4em" />
                             <FaUser size="4em" />
                         </div>
-                        <Link to="/ReceiveMoney" className="btn btn-secondary">Request</Link>
+                        </div>
+                        <p>Please choose account</p>
+                        <input type="text" name="amount" placeholder="amount" />
+                        <input type="text" name="amount" placeholder="user account" />
+                        <button>Submit</button>
                     </div>
                 </div>
 

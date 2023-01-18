@@ -20,10 +20,10 @@ const Login: React.FC<any> = () => {
     // useNavigate() will allow us to "navigate" components
     const navigate = useNavigate();
 
-    const gatherInput = (input:any) => {
+    const gatherInput = (input: any) => {
 
         //update based on the input
-        if(input.target.name === "username"){
+        if (input.target.name === "username") {
             setUsername(input.target.value)
         } else {
             setPassword(input.target.value)
@@ -33,10 +33,10 @@ const Login: React.FC<any> = () => {
     /* axios */
     const login = async () => {
 
-        const response = await axios.post("http://localhost:5555/auth", {username, password})
+        const response = await axios.post("http://localhost:5555/auth", { username, password })
 
         /* if login was successful... */
-        if(response.status === 202){
+        if (response.status === 202) {
             console.log(response)
 
             user.id = response.data.id;
@@ -44,42 +44,42 @@ const Login: React.FC<any> = () => {
             user.password = response.data.password;
 
             // if user logged successfully, id WON'T be 0
-            if(user.id > 0){
+            if (user.id > 0) {
                 navigate("/home")
             }
         }
 
     }
-    
+
     return (
         <>
-        <div className="Login">
-            {/* <div className="image-container">
+            <div className="Login">
+                {/* <div className="image-container">
                 <img src="rev-logo_281_29.png" alt="Revature Logo" />
             </div> */}
-            <Link to="/home" className="image-container">
-            <img src="rev-logo_281_29.png" alt="Revature Logo" />
-            </Link>
-            <div className="hero-image-container">
-                <img src="pexels-andrea-piacquadio-3772512.jpg" alt="image of someone left behind" className="img-fluid hero-image" />
-            </div>
-            <div className="text-container">
-                <h1></h1>
-                <h3>Don't let Revature leave you behind</h3>
-                <div className="input-container">
-                    <input type="text" name="username" placeholder="username" onChange={gatherInput} />
+                <Link to="/home" className="image-container">
+                    <img src="rev-logo_281_29.png" alt="Revature Logo" />
+                </Link>
+                <div className="hero-image-container">
+                    <img src="pexels-andrea-piacquadio-3772512.jpg" alt="image of someone left behind" className="img-fluid hero-image" />
                 </div>
-                <div className="input-container">
-                    <input type="password" name="password" placeholder="password" onChange={gatherInput} />
-                </div>
+                <div className="text-container">
+                    <h1></h1>
+                    <h3>Don't let Revature leave you behind</h3>
+                    <div className="input-container">
+                        <input type="text" name="username" placeholder="username" onChange={gatherInput} />
+                    </div>
+                    <div className="input-container">
+                        <input type="password" name="password" placeholder="password" onChange={gatherInput} />
+                    </div>
 
-                <button className="login-button" onClick={login}>Login</button>
-                <button className="login-button">Reset Password</button>
+                    <button className="login-button" onClick={login}>Login</button>
+                    <button className="login-button">Reset Password</button>
+                </div>
+                <div className="disclaimer">
+                    <p><em>Results based solely on the amount of effort you put in. Sorry...</em></p>
+                </div>
             </div>
-            <div className="disclaimer">
-                <p><em>Results based solely on the amount of effort you put in. Sorry...</em></p>
-            </div>
-        </div>
         </>
     )
 }
