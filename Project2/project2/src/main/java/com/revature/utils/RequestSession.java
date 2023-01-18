@@ -19,7 +19,7 @@ public class RequestSession {
         this.session = session;
     }
 
-    public void setAttribute(String key, Object value) {
+    public void setAttribute(String key, User value) {
         session.setAttribute(key, value);
     }
 

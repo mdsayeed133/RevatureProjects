@@ -34,14 +34,6 @@ public class UsersTest {
     @InjectMocks
     private AuthController authController;
 
-    /*
-    @Before
-    public void setup() {
-        // Set up mock request
-        MockHttpServletRequest request = new MockHttpServletRequest();
-        RequestContextHolder.setRequestAttributes(new ServletRequestAttributes(request));
-    }
-    */
 
 
     @Test

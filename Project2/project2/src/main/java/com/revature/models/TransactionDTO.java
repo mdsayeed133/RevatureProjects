@@ -1,8 +1,5 @@
 package com.revature.models;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class TransactionDTO {
     private int targetAccountId;
     private String msg;

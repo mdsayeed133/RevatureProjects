@@ -4,13 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2acac7d3-61e6-46ba-aca8-9b230c46dbdc" name="Changes" comment="Finalized boilerplate code for DAOs">
+
+    <list default="true" id="25d4d888-95f9-4d3a-9e3e-0af180f175c6" name="Changes" comment="polished the TransactionsService">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Account/Account.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Account/Account.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Home/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Home/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Login/Login.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Signup/Signup.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/AccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/AccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/TransactionTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/TransactionTypeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/revature/services/TransactionsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/revature/services/TransactionsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/revature/tests/TransactionsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/revature/tests/TransactionsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/revature/tests/UsersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/revature/tests/UsersTest.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +68,99 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
+
+  <component name="RunManager">
+    <configuration name="TransactionsTest.addTransaction_ReturnsTransaction_WhenTransactionIsSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.tests.TransactionsTest" />
+      <option name="METHOD_NAME" value="addTransaction_ReturnsTransaction_WhenTransactionIsSuccessful" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TransactionsTest.createTransaction_ThrowsException_WhenUpdatingAmountFails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.tests.TransactionsTest" />
+      <option name="METHOD_NAME" value="createTransaction_ThrowsException_WhenUpdatingAmountFails" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersTest.testAddUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.tests.UsersTest" />
+      <option name="METHOD_NAME" value="testAddUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersTest.testGetUser (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.tests" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.tests.UsersTest" />
+      <option name="METHOD_NAME" value="testGetUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersTest.testLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="project2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.revature.controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.revature.controllers" />
+      <option name="MAIN_CLASS_NAME" value="com.revature.controllers.UsersTest" />
+      <option name="METHOD_NAME" value="testLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.TransactionsTest.addTransaction_ReturnsTransaction_WhenTransactionIsSuccessful" />
+        <item itemvalue="JUnit.TransactionsTest.createTransaction_ThrowsException_WhenUpdatingAmountFails" />
+        <item itemvalue="JUnit.UsersTest.testGetUser (1)" />
+        <item itemvalue="JUnit.UsersTest.testAddUser" />
+        <item itemvalue="JUnit.UsersTest.testLogin" />
+      </list>
+    </recent_temporary>
+  </component>
+
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -208,7 +303,142 @@
       <option name="project" value="LOCAL" />
       <updated>1673645523033</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+
+    <task id="LOCAL-00020" summary="workspace.xml push">
+      <created>1673650398537</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1673650398537</updated>
+    </task>
+    <task id="LOCAL-00021" summary="changes to UsersController">
+      <created>1673650555618</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1673650555618</updated>
+    </task>
+    <task id="LOCAL-00022" summary="polished dao and did half of the controller">
+      <created>1673752833536</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1673752833536</updated>
+    </task>
+    <task id="LOCAL-00023" summary="polished dao and did half of the controller">
+      <created>1673753760769</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1673753760769</updated>
+    </task>
+    <task id="LOCAL-00024" summary="made some test for UsersController">
+      <created>1673757655182</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1673757655182</updated>
+    </task>
+    <task id="LOCAL-00025" summary="make some more tests, add a service layer and modified controller">
+      <created>1673825914820</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1673825914820</updated>
+    </task>
+    <task id="LOCAL-00026" summary="make some more tests, add a service layer and modified controller">
+      <created>1673826017135</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1673826017135</updated>
+    </task>
+    <task id="LOCAL-00027" summary="make some more tests, add a service layer and modified controller">
+      <created>1673826519599</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1673826519599</updated>
+    </task>
+    <task id="LOCAL-00028" summary="make some more tests, add a service layer and modified controller">
+      <created>1673826589166</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1673826589166</updated>
+    </task>
+    <task id="LOCAL-00029" summary="make some more tests, add a service layer and modified controller">
+      <created>1673827963430</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1673827963430</updated>
+    </task>
+    <task id="LOCAL-00030" summary="fixed the login method be making class to handle sessions">
+      <created>1673829294652</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1673829294652</updated>
+    </task>
+    <task id="LOCAL-00031" summary="fixed the login method be making class to handle sessions and redid some tests">
+      <created>1673834511641</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1673834511641</updated>
+    </task>
+    <task id="LOCAL-00032" summary="finish implementing add Transaction method's logic and wrote some more tests">
+      <created>1673853576752</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1673853576752</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fixed the daos params">
+      <created>1673892072940</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1673892072940</updated>
+    </task>
+    <task id="LOCAL-00034" summary="changed add transaction">
+      <created>1673898899839</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1673898899839</updated>
+    </task>
+    <task id="LOCAL-00035" summary="changed add transaction service">
+      <created>1673900016010</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1673900016010</updated>
+    </task>
+    <task id="LOCAL-00036" summary="polish users service and dao">
+      <created>1673904413828</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1673904413828</updated>
+    </task>
+    <task id="LOCAL-00037" summary="updating the test">
+      <created>1673906968744</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1673906968744</updated>
+    </task>
+    <task id="LOCAL-00038" summary="polished the TransactionsService">
+      <created>1673910531968</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1673910531968</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
+
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -250,12 +480,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="started writing the models" />
-    <MESSAGE value="status done" />
-    <MESSAGE value="updated statusId" />
-    <MESSAGE value="Fixed naming convention issues. Created Request in models" />
-    <MESSAGE value="Finished InnerTransferLog.java" />
-    <MESSAGE value="Fixed a naming issue in AccountType.java" />
     <MESSAGE value="Added boilerplate Daos" />
     <MESSAGE value="Finalized boilerplate code for DAOs" />
     <MESSAGE value="Logger Finished - Appears to work without issue." />
@@ -267,6 +491,22 @@
     <MESSAGE value="Fixed an issue with prior commit." />
     <MESSAGE value="Potential fix for the issue with data types on Beans" />
     <MESSAGE value="Fixed Issue with TransactionsDAO. Application is now in runnable state." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Issue with TransactionsDAO. Application is now in runnable state." />
+
+    <MESSAGE value="workspace.xml push" />
+    <MESSAGE value="changes to UsersController" />
+    <MESSAGE value="polished dao and did half of the controller" />
+    <MESSAGE value="made some test for UsersController" />
+    <MESSAGE value="make some more tests, add a service layer and modified controller" />
+    <MESSAGE value="fixed the login method be making class to handle sessions" />
+    <MESSAGE value="fixed the login method be making class to handle sessions and redid some tests" />
+    <MESSAGE value="finish implementing add Transaction method's logic and wrote some more tests" />
+    <MESSAGE value="fixed the daos params" />
+    <MESSAGE value="changed add transaction" />
+    <MESSAGE value="changed add transaction service" />
+    <MESSAGE value="polish users service and dao" />
+    <MESSAGE value="updating the test" />
+    <MESSAGE value="polished the TransactionsService" />
+    <option name="LAST_COMMIT_MESSAGE" value="polished the TransactionsService" />
+
   </component>
 </project>

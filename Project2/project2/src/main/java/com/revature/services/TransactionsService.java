@@ -10,6 +10,7 @@ import com.revature.models.TransactionType;
 import org.decimal4j.util.DoubleRounder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
@@ -41,7 +42,7 @@ public class TransactionsService {
         TransactionType type = transactionTypeService.getTransactionTypeById(typeId);
         return transactionsDAO.findByAccountAndType(account,type);
     }
-
+    @Transactional
     public Transaction createTransaction(Transaction transaction) throws Exception {
         int accountId= transaction.getAccount().getAccountId();
         Account targetAccount = accountService.getAccountById(accountId).get();
@@ -58,6 +59,7 @@ public class TransactionsService {
         return transactionsDAO.save(transaction);
     }
 
+    @Transactional
     public Transaction createTransaction(TransactionDTO transaction) throws Exception {
         int accountId= transaction.getTargetAccountId();
 
