@@ -13,11 +13,11 @@ public class InnerTransferLog {
     private int innerTransferLogsId;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="fromAccountId", nullable=false,insertable=false, updatable=false) //These are not null constrained. Might need to fix?
+    @JoinColumn(name="fromAccountId", nullable=false,insertable=true, updatable=false) //These are not null constrained. Might need to fix?
     private Account fromAccountId;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name="toAccountId", nullable=false,insertable=false, updatable=false) //These are not null constrained. Might need to fix?
+    @JoinColumn(name="toAccountId", nullable=false,insertable=true, updatable=false) //These are not null constrained. Might need to fix?
     private Account toAccountId;
 
     @Column(nullable = false)
