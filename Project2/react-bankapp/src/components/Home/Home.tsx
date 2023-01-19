@@ -14,6 +14,12 @@ const Home: React.FC<any> = () => {
 
 
     /* worry about home page look */
+    const login = async ()=> {
+        navigate("/reset")
+    }
+
+
+
     return (
         <div>
             <Header />

@@ -3,15 +3,16 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
 import '../Login/Login.css'
+import {UserDTO} from '../../interfaces/users';
 
 const Login: React.FC<any> = () => {
 
     //temporary default variable to hold logged in user
-    let user = {
-        id: 0,
-        username: "",
-        password: ""
-    }
+    // let user = {
+    //     id: 0,
+    //     username: "",
+    //     password: ""
+    // }
 
     // create useState hooks to declare the states
     const [username, setUsername] = useState("");
@@ -32,7 +33,7 @@ const Login: React.FC<any> = () => {
 
     /* axios */
     const login = async () => {
-
+        
         const response = await axios.post("localhost:5555/bank/auth/login", {username, password })
         // project2.citpuzbvuzos.us-east-1.rds.amazonaws.com
         //localhost5432
@@ -47,7 +48,7 @@ const Login: React.FC<any> = () => {
             //user.password = response.data.password;
 
             // if user logged successfully, id WON'T be 0
-            if (user.id > 0) {
+            if (user.userId > 0) {
                 navigate("/home")
             }
         }
