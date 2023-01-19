@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import '../Account/Account.css'
 import Header from '../Header/Header'
@@ -11,6 +12,32 @@ const Account = () => {
     // const [username, setUsername] = useState("");
     // const [account, setAccount] = useState("");
     // const [balance, setBalance] = useState("");
+    interface Transaction {
+        transactionId: number;
+        account: {
+          accountId: number;
+          user: {
+            userId: number;
+            username: string;
+            password: string;
+            firstName: string;
+            lastName: string;
+            address: string;
+            email: string;
+          };
+          amount: number;
+          accountType: {
+            accountTypeId: number;
+            accountTypeName: string;
+          }
+        },
+        amount: number;
+        description: string;
+        type: {
+          transactionTypeId: number;
+          transactionTypesName: string;
+        }
+      }
 
     return (
         <div>
@@ -24,12 +51,15 @@ const Account = () => {
                         </div>
                         <div className="requests-container">
                             <h3>Requests</h3>
-                            <p>Request Detail</p>
-                            <select name="dropdown" id="dropdown">
+                            <div id="generated-request-entity">
+                                <p>Amount: {}</p>
+                                <p>Reason: {}</p>
+                                <select name="dropdown" id="dropdown">
                                 <option value="">autopop</option>
-                            </select>
-                            <button className="account-btn btn btn-secondary" id="accept-btn">Accept</button>
-                            <button className="account-btn btn btn-secondary" id="deny-btn">Deny</button>
+                                </select>
+                                <button className="account-btn btn btn-secondary" id="accept-btn">Accept</button>
+                                <button className="account-btn btn btn-secondary" id="deny-btn">Deny</button>
+                            </div>
                         </div>
                     </div>
                     <div className="col-4" id="accounts">
@@ -37,10 +67,16 @@ const Account = () => {
                         <div className="accounts-container">
                             <div id="checking-accounts">
                                 <h4>Your Checking Accounts</h4>
-                                
+                                <div id="generated-account-entity">
+                                    <p>placeholder information</p>
+                                    <Link to="/accounttransactions">more</Link>
+                                </div>
+                                <div id="generated-account-entity">placeholder2</div>
                             </div>
                             <div id="saving-accounts">
                                 <h4>Your Savings Accounts</h4>
+                                <div id="generated-account-entity">placeholder1</div>
+                                <div id="generated-account-entity">placeholder2</div>
                             </div>
                         </div>
                     </div>
@@ -55,6 +91,7 @@ const Account = () => {
                             <p>Last Name: XXXXXXXX</p>
                             <p>Address: XXXXXXXXXXX</p>
                             {/* separate component */}
+                            <Link to="/userprofile" className="account-btn">View Details</Link>
                             <button className="account-btn">View Details</button>
                         </div>
                         <div className="user-account-container">

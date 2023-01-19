@@ -53,6 +53,17 @@ const AccountTransactions: React.FC<Props> = ({ accountId, accountType, balance 
 
        }
     } 
+    /**
+     useEffect(() => {
+            axios.get("localhost:5555/bank/transactions/account/${selectedType}")
+            .then(response => {
+                setTransactions(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }, [selectedType]);
+     */
 
     
     return (
@@ -84,6 +95,8 @@ const AccountTransactions: React.FC<Props> = ({ accountId, accountType, balance 
         </div>
     )
 }
+
+export default AccountTransactions;
 
 
 /*

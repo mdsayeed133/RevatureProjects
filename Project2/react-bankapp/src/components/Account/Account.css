@@ -1,3 +1,5 @@
+
+
 button {
     background-color: var(--primOrange);
     color: white;
@@ -19,7 +21,6 @@ button {
 
 .main-account-section {
     margin-bottom: 10%;
-    background-color: blue;
 }
 
 #main{
@@ -27,7 +28,7 @@ button {
     margin-right:1%;
     box-shadow: 2px 2px 2px black;
     border-radius: 5px;
-    background-color: red;
+    background-color: ;
     padding: 1%;
 }
 
@@ -131,14 +132,34 @@ button {
 
 #checking-accounts{
     margin-bottom:10px;
+    padding:5px;
     background-color:green;
     border-radius:5px;
     box-shadow: 2px 2px 2px black;
 }
 
 #saving-accounts{
+    padding:5px;
     margin-bottom:10px;
     background-color:green;
     border-radius:5px;
     box-shadow: 2px 2px 2px black;
+}
+
+#generated-account-entity{
+    margin:10px;
+    background-color:red;
+}
+
+
+#generated-request-entity{
+    margin:10px;
+    padding:5px;
+    background-color:white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px black;
+}
+
+#generated-request-entity p{
+    font-weight:bold;
 }
