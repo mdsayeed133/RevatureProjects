@@ -3,58 +3,30 @@ import Header from '../Header/Header'
 import axios from 'axios';
 
 import "./AccountTransactions.css";
+import{User} from '../../interfaces/users'
 import { Account } from '../../interfaces/accounts';
 import { Transaction } from '../../interfaces/transactions'
 import { setEnvironmentData } from 'worker_threads';
 import SendMoney from '../SendMoney/SendMoney';
 
 
-//interface Props {
-//    accountInfo: Account;
-//}
+
 
 const AccountTransactions: React.FC<any> = (user:any,props:Account) => {
     const accountId :number= props.accountId; //props.accountId
     const accountType: string = props.accountType.accountTypeName; 
     const [amount, setAmount] = useState<number>(props.amount);
-    const targetUser:User= ;
+    const targetUser :User= user.targetUser;
 
-    
+//const AccountTransactions: React.FC<any> = (any) => {
+    //const accountId :number= 2; //props.accountId
+    //const accountType: string = "saving"; 
+    //const [amount, setAmount] = useState<number>(200);
+    //const targetUser :any= undefined;
+
+
     const [transactions, setTransactions] = useState<Transaction[]>([]);
-    //const [selectedType, setSelectedType] = useState('0');
     
-    /*
-    const fillData = async (e:any) => {
-        console.log(e.target.value);
-        setSelectedType(e.target.value);
-        if(selectedType=='0')
-        {
-           const response = await initialLoad();
-        }
-        else{
-        console.log(selectedType); //not being set properly...
-        console.log(`http://localhost:5555/bank/transactions/account/${accountId}/type/${selectedType}`);
-        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}/type/${selectedType}`);
-        setTransactions(response.data);
-        if (response.status === 200) {
-            console.log(response.data);
-            setTransactions(response.data)
-        }
-        }
-    }
-     useEffect(() => {
-            axios.get('http://localhost:5555/bank/transactions/account/${selectedType}')
-            .then(response => {
-                setTransactions(response.data);
-            })
-            .catch(error => {
-                console.log(error);
-            });
-        }, [selectedType]);
-     */
-    // React.useEffect(() => {initialLoad()},[])
-    // const [transactions, setTransactions] = useState([]);
-
     React.useEffect(() => {
         const url = `http://localhost:5555/bank/transactions/account/${accountId}`;
         fetch(url).then(res => res.json()).then(item => (item));
@@ -94,7 +66,7 @@ const AccountTransactions: React.FC<any> = (user:any,props:Account) => {
     return (
         <div>
             {/* <body onload="initialLoad();"></body> */}
-            <Header targetUser={user.targetUser}/>
+            <Header targetUser={targetUser}/>
             <div id="content-container">
                 <div id="column1">
                     <h1>{accountType} Account Info</h1>
@@ -166,4 +138,35 @@ const login = async () =>
     }
 }
 
-*/
+*/  
+  /*
+    const fillData = async (e:any) => {
+        console.log(e.target.value);
+        setSelectedType(e.target.value);
+        if(selectedType=='0')
+        {
+           const response = await initialLoad();
+        }
+        else{
+        console.log(selectedType); //not being set properly...
+        console.log(`http://localhost:5555/bank/transactions/account/${accountId}/type/${selectedType}`);
+        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}/type/${selectedType}`);
+        setTransactions(response.data);
+        if (response.status === 200) {
+            console.log(response.data);
+            setTransactions(response.data)
+        }
+        }
+    }
+     useEffect(() => {
+            axios.get('http://localhost:5555/bank/transactions/account/${selectedType}')
+            .then(response => {
+                setTransactions(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }, [selectedType]);
+     */
+    // React.useEffect(() => {initialLoad()},[])
+    // const [transactions, setTransactions] = useState([]);

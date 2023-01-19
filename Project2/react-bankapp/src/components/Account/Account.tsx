@@ -5,7 +5,11 @@ import '../Account/Account.css'
 import Header from '../Header/Header'
 import Requests from '../Requests/Requests'
 import axios from 'axios';
+import CreateAccount from '../../CreateAccount/CreateAccount'
 import { Transaction } from '../../interfaces/transactions'
+import{User} from '../../interfaces/users'
+import { Account as Ac } from '../../interfaces/accounts';
+import { setEnvironmentData } from 'worker_threads';
 
 const Account = (props:any) => {
     const navigate = useNavigate();
@@ -28,37 +32,31 @@ const Account = (props:any) => {
     // const [balance, setBalance] = useState("");
 
 
-    const [transactions, setTransactions] = useState<Transaction[]>([]);
+    const [checkingAccounts, setCheckingAccounts] = useState<Ac[]>([]);
+    const [savingsAccounts, setSavingsAccounts] = useState<Ac[]>([]);
+    
 
-    const fillTransactions = async () => {
-        const response = await axios.get('localhost:5555/bank/transactions/account/${selectedType}');
-        setTransactions(response.data);
+    const fillCheckAccounts = async () => 
+    {
+        const response = await axios.get(`http://localhost:5555/bank/accounts/user/${props.targetUser.userId}/type/1`);
+        setCheckingAccounts(response.data);
         if (response.status === 200) {
             console.log(response.data);
-            setTransactions(response.data);
-
+            setCheckingAccounts(response.data);
         }
     }
 
-    const fillAccounts = async () => {
-        const response = await axios.get('localhost:5555/bank/transactions/account/${selectedType}');
-        setTransactions(response.data);
+    const fillSavingsAccounts = async () => 
+    {
+        const response = await axios.get(`http://localhost:5555/bank/accounts/user/${props.targetUser.userId}/type/2`);
+        setSavingsAccounts(response.data);
         if (response.status === 200) {
             console.log(response.data);
-            setTransactions(response.data);
-
+            setSavingsAccounts(response.data);
         }
     }
 
-    const fillRequests = async () => {
-        const response = await axios.get('localhost:5555/bank/transactions/account/${selectedType}');
-        setTransactions(response.data);
-        if (response.status === 200) {
-            console.log(response.data);
-            setTransactions(response.data);
 
-        }
-    }
 
     const logout = async ()=> {
         const response = await axios.post('http://localhost:5555/bank/auth/logout');
@@ -84,6 +82,7 @@ const Account = (props:any) => {
                                 <p>To/From: { }</p>
                                 <p>Amount: { }</p>
                                 <p>Reason: { }</p>
+                                <p>Future Implementation</p>
                             </div>
                         </div>
                     </div>
@@ -92,6 +91,24 @@ const Account = (props:any) => {
                         <div className="accounts-container">
                             <div id="checking-accounts">
                                 <h4>Your Checking Accounts</h4>
+                                {
+                                    checkingAccounts.map(Ac, index) =>
+                                    (
+                                        
+                                    )
+                                }
+
+
+
+
+
+
+
+
+
+
+
+
                                 <div id="generated-account-entity">
                                     <p>placeholder information</p>
                                     {/* <Link to="/accounttransactions">more</Link> */}

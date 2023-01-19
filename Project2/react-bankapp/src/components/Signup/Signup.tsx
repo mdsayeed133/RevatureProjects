@@ -1,56 +1,72 @@
 import React, {useState} from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import '../Signup/Signup.css'
 
+import axios from 'axios'
+
 const SignUp: React.FC<any> = (props:any) => {
-    const [tempUsername, setUsername] = useState("");
-    const [tempFirst, setFirst] = useState("");
-    const [tempLast, setLast] = useState("");
-    const [tempPassword, setPassword] = useState("");
-    const [tempEmail, setEmail] = useState("");
-    const [tempAddress, setAddress] = useState("");
+    const [username, setUsername] = useState("");
+    const [firstName, setFirst] = useState("");
+    const [lastName, setLast] = useState("");
+    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [address, setAddress] = useState("");
     //create useState hooks
-    
+    const navigate = useNavigate();
     const gatherInput = (input:any) =>
     {
         switch(input.target.name)
         {
             case "firstName":
                 setFirst(input.target.value);
-                console.log(tempFirst);
+                console.log(firstName);
                 break;
             case "lastName":
                 setLast(input.target.value);
-                console.log(tempLast);
+                console.log(lastName);
                 break;
             case "email":
                 setEmail(input.target.value);
-                console.log(tempEmail);
+                console.log(email);
                 break;
             case "username":
                 setUsername(input.target.value);
-                console.log(tempUsername);
+                console.log(username);
                 break;
             case "password":
                 setPassword(input.target.value);
-                console.log(tempPassword);
+                console.log(password);
                 break;
             case "address":
                 setAddress(input.target.value);
-                console.log(tempAddress);
+                console.log(address);
                 break;
             default: break;
         }
     }
 
-    const attemptSubmit = (input:any) =>
+    const attemptSubmit = async (input:any) =>
     {
         console.log("You have pushed the button!");
-        if(tempFirst==""||tempLast==""||tempAddress==""||tempPassword==""||tempEmail==""||tempUsername=="")
+        if(firstName==""||lastName==""||address==""||password==""||email==""||username=="")
         {
             alert("You have not filled in all of the information.");
             return;
+        }
+        else
+        {
+            const response = await axios.post("http://localhost:5555/bank/users/register", {username, password, firstName, lastName, address, email})
+            if(response.status==200)
+            {
+                const response2 = await axios.post("http://localhost:5555/bank/auth/login", {username, password })
+                if(response2.status==200)
+                {
+                    props.setTargetUser(response2.data);
+                    props.setLoggedIn(true);
+                    navigate("/home")
+                }
+            }
         }
     }
     

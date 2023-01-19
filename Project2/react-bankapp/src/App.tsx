@@ -78,7 +78,7 @@ function App() {
           <Route path="/login" element={<Login setLoggedIn={setLoggedStatus} setTargetUser={setUser}/>}/>
           <Route path="/home" element={<Home loggedStatus={loggedIn} targetUser={user}/>}/>
           <Route path="/account" element={<Account targetUser={user} setTargetUser={setUser} target={setTargetAccount}/>}/>
-          <Route path="/signup" element={<SignUp/>}/>
+          <Route path="/signup" element={<SignUp setLoggedIn={setLoggedStatus} setTargetUser={setUser}/>}/>
           <Route path="/requests" element={<Requests/>}/>
           <Route path="/userprofile" element={<UserProfile targetUser={user} setTargetUser={setUser}/>}/>
           <Route path="/accounttransactions" element={<AccountTransactions targetUser={user} AC={targetAccount}/>}/>
