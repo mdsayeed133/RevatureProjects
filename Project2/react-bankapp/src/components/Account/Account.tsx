@@ -5,17 +5,29 @@ import '../Account/Account.css'
 import Header from '../Header/Header'
 import Requests from '../Requests/Requests'
 import axios from 'axios';
-import { Transaction } from '../../interfaces/transactions'
+
+import { Transaction } from '../../interfaces/transactions';
+import{User} from '../../interfaces/users'
+import { Account as Ac } from '../../interfaces/accounts';
+import { setEnvironmentData } from 'worker_threads';
+import CreateAccount from '../CreateAccount/CreateAccount'
 
 const Account = (props:any) => {
     const navigate = useNavigate();
-    const accountTrans = async ()=>{
+    
+    //
+    const accountTrans = async () => {
+        //console.log(this.name + this.value);
         navigate("/accounttransactions");
     }
 
     const profile = async ()=>{
         navigate("/userprofile")
     }
+
+    // const createAccountBtn = async ()=>{
+    //     navigate("/createaccount")
+    // }
 
     //this is using axios
     // create useState hooks to declare the states
@@ -24,45 +36,48 @@ const Account = (props:any) => {
     // const [balance, setBalance] = useState("");
 
 
-    const [transactions, setTransactions] = useState<Transaction[]>([]);
+    const [checkingAccounts, setCheckingAccounts] = useState<Ac[]>([]);
+    const [savingsAccounts, setSavingsAccounts] = useState<Ac[]>([]);
+    
 
-    const fillTransactions = async () => {
-        const response = await axios.get('localhost:5555/bank/transactions/account/${selectedType}');
-        setTransactions(response.data);
+    const fillCheckAccounts = async () => 
+    {
+        const response = await axios.get(`http://localhost:5555/bank/accounts/user/${props.targetUser.userId}/type/1`);
+        setCheckingAccounts(response.data);
         if (response.status === 200) {
             console.log(response.data);
-            setTransactions(response.data);
-
+            setCheckingAccounts(response.data);
         }
     }
 
-    const fillAccounts = async () => {
-        const response = await axios.get('localhost:5555/bank/transactions/account/${selectedType}');
-        setTransactions(response.data);
+    const fillSavingsAccounts = async () => 
+    {
+        const response = await axios.get(`http://localhost:5555/bank/accounts/user/${props.targetUser.userId}/type/2`);
+        setSavingsAccounts(response.data);
         if (response.status === 200) {
             console.log(response.data);
-            setTransactions(response.data);
-
+            setSavingsAccounts(response.data);
         }
     }
 
-    const fillRequests = async () => {
-        const response = await axios.get('localhost:5555/bank/transactions/account/${selectedType}');
-        setTransactions(response.data);
-        if (response.status === 200) {
-            console.log(response.data);
-            setTransactions(response.data);
 
-        }
-    }
 
     const logout = async ()=> {
-        localStorage.clear();
-        // navigate("/home")
-        window.location.href='/'
+        const response = await axios.post('http://localhost:5555/bank/auth/logout');
+        if(response.status==200)
+        {
+            localStorage.clear();
+            window.location.href='/'
+            console.log('You logged out')        
+        }
     }
 
-    
+
+    React.useEffect(()=>{
+        fillCheckAccounts();
+        fillSavingsAccounts();
+    },[])
+
 
     return (
         <div>
@@ -76,19 +91,7 @@ const Account = (props:any) => {
                                 <p>To/From: { }</p>
                                 <p>Amount: { }</p>
                                 <p>Reason: { }</p>
-                            </div>
-                        </div>
-                        <div className="requests-container">
-                            <h3>Requests</h3>
-                            <div id="generated-request-entity">
-                                <p>From: { } </p>
-                                <p>Amount: { }</p>
-                                <p>Reason: { }</p>
-                                <select name="dropdown" id="dropdown">
-                                    <option value="">autopop</option>
-                                </select>
-                                <button className="account-btn btn btn-secondary" id="accept-btn">Accept</button>
-                                <button className="account-btn btn btn-secondary" id="deny-btn">Deny</button>
+                                <p>Future Implementation</p>
                             </div>
                         </div>
                     </div>
@@ -97,17 +100,38 @@ const Account = (props:any) => {
                         <div className="accounts-container">
                             <div id="checking-accounts">
                                 <h4>Your Checking Accounts</h4>
-                                <div id="generated-account-entity">
-                                    <p>placeholder information</p>
-                                    {/* <Link to="/accounttransactions">more</Link> */}
-                                    <button onClick={accountTrans}>more</button>
-                                </div>
-                                <div id="generated-account-entity">placeholder2</div>
+                                {
+                                    checkingAccounts.map((Ac, index) =>
+                                    (
+                                        <div id="generated-account-entity" key={index}>
+                                            <p>Account ID: {Ac.accountId}</p>
+                                            <p>Account Balance: {Ac.amount}</p>
+                                            <button onClick={()=>
+                                                 props.setTargetAc(Ac);
+                                                 accountTrans();
+                                            } name="checking" value={index}>More</button>
+                                        </div>
+                                    ))
+                                }
                             </div>
                             <div id="saving-accounts">
                                 <h4>Your Savings Accounts</h4>
-                                <div id="generated-account-entity">placeholder1</div>
-                                <div id="generated-account-entity">placeholder2</div>
+                                {
+                                    savingsAccounts.map((Ac, index) =>
+                                    (
+                                        <div id="generated-account-entity" key={index}>
+                                            <p>Account ID: {Ac.accountId}</p>
+                                            <p>Account Balance: {Ac.amount}</p>
+                                            <button onClick={()=>{
+                                                //console.log(Ac);
+                                                props.setTargetAc(Ac);
+                                                //console.log("This is our target:"+props.targetAc)
+                                                accountTrans();
+                                            }
+                                                } name="savings" value={index}>More</button>
+                                        </div>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
@@ -127,8 +151,7 @@ const Account = (props:any) => {
                         </div>
                         <div className="user-account-container">
                             <h5>Open New Account</h5>
-                            <button className="account-btn">Checking</button>
-                            <button className="account-btn">Savings</button>
+                          <CreateAccount userId={props.targetUser.userId}/>
                         </div>
                     </div>
                 </div>

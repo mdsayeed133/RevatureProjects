@@ -37,3 +37,6 @@
 /* #loginBox {
     display: none;
 } */
+.carousel-inner {
+    background-repeat: no-repeat;
+}
