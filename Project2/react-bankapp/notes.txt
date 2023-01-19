@@ -60,3 +60,9 @@ font-family: 'Raleway', sans-serif;
 
 username: Edna7546
 password: k39r!
+
+
++=============+
+| Logout test |
++=============+
+https://localhost:5555/bank/auth/logout

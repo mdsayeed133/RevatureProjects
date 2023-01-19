@@ -32,7 +32,7 @@ const Home: React.FC<any> = (props: any) => {
             console.log('not logged in')
         } else {
             const element: HTMLElement = document.getElementById('stat') as HTMLElement 
-            element.innerHTML = 'You are logged in'
+            element.innerHTML = `You are logged in ${props.targetUser.firstName}`
         }
     })
     // if (status != true) {

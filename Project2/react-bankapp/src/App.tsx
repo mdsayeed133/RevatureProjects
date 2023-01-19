@@ -79,7 +79,7 @@ function App() {
           <Route path="/account" element={<Account targetUser={user} setTargetUser={setUser} target={setTargetAccount}/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/requests" element={<Requests/>}/>
-          <Route path="/userprofile" element={<UserProfile/>}/>
+          <Route path="/userprofile" element={<UserProfile targetUser={user} setTargetUser={setUser}/>}/>
           <Route path="/accounttransactions" element={<AccountTransactions targetUser={user} AC={targetAccount}/>}/>
           {/*<Route path="/sendmoney" element={<SendMoney/>}/>*/}
           {/* <Route path="/reset" element={<Reset/>}/> */}

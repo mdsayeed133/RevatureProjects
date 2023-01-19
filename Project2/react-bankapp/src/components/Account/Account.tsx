@@ -13,6 +13,10 @@ const Account = (props:any) => {
         navigate("/accounttransactions");
     }
 
+    const profile = async ()=>{
+        navigate("/userprofile")
+    }
+
     //this is using axios
     // create useState hooks to declare the states
     // const [username, setUsername] = useState("");
@@ -52,6 +56,13 @@ const Account = (props:any) => {
         }
     }
 
+    const logout = async ()=> {
+        localStorage.clear();
+        // navigate("/home")
+        window.location.href='/'
+    }
+
+    
 
     return (
         <div>
@@ -103,7 +114,7 @@ const Account = (props:any) => {
                     <div className="col-3" id="user">
                         <div className="user-status d-flex justify-content-around" id="user-log-out-box">
                             <p>User: {props.targetUser.username}</p>
-                            <button className="account-btn">Log Out</button>
+                            <button className="account-btn" onClick={logout}>Log Out</button>
                         </div>
                         <div className="user-profile-container">
                             <h5>Profile</h5>
@@ -111,8 +122,8 @@ const Account = (props:any) => {
                             <p>Last Name: {props.targetUser.lastName}</p>
                             <p>Address: {props.targetUser.address}</p>
                             {/* separate component */}
-                            <Link to="/userprofile" className="account-btn">View Details</Link>
-                            <button className="account-btn">View Details</button>
+                            {/* <Link to="/userprofile" className="account-btn">View Details</Link> */}
+                            <button className="account-btn" onClick={profile}>View Details</button>
                         </div>
                         <div className="user-account-container">
                             <h5>Open New Account</h5>
