@@ -4,10 +4,43 @@ import axios from 'axios';
 
 import "./AccountTransactions.css";
 
-const AccountTransactions: React.FC<any> = ({ accountId, accountType, accountNumber, balance }) => {
+interface Props {
+  accountId: number;
+  accountType: string;
+  balance: number;
+}
+
+interface Transaction {
+  transactionId: number;
+  account: {
+    accountId: number;
+    user: {
+      userId: number;
+      username: string;
+      password: string;
+      firstName: string;
+      lastName: string;
+      address: string;
+      email: string;
+    };
+    amount: number;
+    accountType: {
+      accountTypeId: number;
+      accountTypeName: string;
+    }
+  },
+  amount: number;
+  description: string;
+  type: {
+    transactionTypeId: number;
+    transactionTypesName: string;
+  }
+}
+
+const AccountTransactions: React.FC<Props> = ({ accountId, accountType, balance }) => {
     
     /*Example*/
-    const [transactions, setTransactions]= useState<any[]>([]);
+    const [transactions, setTransactions]= useState<Transaction[]>([]);
     const [selectedType, setSelectedType] = useState("${accountId}");
     
     const fillData = async () => {
@@ -28,15 +61,15 @@ const AccountTransactions: React.FC<any> = ({ accountId, accountType, accountNum
             <div id="content-container">
                 <div id="column1">
                     <h1>Account Info</h1>
-                    <p>Account Number: {accountNumber}/ {accountType}</p>
+                    <p>Account Number: {accountId}/ {accountType}</p>
                     <p>Balance: {balance}</p>
                 </div>
                 <div id="column2">
                     <h1>Transaction History</h1>
                     <select value={selectedType} onChange={e => setSelectedType(e.target.value)}>
                         <option value="${accountId}">All</option>
-                        <option value="expense">Expense</option>
-                        <option value="income">Income</option>
+                        <option value="${accountId}/type/1">Expense</option>
+                        <option value="${accountId}/type/2">Income</option>
                     </select>
                     {transactions.map((transaction, index) => (
                         <div id="transaction" key={index}>

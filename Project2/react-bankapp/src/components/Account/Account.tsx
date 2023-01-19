@@ -37,6 +37,7 @@ const Account = () => {
                         <div className="accounts-container">
                             <div id="checking-accounts">
                                 <h4>Your Checking Accounts</h4>
+                                
                             </div>
                             <div id="saving-accounts">
                                 <h4>Your Savings Accounts</h4>
