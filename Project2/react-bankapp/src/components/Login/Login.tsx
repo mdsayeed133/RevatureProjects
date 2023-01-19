@@ -3,19 +3,23 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
 import '../Login/Login.css'
+import {UserDTO} from '../../interfaces/users';
+import { User } from '../../interfaces/users';
+import Header from '../Header/Header';
 
-const Login: React.FC<any> = () => {
+const Login: React.FC<any> = (props:any) => {
 
     //temporary default variable to hold logged in user
-    let user = {
-        id: 0,
-        username: "",
-        password: ""
-    }
+    // let user = {
+    //     id: 0,
+    //     username: "",
+    //     password: ""
+    // }
 
     // create useState hooks to declare the states
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+
 
     // useNavigate() will allow us to "navigate" components
     const navigate = useNavigate();
@@ -32,30 +36,41 @@ const Login: React.FC<any> = () => {
 
     /* axios */
     const login = async () => {
-
-        const response = await axios.post("project2.citpuzbvuzos.us-east-1.rds.amazonaws.com", { username, password })
+        
+        const response = await axios.post("http://localhost:5555/bank/auth/login", {username, password })
         // project2.citpuzbvuzos.us-east-1.rds.amazonaws.com
         //localhost5432
         // const response = await axios.post("localhost:5432")
 
         /* if login was successful... */
-        if (response.status === 202) {
-            console.log(response)
-
-            user.id = response.data.id;
-            user.username = response.data.username;
-            user.password = response.data.password;
+        if (response.status === 200) {
+            console.log(response.data)
+            props.setTargetUser(response.data);
+            props.setLoggedIn(true);
+            // setUserAddress(response.data.address);
+            // setEmail(response.data.email);
+            // setUserId(response.data.id);
+            // setFirstName(response.data.firstName);
+            // setLastName(response.data.lastName);
 
             // if user logged successfully, id WON'T be 0
-            if (user.id > 0) {
-                navigate("/home")
-            }
-        }
+            //if (user.userId > 0) {
+            //navigate("/home")
+            //}
+            // setUsername(response.data.username);
+            navigate("/home")
 
+        }
     }
+
+    const reset = async ()=> {
+        navigate("/reset")
+    }
+
 
     return (
         <>
+        {/* <Header/> */}
             <div className="Login">
                 {/* <div className="image-container">
                 <img src="rev-logo_281_29.png" alt="Revature Logo" />
@@ -77,7 +92,7 @@ const Login: React.FC<any> = () => {
                     </div>
 
                     <button className="login-button" onClick={login}>Login</button>
-                    <button className="login-button">Reset Password</button>
+                    <button className="login-button" onClick={reset}>Reset Password</button>
                 </div>
                 <div className="disclaimer">
                     <p><em>Results based solely on the amount of effort you put in. Sorry...</em></p>

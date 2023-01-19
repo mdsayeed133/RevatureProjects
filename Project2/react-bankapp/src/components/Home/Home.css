@@ -29,3 +29,11 @@
     color: var(--primOrange);
     transition: ease-in 0.5s;
 }
+
+#d-none{
+    display:none;
+}
+
+/* #loginBox {
+    display: none;
+} */

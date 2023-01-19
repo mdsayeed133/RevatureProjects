@@ -1,0 +1,17 @@
+#content-container{
+    margin-left:2%;
+    margin-right:2%;
+    box-shadow: 2px 2px 2px black;
+}
+
+#transaction{
+    border-color: #fcb414;
+    border-radius: 3px;
+    background-color: gainsboro;
+    box-shadow: 2px 2px 2px black;
+    margin:10px;
+}
+
+#transaction p{
+    font-weight: bold;
+}

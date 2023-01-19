@@ -5,27 +5,60 @@ import Header from '../Header/Header'
 
 import { FaAws, FaReact } from "react-icons/fa";
 import { SiTypescript, SiSpring, SiPostgresql, SiBootstrap, SiPython } from "react-icons/si";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
-const Home: React.FC<any> = () => {
+const Home: React.FC<any> = (props: any) => {
     // get the state
+    const navigate = useNavigate();
     // create useState hooks to declare the states
     // const [username, setUsername] = useState("");
 
 
     /* worry about home page look */
+    const login = async () => {
+        navigate("/login")
+    }
+    const signup = async () => {
+        navigate("/signup")
+    }
+
+    
+    const status = props.loggedStatus;
+    console.log(status);
+
+
+    React.useEffect(()=>{ 
+        if(status != true){
+            console.log('not logged in')
+        } else {
+            const element: HTMLElement = document.getElementById('stat') as HTMLElement 
+            element.innerHTML = `You are logged in ${props.targetUser.firstName}`
+        }
+    })
+    // if (status != true) {
+    //     console.log('nothing');
+    // } else {
+        // document.body.classList.add("dark")
+        // document.getElementById("loginBox")?.id="d-none";
+        // document.getElementById("accountBox")?.id="d-none";
+        // let stat = document.getElementById("stat")
+        // document.getElementById("loginBox").classList.add("d-block")
+    //}
+
     return (
         <div>
-            <Header />
-
+            <Header targetUser={props.targetUser}/>
+            <div className="check-log-status">
+                <p id="stat"></p>
+            </div>
             <section className="d-none d-md-block carousel-section">
                 <div id="carouselExampleFade" className="carousel slide carousel-fade">
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img src="stress1.jpg" className="d-block w-100 img-fluid" alt="..." />
+                            <img src="stress1.jpg" className="d-block w-100 img-fluid" alt="Someone who isn't using Revature Banking" />
                         </div>
                         <div className="carousel-item">
-                            <img src="stress2.jpg" className="d-block w-100 img-fluid" alt="..." />
+                            <img src="stress2.jpg" className="d-block w-100 img-fluid" alt="Image of a woman not using" />
                         </div>
                         <div className="carousel-item">
                             <img src="money.jpg" className="d-block w-100 img-fluid" alt="..." />
@@ -43,16 +76,22 @@ const Home: React.FC<any> = () => {
             </section>
             <div className="main-container container">
                 <div className="row dividing-line d-flex justify-content-around">
-                    <div className="col-md-6 login-options">
-                        <h3 className="subheader">Not Logged In?</h3>
-                        <p className="text d-none d-md-block">If you want to make the most of the opportunities that Revature Banking can provide you, please click to login</p>
-                        <Link to="/login" className="log-btn btn btn-secondary">Login</Link>
-                    </div>
-                    <div className="col-md-6 login-options">
-                        <h3 className="subheader">No Account?</h3>
-                        <p className="text d-none d-md-block">If you want to make the most of the opportunities that Revature Banking can provide you, please click to create an account</p>
-                        <Link to="/Signup" className="log-btn btn btn-secondary">Create Account</Link>
-                    </div>
+                    <div className="col-md-6 login-options d-none d-md-block" id="loginBox">
+                    <section>
+                    <h3 className="subheader">Not Logged In?</h3>
+                    <p className="text d-none d-md-block">If you want to make the most of the opportunities that Revature Banking can provide you, please click to login</p>
+                    {/* <Link to="/login" className="log-btn btn btn-secondary">Login</Link> */}
+                <button className="log-btn btn btn-secondary" onClick={login}>Login</button>
+            </section>
+        </div>
+        <div className="col-md-6 login-options" id="accountBox">
+            <section>
+                <h3 className="subheader">No Account?</h3>
+                <p className="text d-none d-md-block">If you want to make the most of the opportunities that Revature Banking can provide you, please click to create an account</p>
+                {/* <Link to="/Signup" className="log-btn btn btn-secondary">Create Account</Link> */}
+                <button className="log-btn btn btn-secondary" onClick={signup}>Create Account</button>
+            </section>
+        </div>
                 </div>
                 <div className="row dividing-line">
                     <h2 className="why-container">Why Choose RevatureBanking?</h2>
