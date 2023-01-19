@@ -22,8 +22,14 @@ const AccountTransactions: React.FC<any> = (props:any) => {
     const [selectedType, setSelectedType] = useState('${accountId}');
     
     const fillData = async (e:any) => {
+        console.log(e.target.value);
         setSelectedType(e.target.value);
-        console.log(selectedType);
+        if(selectedType=='null')
+        {
+            initialLoad();
+        }
+        else{
+        console.log(selectedType); //not being set properly...
         console.log(`http://localhost:5555/bank/transactions/account/${accountId}/type/${selectedType}`);
         const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}/type/${selectedType}`);
         setTransactions(response.data);
@@ -31,6 +37,7 @@ const AccountTransactions: React.FC<any> = (props:any) => {
             console.log(response.data);
             setTransactions(response.data);
 
+            }
         }
     }
 
@@ -59,7 +66,7 @@ const AccountTransactions: React.FC<any> = (props:any) => {
     // React.useEffect(() => {initialLoad()},[])
     // const [transactions, setTransactions] = useState([]);
     React.useEffect(() => {
-        const url = `http://localhost:5555/bank/transactions/account/${selectedType}`;
+        const url = `http://localhost:5555/bank/transactions/account/${accountId}`;
         fetch(url).then(res => res.json()).then(item => (item));
         initialLoad()},[])
 
@@ -76,9 +83,9 @@ const AccountTransactions: React.FC<any> = (props:any) => {
                 <div id="column2">
                     <h1>Transaction History</h1>
                     <select value={selectedType} onChange={e => fillData(e)}>
-                        <option value='${accountId}'>All</option>
-                        <option value='${${accountId}/type/1}'>Expense</option>
-                        <option value='${${accountId}/type/2}'>Income</option>
+                        <option value='null'>All</option>
+                        <option value='2'>Expense</option>
+                        <option value='1'>Income</option>
                     </select>
                     {transactions.map((transaction, index) => (
                         <div id="transaction" key={index}>
