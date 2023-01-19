@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../Header/Header.css'
-const Header = () => {
+import Login from '../Login/Login'
+const Header: React.FC<any> = ({username}) => {
 
 
 
@@ -14,13 +15,14 @@ const Header = () => {
                 <div className="col-md-4">
                     <ul className="nav top-nav-list">
                         {/* links to "navigate" components */}
-                        <Link to="/Home" className="nav-item btn-secondary btn">Home</Link>
-                        <Link to="/Account" className="nav-item btn-secondary btn">Account</Link>
-                        <Link to="/Requests" className="nav-item btn-secondary btn">Requests</Link>
+                        <Link to="/Home" className="nav-item btn">Home</Link>
+                        <Link to="/Account" className="nav-item btn">Account</Link>
+                        {/* <Link to="/Requests" className="nav-item btn-secondary btn">Requests</Link> */}
                     </ul>
                 </div>
                 <div className="col-md-2 login-status">
-                    <p className="login-name">Hello, GUEST</p>
+                    {/* will change dynamically with useState,useEffect */}
+                    <p className="login-name">Hello, {username}</p>
                 </div>
             </div>
         </div>

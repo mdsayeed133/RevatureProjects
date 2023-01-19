@@ -3,35 +3,107 @@ import Header from '../Header/Header'
 import axios from 'axios';
 
 import "./AccountTransactions.css";
+import { Account } from '../../interfaces/accounts';
+import { Transaction } from '../../interfaces/transactions'
+import { setEnvironmentData } from 'worker_threads';
 
-const AccountTransactions: React.FC<any> = ({ accountId, accountType, accountNumber, balance }) => {
+
+//interface Props {
+//    accountInfo: Account;
+//}
+
+const AccountTransactions: React.FC<any> = (props:Account) => {
+    const accountId :number= props.accountId; //props.accountId
+    const accountType: string = props.accountType.accountTypeName; 
+    var amount: number = props.amount;
+
     
-    /*Example*/
-    const [transactions, setTransactions]= useState<any[]>([]);
+    const [transactions, setTransactions] = useState<Transaction[]>([]);
+    //const [selectedType, setSelectedType] = useState('0');
     
-    const fillData = async () => {
-       const response = await axios.get('localhost:5555/bank/transactions/account/${accountId}');
-       setTransactions(response.data);
-       if(response.status===200)
-       {
+    /*
+    const fillData = async (e:any) => {
+        console.log(e.target.value);
+        setSelectedType(e.target.value);
+        if(selectedType=='0')
+        {
+           const response = await initialLoad();
+        }
+        else{
+        console.log(selectedType); //not being set properly...
+        console.log(`http://localhost:5555/bank/transactions/account/${accountId}/type/${selectedType}`);
+        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}/type/${selectedType}`);
+        setTransactions(response.data);
+        if (response.status === 200) {
+            console.log(response.data);
+            setTransactions(response.data)
+        }
+        }
+    }
+     useEffect(() => {
+            axios.get('http://localhost:5555/bank/transactions/account/${selectedType}')
+            .then(response => {
+                setTransactions(response.data);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+        }, [selectedType]);
+     */
+    // React.useEffect(() => {initialLoad()},[])
+    // const [transactions, setTransactions] = useState([]);
+
+    React.useEffect(() => {
+        const url = `http://localhost:5555/bank/transactions/account/${accountId}`;
+        fetch(url).then(res => res.json()).then(item => (item));
+        initialLoad()},[])
+
+    const initialLoad = async () =>
+    {
+        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}`);
+        setTransactions(response.data);
+        if (response.status === 200) {
             console.log(response.data);
             setTransactions(response.data);
 
-       }
-    } 
+        }
+    }
+    const loadIncome = async () =>
+    {
+        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}/type/2`);
+        setTransactions(response.data);
+        if (response.status === 200) {
+            console.log(response.data);
+            setTransactions(response.data);
 
+        }
+    }
     
+    const loadExpense = async () =>
+    {
+        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}/type/1`);
+        setTransactions(response.data);
+        if (response.status === 200) {
+            console.log(response.data);
+            setTransactions(response.data);
+
+        }
+    }
     return (
         <div>
-            <Header/>
+            {/* <body onload="initialLoad();"></body> */}
+            <Header />
             <div id="content-container">
                 <div id="column1">
-                    <h1>Account Info</h1>
-                    <p>Account Number: {accountNumber}/ {accountType}</p>
-                    <p>Balance: {balance}</p>
+                    <h1>{accountType} Account Info</h1>
+                    <p>Account Number: {accountId}</p>
+                    <p>Balance: {amount}</p>
                 </div>
                 <div id="column2">
                     <h1>Transaction History</h1>
+                    <button onClick={e=>initialLoad()}>All</button>
+                    <button onClick={e=>loadIncome()}>Income</button>
+                    <button onClick={e=>loadExpense()}>Expense</button>
                     {transactions.map((transaction, index) => (
                         <div id="transaction" key={index}>
                             <p>Transaction ID: {transaction.transactionId}</p>
@@ -42,9 +114,12 @@ const AccountTransactions: React.FC<any> = ({ accountId, accountType, accountNum
                     ))}
                 </div>
             </div>
+
         </div>
     )
 }
+
+export default AccountTransactions;
 
 
 /*

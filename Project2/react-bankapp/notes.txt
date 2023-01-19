@@ -53,3 +53,10 @@ font-family: 'Raleway', sans-serif;
 - keep track of differences in TSX and JSX
 
 
+
++=============+
+| Login tests |
++=============+
+
+username: Edna7546
+password: k39r!
