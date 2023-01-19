@@ -3,6 +3,7 @@ package com.revature.services;
 import com.revature.daos.AccountsDAO;
 import com.revature.daos.UsersDAO;
 import com.revature.models.Account;
+import com.revature.models.AccountDTO;
 import com.revature.models.AccountType;
 import com.revature.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,6 +44,17 @@ public class AccountService {
     public double getAmountOfAccount(int id){
         Account account = accountsDAO.findById(id).get();
         return account.getAmount();
+    }
+
+    @Transactional
+    public Account createAccount(AccountDTO accountDTO) throws Exception{
+        if(accountDTO.getAmount()<0)throw new Exception("amount must be positive");
+        User user = usersDAO.findById(accountDTO.getUserId()).get();
+        AccountType type= accountsTypeService.getAccountType(accountDTO.getAccountTypeId());
+        Account newAccount= new Account(user,accountDTO.getAmount(),type);
+        accountsDAO.save(newAccount);
+        return newAccount;
+
     }
 
 }

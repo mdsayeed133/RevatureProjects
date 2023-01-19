@@ -2,6 +2,7 @@ package com.revature.controllers;
 
 import com.revature.daos.AccountsDAO;
 import com.revature.models.Account;
+import com.revature.models.AccountDTO;
 import com.revature.models.User;
 import com.revature.services.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,9 +46,9 @@ public class AccountController {
     }
 
     @PostMapping()
-    public ResponseEntity<Account> addAccount(@RequestBody Account account) {
+    public ResponseEntity<Account> addAccount(@RequestBody AccountDTO account) {
         try {
-            return ResponseEntity.ok(accountsDAO.save(account));
+            return ResponseEntity.ok(accountService.createAccount(account));
         } catch (Exception e) {
             return ResponseEntity.badRequest().build();
         }
