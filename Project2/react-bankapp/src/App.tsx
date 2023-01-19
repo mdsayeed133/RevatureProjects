@@ -33,6 +33,14 @@ function App() {
 
 
     // test
+    // const login = async()=> {
+    //   const response = await axios.post("http://localhost:5555/bank/auth/login", {username, password })
+
+    //   if (response.status === 200) {
+    //     console.log(response.data);
+    //     setFirstName(response.data.firstName);
+    //   }
+    // }
 
   return (
     <div className="App">

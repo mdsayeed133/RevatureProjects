@@ -44,11 +44,11 @@ const Login: React.FC<any> = (props:any) => {
         /* if login was successful... */
         if (response.status === 200) {
             console.log(response.data)
-            setUserAddress(response.data.address);
-            setEmail(response.data.email);
-            setUserId(response.data.id);
-            setFirstName(response.data.firstName);
-            setLastName(response.data.lastName);
+            // setUserAddress(response.data.address);
+            // setEmail(response.data.email);
+            // setUserId(response.data.id);
+            // setFirstName(response.data.firstName);
+            // setLastName(response.data.lastName);
 
             // if user logged successfully, id WON'T be 0
             //if (user.userId > 0) {

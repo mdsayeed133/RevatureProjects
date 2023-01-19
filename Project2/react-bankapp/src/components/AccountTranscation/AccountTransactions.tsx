@@ -5,6 +5,7 @@ import axios from 'axios';
 import "./AccountTransactions.css";
 import { Account } from '../../interfaces/accounts';
 import { Transaction } from '../../interfaces/transactions'
+import { setEnvironmentData } from 'worker_threads';
 
 
 //interface Props {
@@ -12,16 +13,19 @@ import { Transaction } from '../../interfaces/transactions'
 //}
 
 const AccountTransactions: React.FC<any> = (props:any) => {
-    var accountId :number= 2; //props.accountId
-    var accountType: string = "saving" 
-    var amount: number = 10;
+    const accountId :number= 2; //props.accountId
+    const accountType: string = "saving" 
+    const amount: number = 10;
 
     /*Example*/
     const [transactions, setTransactions] = useState<Transaction[]>([]);
-    const [selectedType, setSelectedType] = useState("${accountId}");
+    const [selectedType, setSelectedType] = useState('${accountId}');
     
-    const fillData = async () => {
-        const response = await axios.get("http://localhost:5555/bank/transactions/account/${selectedType}");
+    const fillData = async (e:any) => {
+        setSelectedType(e.target.value);
+        console.log(selectedType);
+        console.log(`http://localhost:5555/bank/transactions/account/${accountId}/type/${selectedType}`);
+        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}/type/${selectedType}`);
         setTransactions(response.data);
         if (response.status === 200) {
             console.log(response.data);
@@ -29,9 +33,21 @@ const AccountTransactions: React.FC<any> = (props:any) => {
 
         }
     }
+
+    const initialLoad = async () =>
+    {
+        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}`);
+        setTransactions(response.data);
+        if (response.status === 200) {
+            console.log(response.data);
+            setTransactions(response.data);
+
+        }
+    }
+
     /**
      useEffect(() => {
-            axios.get("http://localhost:5555/bank/transactions/account/${selectedType}")
+            axios.get('http://localhost:5555/bank/transactions/account/${selectedType}')
             .then(response => {
                 setTransactions(response.data);
             })
@@ -40,10 +56,16 @@ const AccountTransactions: React.FC<any> = (props:any) => {
             });
         }, [selectedType]);
      */
-
+    // React.useEffect(() => {initialLoad()},[])
+    // const [transactions, setTransactions] = useState([]);
+    React.useEffect(() => {
+        const url = `http://localhost:5555/bank/transactions/account/${selectedType}`;
+        fetch(url).then(res => res.json()).then(item => (item));
+        initialLoad()},[])
 
     return (
         <div>
+            {/* <body onload="initialLoad();"></body> */}
             <Header />
             <div id="content-container">
                 <div id="column1">
@@ -53,12 +75,10 @@ const AccountTransactions: React.FC<any> = (props:any) => {
                 </div>
                 <div id="column2">
                     <h1>Transaction History</h1>
-                    <select value={selectedType} onChange={e => setSelectedType(e.target.value);
-                    fillData();
-                    }>
-                        <option value="${accountId}">All</option>
-                        <option value="${accountId}/type/1">Expense</option>
-                        <option value="${accountId}/type/2">Income</option>
+                    <select value={selectedType} onChange={e => fillData(e)}>
+                        <option value='${accountId}'>All</option>
+                        <option value='${${accountId}/type/1}'>Expense</option>
+                        <option value='${${accountId}/type/2}'>Income</option>
                     </select>
                     {transactions.map((transaction, index) => (
                         <div id="transaction" key={index}>
