@@ -5,6 +5,7 @@ import '../Account/Account.css'
 import Header from '../Header/Header'
 import Requests from '../Requests/Requests'
 import axios from 'axios';
+import { Transaction } from '../../interfaces/transactions'
 
 const Account = (props:any) => {
     const navigate = useNavigate();
@@ -17,50 +18,6 @@ const Account = (props:any) => {
     // const [username, setUsername] = useState("");
     // const [account, setAccount] = useState("");
     // const [balance, setBalance] = useState("");
-    interface Transaction {
-        transactionId: number;
-        account: {
-            accountId: number;
-            user: {
-                userId: number;
-                username: string;
-                password: string;
-                firstName: string;
-                lastName: string;
-                address: string;
-                email: string;
-            };
-            amount: number;
-            accountType: {
-                accountTypeId: number;
-                accountTypeName: string;
-            }
-        },
-        amount: number;
-        description: string;
-        type: {
-            transactionTypeId: number;
-            transactionTypesName: string;
-        }
-    }
-
-    interface Account {
-        accountId: number;
-        user: {
-            userId: number;
-            username: string;
-            password: string;
-            firstName: string;
-            lastName: string;
-            address: string;
-            email: string;
-        };
-        amount: number;
-        accountType: {
-            accountTypeId: number;
-            accountTypeName: string;
-        }
-    }
 
 
     const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -98,7 +55,7 @@ const Account = (props:any) => {
 
     return (
         <div>
-            <Header />
+            <Header targetUser={props.targetUser}/>
             <div className="container-fluid main-account-section">
                 <div className="row d-flex justify-content-around" id="main">
                     <div className="col-3" id="activity">
@@ -145,14 +102,14 @@ const Account = (props:any) => {
                     </div>
                     <div className="col-3" id="user">
                         <div className="user-status d-flex justify-content-around" id="user-log-out-box">
-                            <p>User: XXXXXXXXX</p>
+                            <p>User: {props.targetUser.username}</p>
                             <button className="account-btn">Log Out</button>
                         </div>
                         <div className="user-profile-container">
                             <h5>Profile</h5>
-                            <p>First Name: XXXXXXXX</p>
-                            <p>Last Name: XXXXXXXX</p>
-                            <p>Address: XXXXXXXXXXX</p>
+                            <p>First Name: {props.targetUser.firstName}</p>
+                            <p>Last Name: {props.targetUser.lastName}</p>
+                            <p>Address: {props.targetUser.address}</p>
                             {/* separate component */}
                             <Link to="/userprofile" className="account-btn">View Details</Link>
                             <button className="account-btn">View Details</button>
@@ -163,7 +120,6 @@ const Account = (props:any) => {
                             <button className="account-btn">Savings</button>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

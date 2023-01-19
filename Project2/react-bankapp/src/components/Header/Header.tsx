@@ -1,10 +1,9 @@
-import React from 'react'
+import axios from 'axios'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import '../Header/Header.css'
 import Login from '../Login/Login'
-const Header: React.FC<any> = ({username}) => {
-
-
+const Header: React.FC<any> = (login:any) => {
 
     return (
         <div className="header-container container-fluid">
@@ -22,7 +21,7 @@ const Header: React.FC<any> = ({username}) => {
                 </div>
                 <div className="col-md-2 login-status">
                     {/* will change dynamically with useState,useEffect */}
-                    <p className="login-name">Hello, {username}</p>
+                    {/* <p className="login-name" id="nameDisplay">Hello, {login.user.firstName}</p> */}
                 </div>
             </div>
         </div>

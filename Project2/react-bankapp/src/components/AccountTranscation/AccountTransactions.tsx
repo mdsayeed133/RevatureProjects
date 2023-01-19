@@ -12,10 +12,10 @@ import { setEnvironmentData } from 'worker_threads';
 //    accountInfo: Account;
 //}
 
-const AccountTransactions: React.FC<any> = (props:Account) => {
+const AccountTransactions: React.FC<any> = (user:any,props:Account) => {
     const accountId :number= props.accountId; //props.accountId
     const accountType: string = props.accountType.accountTypeName; 
-    var amount: number = props.amount;
+    const [amount, setAmount] = useState<number>(props.amount);
 
     
     const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -92,7 +92,7 @@ const AccountTransactions: React.FC<any> = (props:Account) => {
     return (
         <div>
             {/* <body onload="initialLoad();"></body> */}
-            <Header />
+            <Header targetUser={user.targetUser}/>
             <div id="content-container">
                 <div id="column1">
                     <h1>{accountType} Account Info</h1>
@@ -101,9 +101,9 @@ const AccountTransactions: React.FC<any> = (props:Account) => {
                 </div>
                 <div id="column2">
                     <h1>Transaction History</h1>
-                    <button onClick={e=>initialLoad()}>All</button>
-                    <button onClick={e=>loadIncome()}>Income</button>
-                    <button onClick={e=>loadExpense()}>Expense</button>
+                    <button onClick={()=>initialLoad()}>All</button>
+                    <button onClick={()=>loadIncome()}>Income</button>
+                    <button onClick={()=>loadExpense()}>Expense</button>
                     {transactions.map((transaction, index) => (
                         <div id="transaction" key={index}>
                             <p>Transaction ID: {transaction.transactionId}</p>

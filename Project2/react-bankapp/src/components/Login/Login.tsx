@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import '../Login/Login.css'
 import {UserDTO} from '../../interfaces/users';
 import { User } from '../../interfaces/users';
+import Header from '../Header/Header';
 
 const Login: React.FC<any> = (props:any) => {
 
@@ -44,6 +45,8 @@ const Login: React.FC<any> = (props:any) => {
         /* if login was successful... */
         if (response.status === 200) {
             console.log(response.data)
+            props.setTargetUser(response.data);
+            props.setLoggedIn(true);
             // setUserAddress(response.data.address);
             // setEmail(response.data.email);
             // setUserId(response.data.id);
@@ -54,7 +57,9 @@ const Login: React.FC<any> = (props:any) => {
             //if (user.userId > 0) {
             //navigate("/home")
             //}
+            // setUsername(response.data.username);
             navigate("/home")
+
         }
     }
 
@@ -65,6 +70,7 @@ const Login: React.FC<any> = (props:any) => {
 
     return (
         <>
+        {/* <Header/> */}
             <div className="Login">
                 {/* <div className="image-container">
                 <img src="rev-logo_281_29.png" alt="Revature Logo" />
