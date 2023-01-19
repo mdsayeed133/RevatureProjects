@@ -17,6 +17,12 @@ const Login: React.FC<any> = () => {
     // create useState hooks to declare the states
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [email, setEmail] = useState("");
+    const [firstName, setFirstName] = useState("GUEST");
+    const [lastName, setLastName] = useState("");
+    const [userId, setUserId] = useState(-1);
+    const [address, setUserAddress] = useState("");
+
 
     // useNavigate() will allow us to "navigate" components
     const navigate = useNavigate();
@@ -34,23 +40,23 @@ const Login: React.FC<any> = () => {
     /* axios */
     const login = async () => {
         
-        const response = await axios.post("localhost:5555/bank/auth/login", {username, password })
+        const response = await axios.post("http://localhost:5555/bank/auth/login", {username, password })
         // project2.citpuzbvuzos.us-east-1.rds.amazonaws.com
         //localhost5432
         // const response = await axios.post("localhost:5432")
 
         /* if login was successful... */
         if (response.status === 200) {
-            console.log(response)
-            
-            //user.id = response.data.id;
-            //user.username = response.data.username;
-            //user.password = response.data.password;
+            console.log(response.data)
+            setUserAddress(response.data.address);
+            setEmail(response.data.email);
+            setUserId
 
             // if user logged successfully, id WON'T be 0
-            if (user.userId > 0) {
-                navigate("/home")
-            }
+            //if (user.userId > 0) {
+            //navigate("/home")
+            //}
+            navigate("/home")
         }
     }
 

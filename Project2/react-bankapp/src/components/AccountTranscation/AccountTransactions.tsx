@@ -61,7 +61,7 @@ const AccountTransactions: React.FC<Props> = ({ accountinfo }) => {
     const [selectedType, setSelectedType] = useState("${accountId}");
     
     const fillData = async () => {
-       const response = await axios.get('localhost:5555/bank/transactions/account/${selectedType}');
+       const response = await axios.get("http://localhost:5555/bank/transactions/account/${selectedType}");
        setTransactions(response.data);
        if(response.status===200)
        {
@@ -72,7 +72,7 @@ const AccountTransactions: React.FC<Props> = ({ accountinfo }) => {
     } 
     /**
      useEffect(() => {
-            axios.get("localhost:5555/bank/transactions/account/${selectedType}")
+            axios.get("http://localhost:5555/bank/transactions/account/${selectedType}")
             .then(response => {
                 setTransactions(response.data);
             })
@@ -109,6 +109,7 @@ const AccountTransactions: React.FC<Props> = ({ accountinfo }) => {
                     ))}
                 </div>
             </div>
+        
         </div>
     )
 }

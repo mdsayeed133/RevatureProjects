@@ -20,7 +20,8 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className="col-md-2 login-status">
-                    <p className="login-name">Hello, GUEST</p>
+                    {/* will change dynamically with useState,useEffect */}
+                    <p className="login-name">Hello, </p>
                 </div>
             </div>
         </div>
