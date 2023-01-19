@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-import '../CreateAccount/CreateAccount.css'
 interface Props {
     userId: number;
 }
@@ -18,7 +17,7 @@ const CreateAccount: React.FC<Props> = ({ userId }) => {
                 amount: amount,
                 accountTypeId: accountTypeId
             });
-            if (response.status === 200) {
+            if (response.status === 201) {
                 console.log('Account created successfully');
             }
         } catch (error) {
@@ -38,10 +37,18 @@ const CreateAccount: React.FC<Props> = ({ userId }) => {
                 />
             </label>
             <br />
-            <button type="submit" onClick={() => setAccountTypeId(1)}>Checking</button>
-            <button type="submit" onClick={() => setAccountTypeId(2)}>Savings</button>
+            <label>
+                Account Type:
+                <select value={accountTypeId} onChange={event => setAccountTypeId(parseFloat(event.target.value))}>
+                    <option value={1}>Checking</option>
+                    <option value={2}>Savings</option>
+                </select>
+            </label>
+            <br />
+            <button type="submit">Create Account</button>
         </form>
     );
 };
 
 export default CreateAccount;
+

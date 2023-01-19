@@ -12,11 +12,13 @@ import SendMoney from '../SendMoney/SendMoney';
 
 
 
-const AccountTransactions: React.FC<any> = (user:any,props:Account) => {
-    const accountId :number= props.accountId; //props.accountId
-    const accountType: string = props.accountType.accountTypeName; 
-    const [amount, setAmount] = useState<number>(props.amount);
-    const targetUser :User= user.targetUser;
+const AccountTransactions: React.FC<any> = (props:any) => {
+    console.log(props.user);
+    console.log(props.account);
+    const accountId:number= props.account.accountId; //props.accountId
+    const accountType: string = props.account.accountType.accountTypeName; 
+    const [amount, setAmount] = useState<number>(props.account.amount);
+    const targetUser:User= props.user;
 
 //const AccountTransactions: React.FC<any> = (any) => {
     //const accountId :number= 2; //props.accountId

@@ -5,15 +5,19 @@ import '../Account/Account.css'
 import Header from '../Header/Header'
 import Requests from '../Requests/Requests'
 import axios from 'axios';
-import CreateAccount from '../../CreateAccount/CreateAccount'
-import { Transaction } from '../../interfaces/transactions'
+
+import { Transaction } from '../../interfaces/transactions';
 import{User} from '../../interfaces/users'
 import { Account as Ac } from '../../interfaces/accounts';
 import { setEnvironmentData } from 'worker_threads';
+import CreateAccount from '../CreateAccount/CreateAccount'
 
 const Account = (props:any) => {
     const navigate = useNavigate();
-    const accountTrans = async ()=>{
+    
+    //
+    const accountTrans = async () => {
+        //console.log(this.name + this.value);
         navigate("/accounttransactions");
     }
 
@@ -21,9 +25,9 @@ const Account = (props:any) => {
         navigate("/userprofile")
     }
 
-    const createAccountBtn = async ()=>{
-        navigate("/createaccount")
-    }
+    // const createAccountBtn = async ()=>{
+    //     navigate("/createaccount")
+    // }
 
     //this is using axios
     // create useState hooks to declare the states
@@ -69,6 +73,11 @@ const Account = (props:any) => {
     }
 
 
+    React.useEffect(()=>{
+        fillCheckAccounts();
+        fillSavingsAccounts();
+    },[])
+
 
     return (
         <div>
@@ -92,37 +101,37 @@ const Account = (props:any) => {
                             <div id="checking-accounts">
                                 <h4>Your Checking Accounts</h4>
                                 {
-                                    checkingAccounts.map(Ac, index) =>
+                                    checkingAccounts.map((Ac, index) =>
                                     (
                                         <div id="generated-account-entity" key={index}>
-                                            <p>Account Type: {}</p>
-                                            <p></>
+                                            <p>Account ID: {Ac.accountId}</p>
+                                            <p>Account Balance: {Ac.amount}</p>
+                                            <button onClick={()=>
+                                                 props.setTargetAc(Ac);
+                                                 accountTrans();
+                                            } name="checking" value={index}>More</button>
                                         </div>
-                                    )
+                                    ))
                                 }
-
-
-
-
-
-
-
-
-
-
-
-
-                                <div id="generated-account-entity">
-                                    <p>placeholder information</p>
-                                    {/* <Link to="/accounttransactions">more</Link> */}
-                                    <button onClick={accountTrans}>more</button>
-                                </div>
-                                <div id="generated-account-entity">placeholder2</div>
                             </div>
                             <div id="saving-accounts">
                                 <h4>Your Savings Accounts</h4>
-                                <div id="generated-account-entity">placeholder1</div>
-                                <div id="generated-account-entity">placeholder2</div>
+                                {
+                                    savingsAccounts.map((Ac, index) =>
+                                    (
+                                        <div id="generated-account-entity" key={index}>
+                                            <p>Account ID: {Ac.accountId}</p>
+                                            <p>Account Balance: {Ac.amount}</p>
+                                            <button onClick={()=>{
+                                                //console.log(Ac);
+                                                props.setTargetAc(Ac);
+                                                //console.log("This is our target:"+props.targetAc)
+                                                accountTrans();
+                                            }
+                                                } name="savings" value={index}>More</button>
+                                        </div>
+                                    ))
+                                }
                             </div>
                         </div>
                     </div>
@@ -142,8 +151,7 @@ const Account = (props:any) => {
                         </div>
                         <div className="user-account-container">
                             <h5>Open New Account</h5>
-                            <button className="account-btn" onClick={createAccountBtn}>Checking</button>
-                            <button className="account-btn">Savings</button>
+                          <CreateAccount userId={props.targetUser.userId}/>
                         </div>
                     </div>
                 </div>
@@ -152,4 +160,4 @@ const Account = (props:any) => {
     )
 }
 
-export default Accoun
+export default Account
