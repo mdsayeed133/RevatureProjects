@@ -66,3 +66,29 @@ password: k39r!
 | Logout test |
 +=============+
 https://localhost:5555/bank/auth/logout
+
+
+
+
+
+
+
+
+
+
++==============+
+| Removed Code |
++==============+
+<div className="requests-container">
+                            <h3>Requests</h3>
+                            <div id="generated-request-entity">
+                                <p>From: { } </p>
+                                <p>Amount: { }</p>
+                                <p>Reason: { }</p>
+                                <select name="dropdown" id="dropdown">
+                                    <option value="">autopop</option>
+                                </select>
+                                <button className="account-btn btn btn-secondary" id="accept-btn">Accept</button>
+                                <button className="account-btn btn btn-secondary" id="deny-btn">Deny</button>
+                            </div>
+                        </div>

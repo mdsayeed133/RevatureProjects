@@ -10,4 +10,11 @@
     background-color:var(--primOrange);
     border-radius:5px;
     margin-bottom: 10px;
+    box-shadow: 2px 2px 2px black;
+}
+
+.user-information{
+    background-color:var(--primWhite);
+    border-radius:5px;
+    box-shadow: 2px 2px 2px black;
 }

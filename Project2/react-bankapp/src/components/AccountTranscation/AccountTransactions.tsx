@@ -6,6 +6,7 @@ import "./AccountTransactions.css";
 import { Account } from '../../interfaces/accounts';
 import { Transaction } from '../../interfaces/transactions'
 import { setEnvironmentData } from 'worker_threads';
+import SendMoney from '../SendMoney/SendMoney';
 
 
 //interface Props {
@@ -16,6 +17,7 @@ const AccountTransactions: React.FC<any> = (user:any,props:Account) => {
     const accountId :number= props.accountId; //props.accountId
     const accountType: string = props.accountType.accountTypeName; 
     const [amount, setAmount] = useState<number>(props.amount);
+    const targetUser:User= ;
 
     
     const [transactions, setTransactions] = useState<Transaction[]>([]);
@@ -98,6 +100,7 @@ const AccountTransactions: React.FC<any> = (user:any,props:Account) => {
                     <h1>{accountType} Account Info</h1>
                     <p>Account Number: {accountId}</p>
                     <p>Balance: {amount}</p>
+                    <SendMoney accountId={accountId} accountAmount={amount} setAmount={setAmount} />
                 </div>
                 <div id="column2">
                     <h1>Transaction History</h1>

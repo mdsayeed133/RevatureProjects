@@ -17,6 +17,10 @@ const Account = (props:any) => {
         navigate("/userprofile")
     }
 
+    const createAccountBtn = async ()=>{
+        navigate("/createaccount")
+    }
+
     //this is using axios
     // create useState hooks to declare the states
     // const [username, setUsername] = useState("");
@@ -57,12 +61,16 @@ const Account = (props:any) => {
     }
 
     const logout = async ()=> {
-        localStorage.clear();
-        // navigate("/home")
-        window.location.href='/'
+        const response = await axios.post('http://localhost:5555/bank/auth/logout');
+        if(response.status==200)
+        {
+            localStorage.clear();
+            window.location.href='/'
+            console.log('You logged out')        
+        }
     }
 
-    
+
 
     return (
         <div>
@@ -76,19 +84,6 @@ const Account = (props:any) => {
                                 <p>To/From: { }</p>
                                 <p>Amount: { }</p>
                                 <p>Reason: { }</p>
-                            </div>
-                        </div>
-                        <div className="requests-container">
-                            <h3>Requests</h3>
-                            <div id="generated-request-entity">
-                                <p>From: { } </p>
-                                <p>Amount: { }</p>
-                                <p>Reason: { }</p>
-                                <select name="dropdown" id="dropdown">
-                                    <option value="">autopop</option>
-                                </select>
-                                <button className="account-btn btn btn-secondary" id="accept-btn">Accept</button>
-                                <button className="account-btn btn btn-secondary" id="deny-btn">Deny</button>
                             </div>
                         </div>
                     </div>
@@ -127,7 +122,7 @@ const Account = (props:any) => {
                         </div>
                         <div className="user-account-container">
                             <h5>Open New Account</h5>
-                            <button className="account-btn">Checking</button>
+                            <button className="account-btn" onClick={createAccountBtn}>Checking</button>
                             <button className="account-btn">Savings</button>
                         </div>
                     </div>

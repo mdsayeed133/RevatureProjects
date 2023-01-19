@@ -16,6 +16,7 @@ import { User } from './interfaces/users';
 import { Account as Ac} from './interfaces/accounts';
 import axios from 'axios';
 import SendMoney from './components/SendMoney/SendMoney';
+import CreateAccount from './components/CreateAccount/CreateAccount';
 
 function App() {
     // test darkmode here...
@@ -83,6 +84,7 @@ function App() {
           <Route path="/accounttransactions" element={<AccountTransactions targetUser={user} AC={targetAccount}/>}/>
           {/*<Route path="/sendmoney" element={<SendMoney/>}/>*/}
           {/* <Route path="/reset" element={<Reset/>}/> */}
+          <Route path="/createaccount" element={<CreateAccount/>}/>
         </Routes>
       </BrowserRouter>
       <Footer/>
