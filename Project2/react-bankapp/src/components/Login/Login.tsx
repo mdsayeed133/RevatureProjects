@@ -4,8 +4,9 @@ import { Link, useNavigate } from 'react-router-dom';
 
 import '../Login/Login.css'
 import {UserDTO} from '../../interfaces/users';
+import { User } from '../../interfaces/users';
 
-const Login: React.FC<any> = () => {
+const Login: React.FC<any> = (props:any) => {
 
     //temporary default variable to hold logged in user
     // let user = {
@@ -17,11 +18,6 @@ const Login: React.FC<any> = () => {
     // create useState hooks to declare the states
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("");
-    const [firstName, setFirstName] = useState("GUEST");
-    const [lastName, setLastName] = useState("");
-    const [userId, setUserId] = useState(-1);
-    const [address, setUserAddress] = useState("");
 
 
     // useNavigate() will allow us to "navigate" components
@@ -50,7 +46,9 @@ const Login: React.FC<any> = () => {
             console.log(response.data)
             setUserAddress(response.data.address);
             setEmail(response.data.email);
-            setUserId
+            setUserId(response.data.id);
+            setFirstName(response.data.firstName);
+            setLastName(response.data.lastName);
 
             // if user logged successfully, id WON'T be 0
             //if (user.userId > 0) {
@@ -63,6 +61,7 @@ const Login: React.FC<any> = () => {
     const reset = async ()=> {
         navigate("/reset")
     }
+
 
     return (
         <>

@@ -1,7 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import '../Header/Header.css'
-const Header = () => {
+import Login from '../Login/Login'
+const Header: React.FC<any> = ({username}) => {
 
 
 
@@ -21,7 +22,7 @@ const Header = () => {
                 </div>
                 <div className="col-md-2 login-status">
                     {/* will change dynamically with useState,useEffect */}
-                    <p className="login-name">Hello, </p>
+                    <p className="login-name">Hello, {username}</p>
                 </div>
             </div>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import '../Account/Account.css'
 import Header from '../Header/Header'
@@ -7,6 +7,10 @@ import Requests from '../Requests/Requests'
 import axios from 'axios';
 
 const Account = () => {
+    const navigate = useNavigate();
+    const accountTrans = async ()=>{
+        navigate("/accounttransactions");
+    }
 
     //this is using axios
     // create useState hooks to declare the states
@@ -127,7 +131,8 @@ const Account = () => {
                                 <h4>Your Checking Accounts</h4>
                                 <div id="generated-account-entity">
                                     <p>placeholder information</p>
-                                    <Link to="/accounttransactions">more</Link>
+                                    {/* <Link to="/accounttransactions">more</Link> */}
+                                    <button onClick={accountTrans}>more</button>
                                 </div>
                                 <div id="generated-account-entity">placeholder2</div>
                             </div>
