@@ -14,9 +14,9 @@ const Header = () => {
                 <div className="col-md-4">
                     <ul className="nav top-nav-list">
                         {/* links to "navigate" components */}
-                        <Link to="/Home" className="nav-item btn-secondary btn">Home</Link>
-                        <Link to="/Account" className="nav-item btn-secondary btn">Account</Link>
-                        <Link to="/Requests" className="nav-item btn-secondary btn">Requests</Link>
+                        <Link to="/Home" className="nav-item btn">Home</Link>
+                        <Link to="/Account" className="nav-item btn">Account</Link>
+                        {/* <Link to="/Requests" className="nav-item btn-secondary btn">Requests</Link> */}
                     </ul>
                 </div>
                 <div className="col-md-2 login-status">

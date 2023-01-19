@@ -8,9 +8,10 @@ const AccountTransactions: React.FC<any> = ({ accountId, accountType, accountNum
     
     /*Example*/
     const [transactions, setTransactions]= useState<any[]>([]);
+    const [selectedType, setSelectedType] = useState("${accountId}");
     
     const fillData = async () => {
-       const response = await axios.get('localhost:5555/bank/transactions/account/${accountId}');
+       const response = await axios.get('localhost:5555/bank/transactions/account/${selectedType}');
        setTransactions(response.data);
        if(response.status===200)
        {
@@ -32,6 +33,11 @@ const AccountTransactions: React.FC<any> = ({ accountId, accountType, accountNum
                 </div>
                 <div id="column2">
                     <h1>Transaction History</h1>
+                    <select value={selectedType} onChange={e => setSelectedType(e.target.value)}>
+                        <option value="${accountId}">All</option>
+                        <option value="expense">Expense</option>
+                        <option value="income">Income</option>
+                    </select>
                     {transactions.map((transaction, index) => (
                         <div id="transaction" key={index}>
                             <p>Transaction ID: {transaction.transactionId}</p>
