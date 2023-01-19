@@ -33,7 +33,7 @@ const Login: React.FC<any> = () => {
     /* axios */
     const login = async () => {
 
-        const response = await axios.post("project2.citpuzbvuzos.us-east-1.rds.amazonaws.com", { username, password })
+        const response = await axios.post("localhost:5555/bank/account/user", { username, password })
         // project2.citpuzbvuzos.us-east-1.rds.amazonaws.com
         //localhost5432
         // const response = await axios.post("localhost:5432")

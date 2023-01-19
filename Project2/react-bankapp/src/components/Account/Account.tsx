@@ -47,11 +47,16 @@ const Account = () => {
                     <div className="col-3" id="activity">
                         <div className="recent-activity">
                             <h3 className="subheader">Recent Activity</h3>
-                            <p>Recent transactions</p>
+                            <div id="generated-transaction-entity">
+                                <p>To/From: {}</p>
+                                <p>Amount: {}</p>
+                                <p>Reason: {}</p>
+                            </div>
                         </div>
                         <div className="requests-container">
                             <h3>Requests</h3>
                             <div id="generated-request-entity">
+                                <p>From: {} </p>
                                 <p>Amount: {}</p>
                                 <p>Reason: {}</p>
                                 <select name="dropdown" id="dropdown">
