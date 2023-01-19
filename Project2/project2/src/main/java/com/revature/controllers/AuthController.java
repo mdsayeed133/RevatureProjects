@@ -24,7 +24,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody UserLoginDTO u) {
+    public ResponseEntity<User> login(@RequestBody UserLoginDTO u) {
         Optional<User> possibleUser = uDAO.findByUsernameAndPassword(u.getUsername(), u.getPassword());
         if (possibleUser.isPresent()) {
             User user = possibleUser.get();
@@ -35,7 +35,7 @@ public class AuthController {
     }
 
     @PostMapping("/logout")
-    public ResponseEntity logout() {
+    public ResponseEntity<String> logout() {
         requestSession.setAttribute("activeUser",null);
         return ResponseEntity.ok("The user has logged out");
     }
