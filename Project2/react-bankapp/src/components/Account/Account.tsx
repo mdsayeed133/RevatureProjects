@@ -94,7 +94,10 @@ const Account = (props:any) => {
                                 {
                                     checkingAccounts.map(Ac, index) =>
                                     (
-                                        
+                                        <div id="generated-account-entity" key={index}>
+                                            <p>Account Type: {}</p>
+                                            <p></>
+                                        </div>
                                     )
                                 }
 
@@ -149,4 +152,4 @@ const Account = (props:any) => {
     )
 }
 
-export default Account
+export default Accoun
