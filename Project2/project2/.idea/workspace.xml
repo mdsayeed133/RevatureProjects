@@ -5,7 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25d4d888-95f9-4d3a-9e3e-0af180f175c6" name="Changes" comment="polished the TransactionsService">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logback.log" beforeDir="false" afterPath="$PROJECT_DIR$/logback.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-bankapp/notes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/notes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/AccountTranscation/AccountTransactions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/AccountTranscation/AccountTransactions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../react-bankapp/src/components/Login/Login.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/../react-bankapp/src/components/Login/Login.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

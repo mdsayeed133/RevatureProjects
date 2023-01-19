@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Requests from './components/Requests/Requests';
 import UserProfile from './components/UserProfile/UserProfile';
 import AccountTransactions from './components/AccountTranscation/AccountTransactions';
+import Reset from './components/Reset/Reset';
 
 
 
@@ -50,6 +51,7 @@ function App() {
           <Route path="/requests" element={<Requests/>}/>
           <Route path="/userprofile" element={<UserProfile/>}/>
           {/* <Route path="/accounttransactions" element={<AccountTransactions/>}/> */}
+          {/* <Route path="/reset" element={<Reset/>}/> */}
         </Routes>
       </BrowserRouter>
       <Footer/>

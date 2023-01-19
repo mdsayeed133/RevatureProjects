@@ -33,25 +33,28 @@ const Login: React.FC<any> = () => {
     /* axios */
     const login = async () => {
 
-        const response = await axios.post("localhost:5555/bank/account/user", { username, password })
+        const response = await axios.post("localhost:5555/bank/auth/login", {username, password })
         // project2.citpuzbvuzos.us-east-1.rds.amazonaws.com
         //localhost5432
         // const response = await axios.post("localhost:5432")
 
         /* if login was successful... */
-        if (response.status === 202) {
+        if (response.status === 200) {
             console.log(response)
-
-            user.id = response.data.id;
-            user.username = response.data.username;
-            user.password = response.data.password;
+            
+            //user.id = response.data.id;
+            //user.username = response.data.username;
+            //user.password = response.data.password;
 
             // if user logged successfully, id WON'T be 0
             if (user.id > 0) {
                 navigate("/home")
             }
         }
+    }
 
+    const reset = async ()=> {
+        navigate("/reset")
     }
 
     return (
@@ -77,7 +80,7 @@ const Login: React.FC<any> = () => {
                     </div>
 
                     <button className="login-button" onClick={login}>Login</button>
-                    <button className="login-button">Reset Password</button>
+                    <button className="login-button" onClick={reset}>Reset Password</button>
                 </div>
                 <div className="disclaimer">
                     <p><em>Results based solely on the amount of effort you put in. Sorry...</em></p>

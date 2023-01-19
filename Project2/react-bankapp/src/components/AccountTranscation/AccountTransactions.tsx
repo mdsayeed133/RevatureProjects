@@ -4,12 +4,24 @@ import axios from 'axios';
 
 import "./AccountTransactions.css";
 
-interface Props {
-  accountId: number;
-  accountType: string;
-  balance: number;
-}
 
+interface Account{
+    accountId: number;
+    user: {
+      userId: number;
+      username: string;
+      password: string;
+      firstName: string;
+      lastName: string;
+      address: string;
+      email: string;
+    };
+    amount: number;
+    accountType: {
+      accountTypeId: number;
+      accountTypeName: string;
+    }
+}
 interface Transaction {
   transactionId: number;
   account: {
@@ -37,7 +49,12 @@ interface Transaction {
   }
 }
 
-const AccountTransactions: React.FC<Props> = ({ accountId, accountType, balance }) => {
+
+interface Props {
+  accountinfo: Account;
+}
+
+const AccountTransactions: React.FC<Props> = ({ accountinfo }) => {
     
     /*Example*/
     const [transactions, setTransactions]= useState<Transaction[]>([]);
@@ -71,9 +88,9 @@ const AccountTransactions: React.FC<Props> = ({ accountId, accountType, balance 
             <Header/>
             <div id="content-container">
                 <div id="column1">
-                    <h1>Account Info</h1>
-                    <p>Account Number: {accountId}/ {accountType}</p>
-                    <p>Balance: {balance}</p>
+                    <h1>{accountinfo.accountType.accountTypeName} Account Info</h1>
+                    <p>Account Number: {accountinfo.accountId}</p>
+                    <p>Balance: {accountinfo.amount}</p>
                 </div>
                 <div id="column2">
                     <h1>Transaction History</h1>
