@@ -34,6 +34,15 @@ public class AccountController {
             return ResponseEntity.notFound().build();
         }
     }
+    @GetMapping("/user/{userId}/type/{type}")
+    public ResponseEntity<List<Account>> getAccountsByUserAndType(@PathVariable int userId, @PathVariable int type) {
+        Optional<List<Account>> accounts = accountService.getAccountOfUserAndType(userId,type);
+        if (accounts.isPresent()) {
+            return ResponseEntity.ok(accounts.get());
+        } else {
+            return ResponseEntity.notFound().build();
+        }
+    }
 
     @PostMapping()
     public ResponseEntity<Account> addAccount(@RequestBody Account account) {
