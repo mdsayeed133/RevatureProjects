@@ -9,24 +9,25 @@ import { setEnvironmentData } from 'worker_threads';
 
 
 //interface Props {
-//    accountinfo: Account;
+//    accountInfo: Account;
 //}
 
-const AccountTransactions: React.FC<any> = (props:any) => {
-    const accountId :number= 2; //props.accountId
-    const accountType: string = "saving" 
-    const amount: number = 10;
+const AccountTransactions: React.FC<any> = (props:Account) => {
+    const accountId :number= props.accountId; //props.accountId
+    const accountType: string = props.accountType.accountTypeName; 
+    var amount: number = props.amount;
 
-    /*Example*/
-    const [transactions, setTransactions] = useState<Transaction[]>([]);
-    const [selectedType, setSelectedType] = useState('${accountId}');
     
+    const [transactions, setTransactions] = useState<Transaction[]>([]);
+    //const [selectedType, setSelectedType] = useState('0');
+    
+    /*
     const fillData = async (e:any) => {
         console.log(e.target.value);
         setSelectedType(e.target.value);
-        if(selectedType=='null')
+        if(selectedType=='0')
         {
-            initialLoad();
+           const response = await initialLoad();
         }
         else{
         console.log(selectedType); //not being set properly...
@@ -35,24 +36,10 @@ const AccountTransactions: React.FC<any> = (props:any) => {
         setTransactions(response.data);
         if (response.status === 200) {
             console.log(response.data);
-            setTransactions(response.data);
-
-            }
+            setTransactions(response.data)
+        }
         }
     }
-
-    const initialLoad = async () =>
-    {
-        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}`);
-        setTransactions(response.data);
-        if (response.status === 200) {
-            console.log(response.data);
-            setTransactions(response.data);
-
-        }
-    }
-
-    /**
      useEffect(() => {
             axios.get('http://localhost:5555/bank/transactions/account/${selectedType}')
             .then(response => {
@@ -65,11 +52,43 @@ const AccountTransactions: React.FC<any> = (props:any) => {
      */
     // React.useEffect(() => {initialLoad()},[])
     // const [transactions, setTransactions] = useState([]);
+
     React.useEffect(() => {
         const url = `http://localhost:5555/bank/transactions/account/${accountId}`;
         fetch(url).then(res => res.json()).then(item => (item));
         initialLoad()},[])
 
+    const initialLoad = async () =>
+    {
+        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}`);
+        setTransactions(response.data);
+        if (response.status === 200) {
+            console.log(response.data);
+            setTransactions(response.data);
+
+        }
+    }
+    const loadIncome = async () =>
+    {
+        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}/type/2`);
+        setTransactions(response.data);
+        if (response.status === 200) {
+            console.log(response.data);
+            setTransactions(response.data);
+
+        }
+    }
+    
+    const loadExpense = async () =>
+    {
+        const response = await axios.get(`http://localhost:5555/bank/transactions/account/${accountId}/type/1`);
+        setTransactions(response.data);
+        if (response.status === 200) {
+            console.log(response.data);
+            setTransactions(response.data);
+
+        }
+    }
     return (
         <div>
             {/* <body onload="initialLoad();"></body> */}
@@ -82,11 +101,9 @@ const AccountTransactions: React.FC<any> = (props:any) => {
                 </div>
                 <div id="column2">
                     <h1>Transaction History</h1>
-                    <select value={selectedType} onChange={e => fillData(e)}>
-                        <option value='null'>All</option>
-                        <option value='2'>Expense</option>
-                        <option value='1'>Income</option>
-                    </select>
+                    <button onClick={e=>initialLoad()}>All</button>
+                    <button onClick={e=>loadIncome()}>Income</button>
+                    <button onClick={e=>loadExpense()}>Expense</button>
                     {transactions.map((transaction, index) => (
                         <div id="transaction" key={index}>
                             <p>Transaction ID: {transaction.transactionId}</p>

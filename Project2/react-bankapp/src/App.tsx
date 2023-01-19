@@ -13,6 +13,7 @@ import AccountTransactions from './components/AccountTranscation/AccountTransact
 import Reset from './components/Reset/Reset';
 
 import { User } from './interfaces/users';
+import { Account as Ac} from './interfaces/accounts';
 
 function App() {
     // test darkmode here...
@@ -21,6 +22,7 @@ function App() {
     const [darkMode, setDarkMode] = React.useState(false);
     
     const [user, setUser] = React.useState<User>();
+    const [targetAccount, setTargetAccount] = React.useState<Ac>();
 
     React.useEffect(() => {
         if (darkMode) {
@@ -54,13 +56,13 @@ function App() {
         <Routes>
           {/* <Route path="" element={<Login/>}/> */}
           <Route path="" element={<Home/>}/>
-          <Route path="/login" element={<Login />}/>
+          <Route path="/login" element={<Login setUser={setUser}/>}/>
           <Route path="/home" element={<Home/>}/>
-          <Route path="/account" element={<Account/>}/>
+          <Route path="/account" element={<Account target={setTargetAccount}/>}/>
           <Route path="/signup" element={<SignUp/>}/>
           <Route path="/requests" element={<Requests/>}/>
           <Route path="/userprofile" element={<UserProfile/>}/>
-          <Route path="/accounttransactions" element={<AccountTransactions/>}/>
+          <Route path="/accounttransactions" element={<AccountTransactions AC={targetAccount}/>}/>
           {/* <Route path="/reset" element={<Reset/>}/> */}
         </Routes>
       </BrowserRouter>

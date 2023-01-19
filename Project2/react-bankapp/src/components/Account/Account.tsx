@@ -6,7 +6,7 @@ import Header from '../Header/Header'
 import Requests from '../Requests/Requests'
 import axios from 'axios';
 
-const Account = () => {
+const Account = (props:any) => {
     const navigate = useNavigate();
     const accountTrans = async ()=>{
         navigate("/accounttransactions");
