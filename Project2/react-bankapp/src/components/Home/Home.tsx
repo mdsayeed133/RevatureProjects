@@ -35,15 +35,6 @@ const Home: React.FC<any> = (props: any) => {
             element.innerHTML = `You are logged in ${props.targetUser.firstName}`
         }
     })
-    // if (status != true) {
-    //     console.log('nothing');
-    // } else {
-        // document.body.classList.add("dark")
-        // document.getElementById("loginBox")?.id="d-none";
-        // document.getElementById("accountBox")?.id="d-none";
-        // let stat = document.getElementById("stat")
-        // document.getElementById("loginBox").classList.add("d-block")
-    //}
 
     return (
         <div>
