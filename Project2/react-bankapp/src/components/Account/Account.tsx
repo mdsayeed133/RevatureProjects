@@ -7,21 +7,21 @@ import Requests from '../Requests/Requests'
 import axios from 'axios';
 
 import { Transaction } from '../../interfaces/transactions';
-import{User} from '../../interfaces/users'
+import { User } from '../../interfaces/users'
 import { Account as Ac } from '../../interfaces/accounts';
 import { setEnvironmentData } from 'worker_threads';
 import CreateAccount from '../CreateAccount/CreateAccount'
 
-const Account = (props:any) => {
+const Account = (props: any) => {
     const navigate = useNavigate();
-    
+
     //
     const accountTrans = async () => {
         //console.log(this.name + this.value);
         navigate("/accounttransactions");
     }
 
-    const profile = async ()=>{
+    const profile = async () => {
         navigate("/userprofile")
     }
 
@@ -38,10 +38,9 @@ const Account = (props:any) => {
 
     const [checkingAccounts, setCheckingAccounts] = useState<Ac[]>([]);
     const [savingsAccounts, setSavingsAccounts] = useState<Ac[]>([]);
-    
 
-    const fillCheckAccounts = async () => 
-    {
+
+    const fillCheckAccounts = async () => {
         const response = await axios.get(`http://localhost:5555/bank/accounts/user/${props.targetUser.userId}/type/1`);
         setCheckingAccounts(response.data);
         if (response.status === 200) {
@@ -50,8 +49,7 @@ const Account = (props:any) => {
         }
     }
 
-    const fillSavingsAccounts = async () => 
-    {
+    const fillSavingsAccounts = async () => {
         const response = await axios.get(`http://localhost:5555/bank/accounts/user/${props.targetUser.userId}/type/2`);
         setSavingsAccounts(response.data);
         if (response.status === 200) {
@@ -62,26 +60,25 @@ const Account = (props:any) => {
 
 
 
-    const logout = async ()=> {
+    const logout = async () => {
         const response = await axios.post('http://localhost:5555/bank/auth/logout');
-        if(response.status==200)
-        {
+        if (response.status == 200) {
             localStorage.clear();
-            window.location.href='/'
-            console.log('You logged out')        
+            window.location.href = '/'
+            console.log('You logged out')
         }
     }
 
 
-    React.useEffect(()=>{
+    React.useEffect(() => {
         fillCheckAccounts();
         fillSavingsAccounts();
-    },[])
+    }, [])
 
 
     return (
         <div>
-            <Header targetUser={props.targetUser}/>
+            <Header targetUser={props.targetUser} />
             <div className="container-fluid main-account-section">
                 <div className="row d-flex justify-content-around" id="main">
                     <div className="col-3" id="activity">
@@ -106,9 +103,10 @@ const Account = (props:any) => {
                                         <div id="generated-account-entity" key={index}>
                                             <p>Account ID: {Ac.accountId}</p>
                                             <p>Account Balance: {Ac.amount}</p>
-                                            <button onClick={()=>
-                                                 props.setTargetAc(Ac);
-                                                 accountTrans();
+                                            <button onClick={() => {
+                                                props.setTargetAc(Ac);
+                                                accountTrans();
+                                            }
                                             } name="checking" value={index}>More</button>
                                         </div>
                                     ))
@@ -122,13 +120,13 @@ const Account = (props:any) => {
                                         <div id="generated-account-entity" key={index}>
                                             <p>Account ID: {Ac.accountId}</p>
                                             <p>Account Balance: {Ac.amount}</p>
-                                            <button onClick={()=>{
+                                            <button onClick={() => {
                                                 //console.log(Ac);
                                                 props.setTargetAc(Ac);
                                                 //console.log("This is our target:"+props.targetAc)
                                                 accountTrans();
                                             }
-                                                } name="savings" value={index}>More</button>
+                                            } name="savings" value={index}>More</button>
                                         </div>
                                     ))
                                 }
@@ -151,7 +149,7 @@ const Account = (props:any) => {
                         </div>
                         <div className="user-account-container">
                             <h5>Open New Account</h5>
-                          <CreateAccount userId={props.targetUser.userId}/>
+                            <CreateAccount userId={props.targetUser.userId} />
                         </div>
                     </div>
                 </div>
