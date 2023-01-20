@@ -7,7 +7,7 @@ interface Props {
 
 const CreateAccount: React.FC<Props> = ({ userId }) => {
     const [amount, setAmount] = useState<number>(0);
-    const [accountTypeId, setAccountTypeId] = useState<number>(0);
+    const [accountTypeId, setAccountTypeId] = useState<number>(1);
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
